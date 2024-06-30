@@ -1,5 +1,5 @@
 <?php 
-    $url = implode(explode('/barangay_immunization', strtolower($_SERVER['REQUEST_URI'])));
+    $url = implode(explode('/baranggay-clinic-child-immunization-appointment-main', strtolower($_SERVER['REQUEST_URI'])));
     $active = "text-dark bg-light";
     $inactive = "text-light";
 ?>

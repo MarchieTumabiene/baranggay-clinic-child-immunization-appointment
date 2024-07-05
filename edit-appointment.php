@@ -59,7 +59,30 @@ if (isset($_GET['message'])) {
                     <div class="row">
                         <div class="col-lg-6">
                             <label for="">Clinic Barangay Family No.</label>
-                            <input type="text" name="barangay" class="form-control my-3" value="<?= isset($_POST['barangay']) ? $_POST['barangay'] : $row['barangay'] ?>">
+                            <select name="barangay" class="form-select my-3" required>
+                                    <option selected value="" disabled>Select Barangay</option>
+                                    <?php
+                                    $barangays = [
+                                        "Kodia",
+                                        "Maalat",
+                                        "San Agustin",
+                                        "Malbago",
+                                        "Tarong",
+                                        "Talangnan",
+                                        "Mancilang",
+                                        "Kaongkod",
+                                        "Bunakan",
+                                        "Kangwayan"
+                                      ];
+                                    
+                                    foreach($barangays as $barangay): ?>
+                                        <?php if($barangay == $row['barangay']): ?>
+                                            <option selected value="<?= $barangay ?>"><?= $barangay ?></option>
+                                        <?php else: ?>
+                                            <option value="<?= $barangay ?>"><?= $barangay ?></option>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </select>
                             <p class="text-danger"><?= isset($_SESSION['barangay']) ? $_SESSION['barangay'] : '' ?></p>
                         </div>
 
@@ -137,13 +160,13 @@ if (isset($_GET['message'])) {
                     <label for="">Name</label>
                     <div class="row my-3">
                         <div class="col-lg-6">
-                            <input type="text" name="c_lname" class="form-control" value="<?= isset($_POST['c_lname']) ? $_POST['c_lname'] : $row['c_lname'] ?>">
+                            <input type="text" name="c_lname" class="form-control" value="<?= isset($_POST['c_lname']) ? $_POST['c_lname'] : $row['c_lname'] ?>" required>
                             <span style="font-size: 13px;">Last Name*</span>
                             <p class="text-danger"><?= isset($_SESSION['error_c_lname']) ? $_SESSION['error_c_lname'] : '' ?></p>
                         </div>
 
                         <div class="col-lg-6">
-                            <input type="text" name="c_fname" class="form-control" value="<?= isset($_POST['c_fname']) ? $_POST['c_fname'] : $row['c_fname'] ?>">
+                            <input type="text" name="c_fname" class="form-control" value="<?= isset($_POST['c_fname']) ? $_POST['c_fname'] : $row['c_fname'] ?>" required>
                             <span style="font-size: 13px;">First Name*</span>
                             <p class="text-danger"><?= isset($_SESSION['error_c_fname']) ? $_SESSION['error_c_fname'] : '' ?></p>
                         </div>
@@ -186,32 +209,32 @@ if (isset($_GET['message'])) {
                     </div>
 
                     <label>Date First Seen*</label>
-                    <input type="date" class="form-control my-3" name="date_seen" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['date_seen']) ? $_POST['date_seen'] : $row['date_seen'] ?>">
+                    <input type="date" class="form-control my-3" name="date_seen" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['date_seen']) ? $_POST['date_seen'] : $row['date_seen'] ?>" required>
                     <p class="text-danger"><?= isset($_SESSION['error_date_seen']) ? $_SESSION['error_date_seen'] : '' ?></p>
 
                     <label>Birth Date*</label>
-                    <input type="date" class="form-control my-3" name="date_birth" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['date_birth']) ? $_POST['date_birth'] : $row['date_birth'] ?>">
+                    <input type="date" class="form-control my-3" name="date_birth" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['date_birth']) ? $_POST['date_birth'] : $row['date_birth'] ?>" required>
                     <p class="text-danger"><?= isset($_SESSION['error_date_birth']) ? $_SESSION['error_date_birth'] : '' ?></p>
 
 
                     <label>Birth Weight*</label>
-                    <input type="text" name="birth_weight" class="form-control my-3" value="<?= isset($_POST['birth_weight']) ? $_POST['birth_weight'] : $row['birth_weight'] ?>">
+                    <input type="text" name="birth_weight" class="form-control my-3" value="<?= isset($_POST['birth_weight']) ? $_POST['birth_weight'] : $row['birth_weight'] ?>" required>
                     <p class="text-danger"><?= isset($_SESSION['error_birth_weight']) ? $_SESSION['error_birth_weight'] : '' ?></p>
 
                     <label>Place of Delivery*</label>
-                    <input type="text" name="place_delivery" class="form-control my-3" value="<?= isset($_POST['place_delivery']) ? $_POST['place_delivery'] : $row['place_delivery'] ?>">
+                    <input type="text" name="place_delivery" class="form-control my-3" value="<?= isset($_POST['place_delivery']) ? $_POST['place_delivery'] : $row['place_delivery'] ?>" required>
                     <p class="text-danger"><?= isset($_SESSION['error_place_delivery']) ? $_SESSION['error_place_delivery'] : '' ?></p>
 
-                    <label>Birth Registered at Local Civil Registry (Date)*</label>
+                    <label>Birth Registered at Local Civil Registry (Date)</label>
                     <input type="text" name="birth_registered" class="form-control my-3" value="<?= isset($_POST['birth_registered']) ? $_POST['birth_registered'] : $row['birth_registered'] ?>">
                     <p class="text-danger"><?= isset($_SESSION['error_birth_registered']) ? $_SESSION['error_birth_registered'] : '' ?></p>
 
                     <label>Complete Address of Family (House No., Street, City/Province)*</label>
-                    <input type="text" name="address" class="form-control my-3" value="<?= isset($_POST['address']) ? $_POST['address'] : $row['address'] ?>">
+                    <input type="text" name="address" class="form-control my-3" value="<?= isset($_POST['address']) ? $_POST['address'] : $row['address'] ?>" required>
                     <p class="text-danger"><?= isset($_SESSION['error_address']) ? $_SESSION['error_address'] : '' ?></p>
 
                     <label class="fw-bold">Email Account*</label>
-                    <input type="email" class="form-control my-3" name="email" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['email']) ? $_POST['email'] : $row['email'] ?>">
+                    <input type="email" class="form-control my-3" name="email" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['email']) ? $_POST['email'] : $row['email'] ?>" required>
                     <p class="text-danger"><?= isset($_SESSION['error_email']) ? $_SESSION['error_email'] : '' ?></p>
 
                     <button type="submit" class="btn btn-primary mt-3">Submit</button>

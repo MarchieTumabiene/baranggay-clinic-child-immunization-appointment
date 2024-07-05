@@ -64,7 +64,6 @@ if ($_GET['action'] === 'update-appointment') {
         && !empty($date_birth)
         && !empty($birth_weight)
         && !empty($place_delivery)
-        && !empty($birth_registered)
         && !empty($address)
     ) {
 

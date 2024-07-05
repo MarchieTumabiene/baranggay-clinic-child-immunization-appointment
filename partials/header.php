@@ -10,6 +10,8 @@
     require __DIR__ . '../../function/add-immunization.php';
     require __DIR__ . '../../function/logout.php';
   }
+
+  
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +30,10 @@
     @media print{
       .dont-print{
         display: none !important;
+      }
+      .card{
+        box-shadow: none !important;
+        border: none !important;
       }
     }
   </style>

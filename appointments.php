@@ -9,6 +9,8 @@ require './partials/header.php';
     appointments a 
     INNER JOIN 
         appoint_parents p ON a.id = p.appoint_id
+    WHERE 
+        a.status = 1
     ");
 ?>
 <div class="container-fluid">
@@ -49,9 +51,9 @@ require './partials/header.php';
                                 <td><?= $row['child'] ?></td>
                                 <td><?= $row['barangay'] ?></td>
                                 <td><?= $row['date_seen'] ?></td>
-                                <td>
-                                    <a href="?action=delete-appointment&id=<?= $row['id'] ?>" class="btn btn-secondary" onclick="return confirm('Are you sure you want to delete this?')"><i class="fa fa-trash"></i> Delete</a>
-                                    <a href="edit-appointment.php?id=<?= $row['id'] ?>" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
+                                <td class="d-flex align-items-center gap-2">
+                                    <a href="?action=delete-appointment&id=<?= $row['id'] ?>" class="btn btn-secondary d-flex align-items-center gap-1" onclick="return confirm('Are you sure you want to delete this?')"><i class="fa fa-trash"></i> Delete</a>
+                                    <a href="edit-appointment.php?id=<?= $row['id'] ?>" class="btn btn-primary d-flex align-items-center gap-1"><i class="fa fa-edit"></i> Edit</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

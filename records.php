@@ -9,6 +9,8 @@ require './partials/header.php';
     appointments a 
     INNER JOIN 
         appoint_parents p ON a.id = p.appoint_id
+    WHERE 
+        a.status = 2
     ");
 ?>
 <div class="container-fluid">
@@ -49,7 +51,7 @@ require './partials/header.php';
                                 <td><?= $row['barangay'] ?></td>
                                 <td><?= $row['date_seen'] ?></td>
                                 <td>
-                                    <a href="view-record.php?id=<?= $row['id'] ?>" class="btn btn-primary"><i class="fa fa-file-lines"></i> View</a>
+                                    <a href="view-record.php?id=<?= $row['id'] ?>" class="btn btn-primary d-flex align-items-center justify-content-between" style="width: 80px;"><i class="fa fa-file-lines"></i> View</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

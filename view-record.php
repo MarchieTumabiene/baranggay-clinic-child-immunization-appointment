@@ -36,8 +36,15 @@ if (isset($_GET['id'])) {
             </div>
 
             <div class="card">
-                <div class="card-body table-responsive">
-                    <h5 class="text-center">EARLY CHILDHOOD CARE AND DEVELOPMENT CARD</h5>
+                <div class="card-body table-responsive p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex gap-2">
+                            <img src="./assets/img/DOH_Logo.png" alt="" style="width: 70px;">
+                            <img src="./assets/img/madridejos_logo.png" alt="" style="width: 70px;">
+                        </div>
+                        <h5 class="text-center">EARLY CHILDHOOD CARE AND DEVELOPMENT CARD</h5>
+                        <img src="./assets/img/sentrong_sigla.jpg" alt="" style="width: 70px;">
+                    </div>
 
                     <table class="table table-bordered mt-4 border-secondary">
                         <tr>

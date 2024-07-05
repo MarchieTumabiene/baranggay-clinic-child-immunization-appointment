@@ -38,7 +38,20 @@
         $DEWORMING,
         $DENTAL_CHECK_UP);
         if ($stmt->execute()) {
-            header("location: view-immunization.php?id=$id");
+
+            $check_count = $conn->query("SELECT * FROM immunization WHERE appoint_id = $id");
+            if ($check_count->num_rows == 6) {
+                $status = 2;
+                $update_status = $conn->prepare("UPDATE appointments SET status = ? WHERE id = ?");
+                $update_status->bind_param('ii', $status, $id);
+                if ($update_status->execute()) {
+                    header("location: view-record.php?id=$id");
+                }
+            }else{
+                header("location: view-immunization.php?id=$id");
+            }
+
+           
         }
 
     }

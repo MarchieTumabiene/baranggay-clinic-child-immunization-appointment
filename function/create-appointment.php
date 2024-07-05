@@ -72,7 +72,6 @@ if ($_GET['action'] === 'create-appointment') {
         && !empty($date_birth)
         && !empty($birth_weight)
         && !empty($place_delivery)
-        && !empty($birth_registered)
         && !empty($address)
     ) {
 

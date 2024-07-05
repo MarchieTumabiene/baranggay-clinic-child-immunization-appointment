@@ -1,16 +1,32 @@
 <?php
-if ($_GET['action'] === 'edit-appointment') {
-    $p_fname = $_POST['p_fname'];
-    $p_mname = $_POST['p_mname'];
-    $p_lname = $_POST['p_lname'];
+if ($_GET['action'] === 'update-appointment') {
+    $id = $_POST['id'];
+    $barangay = $_POST['barangay'];
+    $child_no = $_POST['child_no'];
     $c_fname = $_POST['c_fname'];
     $c_mname = $_POST['c_mname'];
     $c_lname = $_POST['c_lname'];
-    $date = $_POST['date'];
+    $gender = $_POST['gender'];
+    $date_seen = $_POST['date_seen'];
+    $date_birth = $_POST['date_birth'];
+    $birth_weight = $_POST['birth_weight'];
+    $place_delivery = $_POST['place_delivery'];
+    $birth_registered = $_POST['birth_registered'];
+    $address = $_POST['address'];
     $email = $_POST['email'];
-    $id = $_POST['id'];
 
-    if (empty($p_fname)) {
+    $m_fname = $_POST['m_fname'];
+    $m_mname = $_POST['m_mname'];
+    $m_lname = $_POST['m_lname'];
+    $m_education = $_POST['m_education'];
+    $m_occupation = $_POST['m_occupation'];
+    $f_fname = $_POST['f_fname'];
+    $f_mname = $_POST['f_mname'];
+    $f_lname = $_POST['f_lname'];
+    $f_education = $_POST['f_education'];
+    $f_occupation = $_POST['f_occupation'];
+
+    if (empty($m_fname)) {
         $_SESSION['error_p_fname'] = "Please fill firstname*";
     } else {
         unset($_SESSION['error_p_fname']);
@@ -30,11 +46,7 @@ if ($_GET['action'] === 'edit-appointment') {
     } else {
         unset($_SESSION['error_c_lname']);
     }
-    if (empty($date)) {
-        $_SESSION['error_date'] = "Please fill date*";
-    } else {
-        unset($_SESSION['error_date']);
-    }
+
     if (empty($email)) {
         $_SESSION['error_email'] = "Please fill email*";
     } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -43,69 +55,99 @@ if ($_GET['action'] === 'edit-appointment') {
         unset($_SESSION['error_email']);
     }
 
-    if (!empty($c_fname) && !empty($c_lname) && !empty($p_fname) && !empty($p_lname) && !empty($date) && !empty($email)) {
+    if (
+        !empty($c_fname)
+        && !empty($barangay)
+        && !empty($c_lname)
+        && !empty($email)
+        && !empty($date_seen)
+        && !empty($date_birth)
+        && !empty($birth_weight)
+        && !empty($place_delivery)
+        && !empty($birth_registered)
+        && !empty($address)
+    ) {
 
-        try {
-            // Prepare the SQL statement
-            $stmt = $conn->prepare("UPDATE appointments SET
-                    p_fname = ?,	
-                    p_mname = ?,	
-                    p_lname = ?,	
-                    c_fname = ?,	
-                    c_mname = ?,	
-                    c_lname = ?,	
-                    date = ?,
-                    email = ?
-                WHERE 
-                    id = ?");
+        // Prepare the SQL statement
+        $stmt = $conn->prepare("UPDATE appointments SET
+            barangay = ?,
+            child_no = ?,
+            c_fname = ?,	
+            c_mname = ?,	
+            c_lname = ?,	
+            gender = ?,	
+            date_seen = ?,	
+            date_birth = ?,	
+            birth_weight = ?,	
+            place_delivery = ?,	
+            birth_registered = ?,	
+            address = ?,	
+            email = ?
+        WHERE id = ?");
 
-            // Check if the statement was prepared successfully
-            if ($stmt === false) {
-                throw new Exception('Statement preparation failed: ' . $conn->error);
-            }
-
-            // Bind parameters
-            $stmt->bind_param('ssssssssi', $p_fname, $p_mname, $p_lname, $c_fname, $c_mname, $c_lname, $date, $email, $id);
-
-            // Execute the statement
-            if ($stmt->execute()) {
-                $mail = new PHPMailer(true);
-                $mail->SMTPDebug = 0;
-                $mail->isSMTP();
-                $mail->Host = 'smtp.gmail.com';
-                $mail->SMTPAuth = true;
-                $mail->Username = 'angelicacapstonegroup8@gmail.com';
-                $mail->Password = 'jgrsaqushieixcfv';
-                $mail->Port = 587;
-
-                $mail->SMTPOptions = array(
-                    'ssl' => array(
-                        'verify_peer' => false,
-                        'verify_peer_name' => false,
-                        'allow_self_signed' => true
-                    )
-                );
-
-                $mail->setFrom('angelicacapstonegroup8@gmail.com', 'Barangay Clinic Child Immunization');
-
-                $mail->addAddress('bawigarogine02@gmail.com');
-                $mail->Subject = "Appointment Success";
-                $mail->Body = "Your appointment date has been set: ";
-
-                $mail->send();
-
-                $success = "*Appointment added successfully";
-            } else {
-                throw new Exception('Statement execution failed: ' . $stmt->error);
-            }
-
-            // Close the statement
-            $stmt->close();
-        } catch (Exception $e) {
-            $error = "Error: " . $e->getMessage();
+        // Check if the statement was prepared successfully
+        if ($stmt === false) {
+            throw new Exception('Statement preparation failed: ' . $conn->error);
         }
+
+        // Bind parameters
+        $stmt->bind_param('sssssssssssssi', $barangay, $child_no,$c_fname, $c_mname, $c_lname, $gender, $date_seen, $date_birth, $birth_weight, $place_delivery, $birth_registered, $address, $email, $id);
+
+        // Execute the statement
+        if ($stmt->execute()) {
+
+            $query = $conn->prepare("UPDATE appoint_parents SET 
+            m_fname =?,
+            m_mname =?,
+            m_lname =?,
+            m_education =?,
+            m_occupation =?,
+            f_fname =?,
+            f_mname =?,
+            f_lname =?,
+            f_education =?,
+            f_occupation =?
+            WHERE appoint_id = ?");
+            $query->bind_param("ssssssssssi",$m_fname, $m_mname, $m_lname, $m_education, $m_occupation, $f_fname, $f_mname, $f_lname, $f_education, $f_occupation, $id);
+
+            if ($query->execute()) {
+                // $mail = new PHPMailer(true);
+                // $mail->SMTPDebug = 0;
+                // $mail->isSMTP();
+                // $mail->Host = 'smtp.gmail.com';
+                // $mail->SMTPAuth = true;
+                // $mail->Username = 'angelicacapstonegroup8@gmail.com';
+                // $mail->Password = 'jgrsaqushieixcfv';
+                // $mail->Port = 587;
+
+                // $mail->SMTPOptions = array(
+                //     'ssl' => array(
+                //         'verify_peer' => false,
+                //         'verify_peer_name' => false,
+                //         'allow_self_signed' => true
+                //     )
+                // );
+
+                // $mail->setFrom('angelicacapstonegroup8@gmail.com', 'Barangay Clinic Child Immunization');
+
+                // $mail->addAddress('bawigarogine02@gmail.com');
+                // $mail->Subject = "Appointment Success";
+                // $mail->Body = "Your appointment date has been set: ";
+
+                // $mail->send();
+
+                header('location: edit-appointment.php?message=Appointment updated successfully&id='. $id);
+            }
+        } else {
+            throw new Exception('Statement execution failed: ' . $stmt->error);
+        }
+
+
+        // Close the statement
+        $stmt->close();
 
         // Close the connection
         $conn->close();
     }
 }
+

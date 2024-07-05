@@ -4,7 +4,10 @@
 
         $stmt = $conn->prepare("DELETE FROM appointments WHERE id = ?");
         $stmt->bind_param('i', $id);
-        if ($stmt->execute()) {
+
+        $query = $conn->prepare("DELETE FROM appoint_parents WHERE appoint_id = ?");
+        $query->bind_param('i', $id);
+        if ($stmt->execute() && $query->execute()) {
             header('location: appointments.php');
         }
 

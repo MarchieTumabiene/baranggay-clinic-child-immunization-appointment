@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2024 at 09:47 AM
+-- Generation Time: Jul 07, 2024 at 04:50 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -51,7 +51,7 @@ INSERT INTO `admin` (`id`, `username`, `password`, `created_at`, `updated_at`) V
 CREATE TABLE `appointments` (
   `id` int(11) NOT NULL,
   `barangay` text NOT NULL,
-  `child_no` varchar(100) NOT NULL,
+  `child_no` varchar(100) DEFAULT NULL,
   `c_fname` text NOT NULL,
   `c_mname` text DEFAULT NULL,
   `c_lname` text NOT NULL,
@@ -60,9 +60,10 @@ CREATE TABLE `appointments` (
   `date_birth` date NOT NULL,
   `birth_weight` float NOT NULL,
   `place_delivery` text NOT NULL,
-  `birth_registered` text NOT NULL,
+  `birth_registered` date DEFAULT NULL,
   `address` text NOT NULL,
   `email` varchar(255) NOT NULL,
+  `date_appoint` text NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()

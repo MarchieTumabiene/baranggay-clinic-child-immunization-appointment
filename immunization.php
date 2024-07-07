@@ -50,7 +50,7 @@ require './partials/header.php';
                                 <td><?= $row['father'] ?></td>
                                 <td><?= $row['child'] ?></td>
                                 <td><?= $row['barangay'] ?></td>
-                                <td><?= $row['date_seen'] ?></td>
+                                <td><?= $row['date_appoint'] ?></td>
                                 <td>
                                     <a href="view-immunization.php?id=<?= $row['id'] ?>" class="btn btn-primary d-flex align-items-center justify-content-between" style="width: 80px;"><i class="fa fa-file-lines"></i> View</a>
                                 </td>

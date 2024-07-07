@@ -5,6 +5,16 @@ if (isset($_GET['message'])) {
     $message = $_GET['message'];
 }
 
+if (!isset($_GET['action'])) {
+    unset($_SESSION['error']);
+}
+
+$message_error = null;
+if (isset($_SESSION['error'])) {
+    $message_error = $_SESSION['error'];
+}
+
+
 $barangays = [
     "Kodia",
     "Maalat",
@@ -16,7 +26,7 @@ $barangays = [
     "Kaongkod",
     "Bunakan",
     "Kangwayan"
-  ];
+];
 ?>
 <div class="container-fluid">
 
@@ -34,9 +44,15 @@ $barangays = [
                 </div>
                 <div class="card-body table-responsive">
 
-                    <?php if($message !== null): ?>
+                    <?php if ($message !== null) : ?>
                         <div class="alert alert-success py-2">
                             <?= $message ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($message_error !== null) : ?>
+                        <div class="alert alert-danger py-2">
+                            <?= $message_error ?>
                         </div>
                     <?php endif; ?>
 
@@ -49,8 +65,16 @@ $barangays = [
                                 <label for="">Clinic Barangay Family No.</label>
                                 <select name="barangay" class="form-select my-3" required>
                                     <option selected value="" disabled>Select Barangay</option>
-                                    <?php foreach($barangays as $barangay): ?>
-                                        <option value="<?= $barangay ?>"><?= $barangay ?></option>
+                                    <?php foreach ($barangays as $barangay) : ?>
+                                        <?php if (isset($_POST['barangay'])) : ?>
+                                            <?php if ($_POST['barangay'] == $barangay) : ?>
+                                                <option selected value="<?= $barangay ?>"><?= $barangay ?></option>
+                                            <?php else : ?>
+                                                <option value="<?= $barangay ?>"><?= $barangay ?></option>
+                                            <?php endif; ?>
+                                        <?php else : ?>
+                                            <option value="<?= $barangay ?>"><?= $barangay ?></option>
+                                        <?php endif; ?>
                                     <?php endforeach; ?>
                                 </select>
                                 <p class="text-danger"><?= isset($_SESSION['barangay']) ? $_SESSION['barangay'] : '' ?></p>
@@ -58,7 +82,7 @@ $barangays = [
 
                             <div class="col-lg-6">
                                 <label for="">Child's No.</label>
-                                <input type="text" name="child_no" class="form-control my-3">
+                                <input type="text" name="child_no" class="form-control my-3" value="<?= isset($_POST['child_no']) ? $_POST['child_no'] : '' ?>">
                             </div>
 
                         </div>
@@ -182,6 +206,10 @@ $barangays = [
 
                         <label class="fw-bold">Email Account*</label>
                         <input type="email" class="form-control my-3" name="email" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
+                        <p class="text-danger"><?= isset($_SESSION['error_email']) ? $_SESSION['error_email'] : '' ?></p>
+
+                        <label class="fw-bold">Date and Time Appointed*</label>
+                        <input type="datetime-local" min="<?= date('Y-m-d 08:00:00') ?>" max="<?= date('05:00:00 PM') ?>" class="form-control my-3" name="date_appoint" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" required>
                         <p class="text-danger"><?= isset($_SESSION['error_email']) ? $_SESSION['error_email'] : '' ?></p>
 
                         <button type="submit" class="btn btn-primary mt-3">Submit</button>

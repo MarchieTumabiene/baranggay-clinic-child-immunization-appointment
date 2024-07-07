@@ -22,6 +22,7 @@ if ($_GET['action'] === 'create-appointment') {
     $birth_registered = $_POST['birth_registered'];
     $address = $_POST['address'];
     $email = $_POST['email'];
+    $date_appoint = date('Y-m-d h:i', strtotime($_POST['date_appoint']));
 
     $m_fname = $_POST['m_fname'];
     $m_mname = $_POST['m_mname'];
@@ -73,6 +74,7 @@ if ($_GET['action'] === 'create-appointment') {
         && !empty($birth_weight)
         && !empty($place_delivery)
         && !empty($address)
+        && !empty($date_appoint)
     ) {
 
         // Prepare the SQL statement
@@ -89,8 +91,9 @@ if ($_GET['action'] === 'create-appointment') {
             place_delivery,	
             birth_registered,	
             address,	
-            email
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)");
+            email,
+            date_appoint
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?)");
 
         // Check if the statement was prepared successfully
         if ($stmt === false) {
@@ -98,9 +101,14 @@ if ($_GET['action'] === 'create-appointment') {
         }
 
         // Bind parameters
-        $stmt->bind_param('sssssssssssss', $barangay, $child_no,$c_fname, $c_mname, $c_lname, $gender, $date_seen, $date_birth, $birth_weight, $place_delivery, $birth_registered, $address, $email);
+        $stmt->bind_param('ssssssssssssss', $barangay, $child_no,$c_fname, $c_mname, $c_lname, $gender, $date_seen, $date_birth, $birth_weight, $place_delivery, $birth_registered, $address, $email, $date_appoint);
 
-        // Execute the statement
+        $check = $conn->query("SELECT * FROM appointments WHERE date_appoint = '$date_appoint'");
+
+        if ($check->num_rows > 0) {
+            $_SESSION['error'] = "Appointment date and time already exist";
+        }else{
+             // Execute the statement
         if ($stmt->execute()) {
 
             $get_latest = $conn->query("SELECT * FROM appointments ORDER BY id DESC");
@@ -143,6 +151,7 @@ if ($_GET['action'] === 'create-appointment') {
             }
         } else {
             throw new Exception('Statement execution failed: ' . $stmt->error);
+        }
         }
 
 

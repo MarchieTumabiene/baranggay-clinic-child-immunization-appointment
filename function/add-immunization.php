@@ -45,10 +45,36 @@
                 $update_status = $conn->prepare("UPDATE appointments SET status = ? WHERE id = ?");
                 $update_status->bind_param('ii', $status, $id);
                 if ($update_status->execute()) {
-                    header("location: view-record.php?id=$id");
+                    // header("location: view-record.php?id=$id");
+                    ?>
+                    <script>
+                            Swal.fire({
+                              position: 'top-end',
+                              icon: 'success',
+                              title: "Immunization finished succesfully",
+                              showConfirmButton: false,
+                              timer: 1500
+                            }).then(() => {
+                              window.location.href = "view-record.php?id=<?= $id ?>"
+                            })
+                          </script>
+                    <?php
                 }
             }else{
-                header("location: view-immunization.php?id=$id");
+                // header("location: view-immunization.php?id=$id");
+                ?>
+                    <script>
+                            Swal.fire({
+                              position: 'top-end',
+                              icon: 'success',
+                              title: "Immunization added succesfully",
+                              showConfirmButton: false,
+                              timer: 1500
+                            }).then(() => {
+                              window.location.href = "view-immunization.php?id=<?= $id ?>"
+                            })
+                          </script>
+                    <?php
             }
 
            

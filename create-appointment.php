@@ -34,8 +34,10 @@ $barangays = [
 
         <?php require './partials/sidebar.php' ?>
 
-        <div class="col-lg-10 p-4" style="max-height: 100vh; overflow-y: auto;">
+        <div class="col-lg-10 p-0" style="max-height: 100vh; overflow-y: auto;">
+            <?php require './partials/navbar.php' ?>
 
+            <div class="p-4">
             <div class="card">
                 <div class="card-header d-flex align-items-center gap-2">
                     <a href="./appointments.php" class="btn btn-secondary"><i class="fa fa-arrow-left"></i></a>
@@ -219,6 +221,7 @@ $barangays = [
                     </form>
 
                 </div>
+            </div>
             </div>
 
         </div>

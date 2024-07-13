@@ -147,7 +147,20 @@ if ($_GET['action'] === 'create-appointment') {
 
                 // $mail->send();
 
-                header('location: create-appointment.php?message=Appointment added successfully');
+                // header('location: create-appointment.php?message=Appointment added successfully');
+                ?>
+                <script>
+                        Swal.fire({
+                          position: 'top-end',
+                          icon: 'success',
+                          title: "Appointment added succesfully",
+                          showConfirmButton: false,
+                          timer: 1500
+                        }).then(() => {
+                          window.location.href = "create-appointment.php"
+                        })
+                </script>
+                <?php
             }
         } else {
             throw new Exception('Statement execution failed: ' . $stmt->error);

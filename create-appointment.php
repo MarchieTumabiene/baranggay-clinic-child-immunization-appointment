@@ -180,11 +180,11 @@ $barangays = [
                         </div>
 
                         <label>Date First Seen*</label>
-                        <input type="date" class="form-control my-3" name="date_seen" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['date_seen']) ? $_POST['date_seen'] : '' ?>" required>
+                        <input type="date" class="form-control my-3" name="date_seen" value="<?= isset($_POST['date_seen']) ? $_POST['date_seen'] : '' ?>" required>
                         <p class="text-danger"><?= isset($_SESSION['error_date_seen']) ? $_SESSION['error_date_seen'] : '' ?></p>
 
                         <label>Birth Date*</label>
-                        <input type="date" class="form-control my-3" name="date_birth" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['date_birth']) ? $_POST['date_birth'] : '' ?>" required>
+                        <input type="date" class="form-control my-3" name="date_birth" max="<?= date('Y-m-d') ?>" value="<?= isset($_POST['date_birth']) ? $_POST['date_birth'] : '' ?>" required>
                         <p class="text-danger"><?= isset($_SESSION['error_date_birth']) ? $_SESSION['error_date_birth'] : '' ?></p>
 
 

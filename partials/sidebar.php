@@ -3,7 +3,7 @@
     $active = "text-dark bg-light";
     $inactive = "text-light";
 ?>
-<div class="col-lg-2 col-10 bg-primary px-0 dont-print" style="height: 100vh;">
+<div class="col-lg-2 col-10 d-lg-block d-none bg-primary px-0 dont-print" style="height: 100vh;" id="menu">
     <h4 class="text-light mx-3">
         <a href="" class="text-decoration-none text-light">
             Barangay Immunization 
@@ -32,3 +32,19 @@
                 </li>
             </ul>
 </div>
+
+<script>
+     let toggle = document.getElementById('sidebar-toggler')
+    let sidebar = document.getElementById('menu')
+    let close = document.getElementById('close-sidebar')
+
+    toggle.onclick = () => {
+        sidebar.classList.remove('d-none', 'd-lg-block')
+        sidebar.classList.add('position-fixed', 'start-0', 'top-0')
+    }
+
+    close.onclick = () => {
+        sidebar.classList.add('d-none', 'd-lg-block')
+        sidebar.classList.remove('position-fixed', 'start-0', 'top-0')
+    }
+</script>

@@ -8,8 +8,11 @@ require './partials/header.php';
     <?php require './partials/sidebar.php' ?>
 
     <div class="col-lg-10 p-4" style="max-height: 100vh; overflow-y: auto;">
-
+  
       <div class="row">
+        <div class="col-12">
+        <button class="btn btn-primary mb-3" id="sidebar-toggler"><i class="fa fa-bars"></i></button>
+        </div>
 
         <div class="col-lg-4">
 

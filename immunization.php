@@ -21,6 +21,8 @@ require './partials/header.php';
 
     <div class="col-lg-10 p-4" style="max-height: 100vh; overflow-y: auto;">
 
+    <button class="btn btn-primary mb-3" id="sidebar-toggler"><i class="fa fa-bars"></i></button>
+
         <div class="card">
             <div class="card-header d-flex align-items-center gap-2 py-3">
                 <h5 class="mb-0"><i class="fa fa-syringe"></i> Immunization</h5>
@@ -50,7 +52,17 @@ require './partials/header.php';
                                 <td><?= $row['father'] ?></td>
                                 <td><?= $row['child'] ?></td>
                                 <td><?= $row['barangay'] ?></td>
-                                <td><?= $row['date_appoint'] ?></td>
+                                <td style="width: 150px;">
+                                    <?php 
+                                        if ($row['date_appoint'] == '') {
+                                            ?>
+                                            <span class="text-secondary">None</span>
+                                            <?php 
+                                        }else{
+                                            echo date('m-d-y h:i', strtotime($row['date_appoint']));
+                                        }
+                                    ?>
+                                </td>
                                 <td>
                                     <a href="view-immunization.php?id=<?= $row['id'] ?>" class="btn btn-primary d-flex align-items-center justify-content-between" style="width: 80px;"><i class="fa fa-file-lines"></i> View</a>
                                 </td>

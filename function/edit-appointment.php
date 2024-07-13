@@ -135,7 +135,20 @@ if ($_GET['action'] === 'update-appointment') {
 
                 // $mail->send();
 
-                header('location: edit-appointment.php?message=Appointment updated successfully&id='. $id);
+                // header('location: edit-appointment.php?message=Appointment updated successfully&id='. $id);
+                ?>
+                <script>
+                        Swal.fire({
+                          position: 'top-end',
+                          icon: 'success',
+                          title: "Appointment updated succesfully",
+                          showConfirmButton: false,
+                          timer: 1500
+                        }).then(() => {
+                          window.location.href = "edit-appointment.php?id=<?= $id ?>" 
+                        })
+                </script>
+                <?php
             }
         } else {
             throw new Exception('Statement execution failed: ' . $stmt->error);
@@ -143,10 +156,10 @@ if ($_GET['action'] === 'update-appointment') {
 
 
         // Close the statement
-        $stmt->close();
+        // $stmt->close();
 
         // Close the connection
-        $conn->close();
+        // $conn->close();
     }
 }
 

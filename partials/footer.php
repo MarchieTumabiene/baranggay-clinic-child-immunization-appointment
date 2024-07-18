@@ -29,8 +29,9 @@
             showCancelButton: true,
             focusConfirm: false,
             confirmButtonText: `Yes`,
-            confirmButtonColor: "#455dfb",
+            confirmButtonColor: "#0d6efd",
             cancelButtonText: `No`,
+            iconColor: '#0d6efd',
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location = z

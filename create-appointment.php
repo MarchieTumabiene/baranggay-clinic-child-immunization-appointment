@@ -53,7 +53,7 @@ $barangays = [
                     <?php endif; ?>
 
                     <?php if ($message_error !== null) : ?>
-                        <div class="alert alert-danger py-2">
+                        <div class="alert alert-danger py-2 fs-3">
                             <?= $message_error ?>
                         </div>
                     <?php endif; ?>

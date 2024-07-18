@@ -12,7 +12,7 @@ require './partials/header.php';
 
 
       <div class="p-4">
-        <div class="row g-2">
+        <div class="row g-3">
          
 
           <div class="col-lg-4">
@@ -49,13 +49,21 @@ require './partials/header.php';
             <div class="card shadow-sm rounded-0 p-3">
               <div class="card-body">
                 <?php
-                $get_appoint_records = $conn->query("SELECT * FROM appointments");
+                $get_appoint_records = $conn->query("SELECT * FROM appointments WHERE status = 2");
                 ?>
                 <h1><?= $get_appoint_records->num_rows ?></h1>
                 <p class="mb-0"><i class="fa fa-folder-open"></i> Appointment Records</p>
               </div>
             </div>
 
+          </div>
+
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+              <canvas id="barChart"></canvas>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -66,5 +74,31 @@ require './partials/header.php';
   </div>
 
 </div>
+
+<script>
+  var xValues = ["Appointments", "Immunization Records", "Appointment Records"];
+			var yValues = [<?= $get_appointments->num_rows ?>, <?= $get_records->num_rows ?>, <?= $get_appoint_records->num_rows ?>];
+			var barColors = ["#0d6efd", "#0d6efd", "#0d6efd"];
+
+			new Chart("barChart", {
+				type: "bar",
+				data: {
+					labels: xValues,
+					datasets: [{
+						backgroundColor: barColors,
+						data: yValues
+					}]
+				},
+				options: {
+					legend: {
+						display: false
+					},
+					title: {
+						display: false,
+						text: "Records"
+					}
+				}
+			});
+</script>
 <?php
 require './partials/footer.php';

@@ -8,7 +8,7 @@ require __DIR__ . "../../phpmailer/src/Exception.php";
 require __DIR__ . "../../phpmailer/src/PHPMailer.php";
 require __DIR__ . "../../phpmailer/src/SMTP.php";
 
-if ($_GET['action'] === 'create-appointment') {
+if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
     $barangay = $_POST['barangay'];
     $child_no = $_POST['child_no'];
     $c_fname = $_POST['c_fname'];
@@ -103,10 +103,22 @@ if ($_GET['action'] === 'create-appointment') {
         // Bind parameters
         $stmt->bind_param('ssssssssssssss', $barangay, $child_no,$c_fname, $c_mname, $c_lname, $gender, $date_seen, $date_birth, $birth_weight, $place_delivery, $birth_registered, $address, $email, $date_appoint);
 
-        $check = $conn->query("SELECT * FROM appointments WHERE date_appoint = '$date_appoint'");
+        $check = $conn->query("SELECT * FROM appointments WHERE date_appoint = '$date_appoint' AND barangay = '$barangay'");
 
         if ($check->num_rows > 0) {
             $_SESSION['error'] = "Appointment date and time already exist";
+            // header('location: create-appointment.php?message_error=Appointment date and time already exist');
+            ?>
+            <!-- <script>
+                    Swal.fire({
+                      position: 'top-end',
+                      icon: 'error',
+                      title: "Appointment date and time already exist",
+                      showConfirmButton: false,
+                      timer: 1500
+                    })
+            </script> -->
+            <?php
         }else{
              // Execute the statement
         if ($stmt->execute()) {
@@ -174,4 +186,10 @@ if ($_GET['action'] === 'create-appointment') {
         // Close the connection
         $conn->close();
     }
+}else{
+    unset($_SESSION['error_p_fname']);
+    unset($_SESSION['error_p_lname']);
+    unset($_SESSION['error_c_fname']);
+    unset($_SESSION['error_c_lname']);
+    unset($_SESSION['error_email']);
 }

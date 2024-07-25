@@ -29,7 +29,13 @@ if (isset($_GET['message'])) {
 
 ?>
 <div class="container-fluid">
-
+<style>
+        input,
+        select {
+            font-size: 13px !important;
+            padding: 5px !important;
+        }
+    </style>
     <div class="row">
 
         <?php require './partials/sidebar.php' ?>
@@ -46,11 +52,7 @@ if (isset($_GET['message'])) {
                     </div>
                     <div class="card-body table-responsive">
 
-                        <?php if ($message !== null) : ?>
-                            <div class="alert alert-success py-2">
-                                <?= $message ?>
-                            </div>
-                        <?php endif; ?>
+                       
 
                         <form action="?action=update-appointment&id=<?= $row['id'] ?>" method="post">
 
@@ -58,10 +60,10 @@ if (isset($_GET['message'])) {
 
                             <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
 
-                            <div class="row">
+                            <div class="row g-1">
                                 <div class="col-lg-6">
                                     <label for="">Clinic Barangay Family No.</label>
-                                    <select name="barangay" class="form-select my-3" required>
+                                    <select name="barangay" class="form-select my-2" required>
                                         <option selected value="" disabled>Select Barangay</option>
                                         <?php
                                         $barangays = [
@@ -98,7 +100,7 @@ if (isset($_GET['message'])) {
 
                                 <div class="col-lg-6">
                                     <label for="">Child's No.</label>
-                                    <input type="text" name="child_no" class="form-control my-3" value="<?= isset($_POST['child_no']) ? $_POST['child_no'] : $row['child_no'] ?>">
+                                    <input type="text" name="child_no" class="form-control my-2" value="<?= isset($_POST['child_no']) ? $_POST['child_no'] : $row['child_no'] ?>">
                                 </div>
 
                             </div>
@@ -106,61 +108,61 @@ if (isset($_GET['message'])) {
                             <h6 class="">Parent</h6>
 
                             <label for="" class="fw-bold">Mother</label>
-                            <div class="row my-3">
-                                <div class="col-lg-6">
+                            <div class="row g-2 my-2">
+                                <div class="col-lg-4">
                                     <input type="text" name="m_lname" class="form-control " value="<?= isset($_POST['m_lname']) ? $_POST['m_lname'] : $row['m_lname'] ?>">
                                     <span style="font-size: 13px;">Last Name*</span>
                                     <p class="text-danger"><?= isset($_SESSION['error_m_lname']) ? $_SESSION['error_m_lname'] : '' ?></p>
                                 </div>
 
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
                                     <input type="text" name="m_fname" class="form-control " value="<?= isset($_POST['m_fname']) ? $_POST['m_fname'] : $row['m_fname'] ?>">
                                     <span style="font-size: 13px;">First Name*</span>
                                     <p class="text-danger"><?= isset($_SESSION['error_m_fname']) ? $_SESSION['error_m_fname'] : '' ?></p>
                                 </div>
 
-                                <div class="col-lg-12">
-                                    <input type="text" name="m_mname" class="form-control mt-3" value="<?= isset($_POST['m_mname']) ? $_POST['m_mname'] : $row['m_mname'] ?>">
+                                <div class="col-lg-4">
+                                    <input type="text" name="m_mname" class="form-control" value="<?= isset($_POST['m_mname']) ? $_POST['m_mname'] : $row['m_mname'] ?>">
                                     <span style="font-size: 13px;">Middle Name</span>
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <input type="text" name="m_education" class="form-control mt-3" value="<?= isset($_POST['m_education']) ? $_POST['m_education'] : $row['m_education'] ?>">
+                                    <input type="text" name="m_education" class="form-control" value="<?= isset($_POST['m_education']) ? $_POST['m_education'] : $row['m_education'] ?>">
                                     <span style="font-size: 13px;">Educational Level</span>
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <input type="text" name="m_occupation" class="form-control mt-3" value="<?= isset($_POST['m_occupation']) ? $_POST['m_occupation'] : $row['m_occupation'] ?>">
+                                    <input type="text" name="m_occupation" class="form-control" value="<?= isset($_POST['m_occupation']) ? $_POST['m_occupation'] : $row['m_occupation'] ?>">
                                     <span style="font-size: 13px;">Occupation</span>
                                 </div>
                             </div>
 
                             <label for="" class="fw-bold">Father</label>
-                            <div class="row my-3">
-                                <div class="col-lg-6">
+                            <div class="row my-2 g-1">
+                                <div class="col-lg-4">
                                     <input type="text" name="f_lname" class="form-control " value="<?= isset($_POST['f_lname']) ? $_POST['f_lname'] : $row['f_lname'] ?>">
                                     <span style="font-size: 13px;">Last Name*</span>
                                     <p class="text-danger"><?= isset($_SESSION['error_f_lname']) ? $_SESSION['error_f_lname'] : '' ?></p>
                                 </div>
 
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
                                     <input type="text" name="f_fname" class="form-control " value="<?= isset($_POST['f_fname']) ? $_POST['f_fname'] : $row['f_fname'] ?>">
                                     <span style="font-size: 13px;">First Name*</span>
                                     <p class="text-danger"><?= isset($_SESSION['error_f_fname']) ? $_SESSION['error_f_fname'] : '' ?></p>
                                 </div>
 
-                                <div class="col-lg-12">
-                                    <input type="text" name="f_mname" class="form-control mt-3" value="<?= isset($_POST['f_mname']) ? $_POST['f_mname'] : $row['f_mname'] ?>">
+                                <div class="col-lg-4">
+                                    <input type="text" name="f_mname" class="form-control" value="<?= isset($_POST['f_mname']) ? $_POST['f_mname'] : $row['f_mname'] ?>">
                                     <span style="font-size: 13px;">Middle Name</span>
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <input type="text" name="f_education" class="form-control mt-3" value="<?= isset($_POST['f_education']) ? $_POST['f_education'] : $row['f_education'] ?>">
+                                    <input type="text" name="f_education" class="form-control mt-2" value="<?= isset($_POST['f_education']) ? $_POST['f_education'] : $row['f_education'] ?>">
                                     <span style="font-size: 13px;">Educational Level</span>
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <input type="text" name="f_occupation" class="form-control mt-3" value="<?= isset($_POST['f_occupation']) ? $_POST['f_occupation'] : $row['f_occupation'] ?>">
+                                    <input type="text" name="f_occupation" class="form-control mt-2" value="<?= isset($_POST['f_occupation']) ? $_POST['f_occupation'] : $row['f_occupation'] ?>">
                                     <span style="font-size: 13px;">Occupation</span>
                                 </div>
                             </div>
@@ -168,83 +170,102 @@ if (isset($_GET['message'])) {
                             <h6 class="fw-bold">Child</h6>
 
                             <label for="">Name</label>
-                            <div class="row my-3">
-                                <div class="col-lg-6">
+                            <div class="row my-2 g-1">
+                                <div class="col-lg-4">
                                     <input type="text" name="c_lname" class="form-control" value="<?= isset($_POST['c_lname']) ? $_POST['c_lname'] : $row['c_lname'] ?>" required>
                                     <span style="font-size: 13px;">Last Name*</span>
                                     <p class="text-danger"><?= isset($_SESSION['error_c_lname']) ? $_SESSION['error_c_lname'] : '' ?></p>
                                 </div>
 
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
                                     <input type="text" name="c_fname" class="form-control" value="<?= isset($_POST['c_fname']) ? $_POST['c_fname'] : $row['c_fname'] ?>" required>
                                     <span style="font-size: 13px;">First Name*</span>
                                     <p class="text-danger"><?= isset($_SESSION['error_c_fname']) ? $_SESSION['error_c_fname'] : '' ?></p>
                                 </div>
 
-                                <div class="col-lg-12">
-                                    <input type="text" name="c_mname" class="form-control mt-3" value="<?= isset($_POST['c_mname']) ? $_POST['c_mname'] : $row['c_mname'] ?>">
+                                <div class="col-lg-4">
+                                    <input type="text" name="c_mname" class="form-control" value="<?= isset($_POST['c_mname']) ? $_POST['c_mname'] : $row['c_mname'] ?>">
                                     <span style="font-size: 13px;">Middle Name</span>
                                 </div>
                             </div>
 
                             <label>Gender*</label>
-                            <div class="my-3">
+                            <div class="my-2">
                                 <input type="radio" class="form-check-input" name="gender" value="Male" <?php
-                                                                                                        if (isset($_POST['gender'])) {
-                                                                                                            if ($_POST['gender'] == 'Male') {
-                                                                                                                echo "checked";
-                                                                                                            }
-                                                                                                        } else {
-                                                                                                            if ($row['gender'] == 'Male') {
-                                                                                                                echo "checked";
-                                                                                                            }
-                                                                                                        }
-                                                                                                        ?>>
+                                if (isset($_POST['gender'])) {
+                                    if ($_POST['gender'] == 'Male') {
+                                        echo "checked";
+                                    }
+                                } else {
+                                    if ($row['gender'] == 'Male') {
+                                        echo "checked";
+                                    }
+                                }
+                                ?>>
                                 <span class="me-2">Male</span>
                                 <input type="radio" class="form-check-input" name="gender" value="Female" <?php
-                                                                                                            if (isset($_POST['gender'])) {
-                                                                                                                if ($_POST['gender'] == 'Female') {
-                                                                                                                    echo "checked";
-                                                                                                                }
-                                                                                                            } else {
-                                                                                                                if ($row['gender'] == 'Female') {
-                                                                                                                    echo "checked";
-                                                                                                                }
-                                                                                                            }
-                                                                                                            ?>>
+                                if (isset($_POST['gender'])) {
+                                    if ($_POST['gender'] == 'Female') {
+                                        echo "checked";
+                                    }
+                                } else {
+                                    if ($row['gender'] == 'Female') {
+                                        echo "checked";
+                                    }
+                                }
+                                ?>>
                                 <span>Female</span>
                             </div>
 
-                            <label>Date First Seen*</label>
-                            <input type="date" class="form-control my-3" name="date_seen" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['date_seen']) ? $_POST['date_seen'] : $row['date_seen'] ?>" required>
-                            <p class="text-danger"><?= isset($_SESSION['error_date_seen']) ? $_SESSION['error_date_seen'] : '' ?></p>
+                           <div class="row g-1">
+                                <div class="col-lg-6">
+                                    <label>Date First Seen*</label>
+                                    <input type="date" class="form-control my-2" name="date_seen" value="<?= isset($_POST['date_seen']) ? $_POST['date_seen'] : $row['date_seen'] ?>" required>
+                                    <p class="text-danger"><?= isset($_SESSION['error_date_seen']) ? $_SESSION['error_date_seen'] : '' ?></p>
+                                </div>
 
-                            <label>Birth Date*</label>
-                            <input type="date" class="form-control my-3" name="date_birth" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['date_birth']) ? $_POST['date_birth'] : $row['date_birth'] ?>" required>
+                                <div class="col-lg-6">
+                                    <label>Birth Date*</label>
+                            <input type="date" class="form-control my-2" name="date_birth" max="<?= date('Y-m-d') ?>" value="<?= isset($_POST['date_birth']) ? $_POST['date_birth'] : $row['date_birth'] ?>" required>
                             <p class="text-danger"><?= isset($_SESSION['error_date_birth']) ? $_SESSION['error_date_birth'] : '' ?></p>
+                                </div>
 
-
-                            <label>Birth Weight*</label>
-                            <input type="text" name="birth_weight" class="form-control my-3" value="<?= isset($_POST['birth_weight']) ? $_POST['birth_weight'] : $row['birth_weight'] ?>" required>
+                                <div class="col-lg-6">
+                                    <label>Birth Weight*</label>
+                            <input type="text" name="birth_weight" class="form-control my-2" value="<?= isset($_POST['birth_weight']) ? $_POST['birth_weight'] : $row['birth_weight'] ?>" required>
                             <p class="text-danger"><?= isset($_SESSION['error_birth_weight']) ? $_SESSION['error_birth_weight'] : '' ?></p>
+                                </div>
 
-                            <label>Place of Delivery*</label>
-                            <input type="text" name="place_delivery" class="form-control my-3" value="<?= isset($_POST['place_delivery']) ? $_POST['place_delivery'] : $row['place_delivery'] ?>" required>
+                                <div class="col-lg-6">
+                                    <label>Place of Delivery*</label>
+                            <input type="text" name="place_delivery" class="form-control my-2" value="<?= isset($_POST['place_delivery']) ? $_POST['place_delivery'] : $row['place_delivery'] ?>" required>
                             <p class="text-danger"><?= isset($_SESSION['error_place_delivery']) ? $_SESSION['error_place_delivery'] : '' ?></p>
+                                </div>
 
-                            <label>Birth Registered at Local Civil Registry (Date)</label>
-                            <input type="text" name="birth_registered" class="form-control my-3" value="<?= isset($_POST['birth_registered']) ? $_POST['birth_registered'] : $row['birth_registered'] ?>">
+                                <div class="col-lg-6">
+                                     <label>Birth Registered at Local Civil Registry (Date)</label>
+                            <input type="text" name="birth_registered" class="form-control my-2" value="<?= isset($_POST['birth_registered']) ? $_POST['birth_registered'] : $row['birth_registered'] ?>">
                             <p class="text-danger"><?= isset($_SESSION['error_birth_registered']) ? $_SESSION['error_birth_registered'] : '' ?></p>
+                                </div>
 
-                            <label>Complete Address of Family (House No., Street, City/Province)*</label>
-                            <input type="text" name="address" class="form-control my-3" value="<?= isset($_POST['address']) ? $_POST['address'] : $row['address'] ?>" required>
+                                <div class="col-lg-6">
+                                     <label>Complete Address of Family (House No., Street, City/Province)*</label>
+                            <input type="text" name="address" class="form-control my-2" value="<?= isset($_POST['address']) ? $_POST['address'] : $row['address'] ?>" required>
                             <p class="text-danger"><?= isset($_SESSION['error_address']) ? $_SESSION['error_address'] : '' ?></p>
+                                </div>
 
-                            <label class="fw-bold">Email Account*</label>
-                            <input type="email" class="form-control my-3" name="email" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['email']) ? $_POST['email'] : $row['email'] ?>" required>
+                                <div class="col-lg-12">
+                                     <label class="fw-bold">Email Account*</label>
+                            <input type="email" class="form-control my-2" name="email" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['email']) ? $_POST['email'] : $row['email'] ?>" required>
                             <p class="text-danger"><?= isset($_SESSION['error_email']) ? $_SESSION['error_email'] : '' ?></p>
+                                </div>
+                                
 
-                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                           </div>
+
+                         
+
+                            <button type="submit" class="btn btn-primary mt-2">Submit</button>
 
                             <p class="text-success mt-2"><?= isset($success) ? $success : '' ?></p>
 

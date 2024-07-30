@@ -61,7 +61,7 @@ require './partials/header.php';
           <div class="col-12">
             <div class="card">
               <div class="card-body">
-              <canvas id="barChart"></canvas>
+              <canvas id="barChart" height="100px"></canvas>
               </div>
             </div>
           </div>

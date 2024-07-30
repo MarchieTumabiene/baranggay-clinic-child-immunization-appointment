@@ -59,6 +59,7 @@ $get_appointments = $conn->query("SELECT
                                             if ($row['date_appoint'] == '') {
                                             ?>
                                                 <span class="text-secondary">None</span>
+                                              
                                             <?php
                                             } else {
                                                 echo date('m-d-y h:i', strtotime($row['date_appoint']));

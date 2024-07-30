@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2024 at 04:50 PM
+-- Generation Time: Jul 30, 2024 at 04:30 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -30,7 +30,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
+  `verification` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -39,8 +41,8 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'admin', '$2y$10$zkBJuP9ybLVZwSEgFEakRuyAnLpwSbg0xJd6Qz.Jz33HA1w3KmJmG', '2024-06-30 20:26:56', '2024-06-30 20:27:12');
+INSERT INTO `admin` (`id`, `username`, `email`, `password`, `verification`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'tumabienemarchie034@gmail.com', '$2y$10$YN7LYDqPdfXGYYXR.lEnlOX5Q7C1OToNgf5d.oixE46zDARKAle2e', '66a8a5bff20d8', '2024-06-30 20:26:56', '2024-07-30 08:44:12');
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,7 @@ CREATE TABLE `appointments` (
   `place_delivery` text NOT NULL,
   `birth_registered` date DEFAULT NULL,
   `address` text NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `contact_num` varchar(255) NOT NULL,
   `date_appoint` text NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -108,7 +110,17 @@ CREATE TABLE `immunization` (
   `VITAMIN_A` varchar(100) DEFAULT NULL,
   `VITAMIN_K` varchar(100) DEFAULT NULL,
   `DEWORMING` varchar(100) DEFAULT NULL,
-  `DENTAL_CHECK_UP` varchar(100) DEFAULT NULL
+  `DENTAL_CHECK_UP` varchar(100) DEFAULT NULL,
+  `stat_1` int(11) NOT NULL DEFAULT 1,
+  `stat_2` int(11) NOT NULL DEFAULT 1,
+  `stat_3` int(11) NOT NULL DEFAULT 1,
+  `stat_4` int(11) NOT NULL DEFAULT 1,
+  `stat_5` int(11) NOT NULL DEFAULT 1,
+  `stat_6` int(11) NOT NULL DEFAULT 1,
+  `stat_7` int(11) NOT NULL DEFAULT 1,
+  `stat_8` int(11) NOT NULL DEFAULT 1,
+  `stat_9` int(11) NOT NULL DEFAULT 1,
+  `stat_10` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

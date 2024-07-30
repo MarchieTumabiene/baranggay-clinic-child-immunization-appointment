@@ -21,7 +21,7 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
     $place_delivery = $_POST['place_delivery'];
     $birth_registered = $_POST['birth_registered'];
     $address = $_POST['address'];
-    $email = $_POST['email'];
+    $contact_num = $_POST['contact_num'];
     $date_appoint = date('Y-m-d h:i', strtotime($_POST['date_appoint']));
 
     $m_fname = $_POST['m_fname'];
@@ -56,19 +56,17 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
         unset($_SESSION['error_c_lname']);
     }
 
-    if (empty($email)) {
-        $_SESSION['error_email'] = "Please fill email*";
-    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $_SESSION['error_email'] = "Invalid email account";
+    if (empty($contact_num)) {
+        $_SESSION['error_contact_num'] = "Please fill contact_num*";
     } else {
-        unset($_SESSION['error_email']);
+        unset($_SESSION['error_contact_num']);
     }
 
     if (
         !empty($c_fname)
         && !empty($barangay)
         && !empty($c_lname)
-        && !empty($email)
+        && !empty($contact_num)
         && !empty($date_seen)
         && !empty($date_birth)
         && !empty($birth_weight)
@@ -91,7 +89,7 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
             place_delivery,	
             birth_registered,	
             address,	
-            email,
+            contact_num,
             date_appoint
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?)");
 
@@ -101,82 +99,176 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
         }
 
         // Bind parameters
-        $stmt->bind_param('ssssssssssssss', $barangay, $child_no,$c_fname, $c_mname, $c_lname, $gender, $date_seen, $date_birth, $birth_weight, $place_delivery, $birth_registered, $address, $email, $date_appoint);
+        $stmt->bind_param('ssssssssssssss', $barangay, $child_no, $c_fname, $c_mname, $c_lname, $gender, $date_seen, $date_birth, $birth_weight, $place_delivery, $birth_registered, $address, $contact_num, $date_appoint);
 
         $check = $conn->query("SELECT * FROM appointments WHERE date_appoint = '$date_appoint' AND barangay = '$barangay'");
 
         if ($check->num_rows > 0) {
             $_SESSION['error'] = "Appointment date and time already exist";
-            // header('location: create-appointment.php?message_error=Appointment date and time already exist');
-            ?>
-            <!-- <script>
-                    Swal.fire({
-                      position: 'top-end',
-                      icon: 'error',
-                      title: "Appointment date and time already exist",
-                      showConfirmButton: false,
-                      timer: 1500
-                    })
-            </script> -->
-            <?php
-        }else{
-             // Execute the statement
-        if ($stmt->execute()) {
 
-            $get_latest = $conn->query("SELECT * FROM appointments ORDER BY id DESC");
-            $result = $get_latest->fetch_array();
-            $new_id = $result['id'];
-
-            $query = $conn->prepare("INSERT INTO appoint_parents(appoint_id,m_fname,m_mname,m_lname,m_education,m_occupation,f_fname,f_mname,f_lname,f_education,f_occupation) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
-            $query->bind_param("issssssssss", $new_id, $m_fname, $m_mname, $m_lname, $m_education, $m_occupation, $f_fname, $f_mname, $f_lname, $f_education, $f_occupation);
-
-            // $immunization = $conn->prepare("INSERT INTO immunization(appoint_id) VALUES(?)");
-            // $immunization->bind_param("i", $new_id);
-
-            if ($query->execute()) {
-                // $mail = new PHPMailer(true);
-                // $mail->SMTPDebug = 0;
-                // $mail->isSMTP();
-                // $mail->Host = 'smtp.gmail.com';
-                // $mail->SMTPAuth = true;
-                // $mail->Username = 'angelicacapstonegroup8@gmail.com';
-                // $mail->Password = 'jgrsaqushieixcfv';
-                // $mail->Port = 587;
-
-                // $mail->SMTPOptions = array(
-                //     'ssl' => array(
-                //         'verify_peer' => false,
-                //         'verify_peer_name' => false,
-                //         'allow_self_signed' => true
-                //     )
-                // );
-
-                // $mail->setFrom('angelicacapstonegroup8@gmail.com', 'Barangay Clinic Child Immunization');
-
-                // $mail->addAddress('bawigarogine02@gmail.com');
-                // $mail->Subject = "Appointment Success";
-                // $mail->Body = "Your appointment date has been set: ";
-
-                // $mail->send();
-
-                // header('location: create-appointment.php?message=Appointment added successfully');
-                ?>
-                <script>
-                        Swal.fire({
-                          position: 'top-end',
-                          icon: 'success',
-                          title: "Appointment added succesfully",
-                          showConfirmButton: false,
-                          timer: 1500
-                        }).then(() => {
-                          window.location.href = "create-appointment.php"
-                        })
-                </script>
-                <?php
-            }
+            $stmt = $conn->prepare("INSERT INTO immunization(
+                appoint_id,
+                newborn_screening,
+                BCG,
+                DRT,
+                CRV,
+                HEPATITIS_B,
+                MEASLES,
+                VITAMIN_A,
+                VITAMIN_K,
+                DEWORMING,
+                DENTAL_CHECK_UP
+            )
+            VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+            $stmt->bind_param(
+                'issssssssss',
+                $id,
+                $newborn_screening,
+                $BCG,
+                $DRT,
+                $CRV,
+                $HEPATITIS_B,
+                $MEASLES,
+                $VITAMIN_A,
+                $VITAMIN_K,
+                $DEWORMING,
+                $DENTAL_CHECK_UP
+            );
         } else {
-            throw new Exception('Statement execution failed: ' . $stmt->error);
-        }
+            // Execute the statement
+            if ($stmt->execute()) {
+
+                $get_latest = $conn->query("SELECT * FROM appointments ORDER BY id DESC");
+                $result = $get_latest->fetch_array();
+                $new_id = $result['id'];
+
+                $query = $conn->prepare("INSERT INTO appoint_parents(appoint_id,m_fname,m_mname,m_lname,m_education,m_occupation,f_fname,f_mname,f_lname,f_education,f_occupation) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+                $query->bind_param("issssssssss", $new_id, $m_fname, $m_mname, $m_lname, $m_education, $m_occupation, $f_fname, $f_mname, $f_lname, $f_education, $f_occupation);
+
+                // $immunization = $conn->prepare("INSERT INTO immunization(appoint_id) VALUES(?)");
+                // $immunization->bind_param("i", $new_id);
+
+                if ($query->execute()) {
+
+                    $get_new = $conn->query("SELECT * FROM appointments ORDER BY id DESC");
+                    $fetch_new = $get_new->fetch_assoc();
+                    $id = $fetch_new['id'];
+
+                    $appoint_dates = array();
+                    $base_date = date('Y-m-d', strtotime($date_appoint));
+                    $max = 6;
+
+                    for ($i = 0; $i < $max; $i++) {
+                        $appoint_dates[$i] = date("Y-m-d", strtotime($base_date . " +$i month"));
+                        // echo $appoint_dates[$i] . "\n";
+
+                        if ($i == 0) {
+                            $insert_imm = $conn->prepare("INSERT INTO immunization(
+                                appoint_id,
+                                newborn_screening
+                            )
+                            VALUES(?,?)");
+                            $insert_imm->bind_param('is', $id, $appoint_dates[$i]);
+                            $insert_imm->execute();
+                        } else if ($i == 1) {
+                            $insert_imm = $conn->prepare("INSERT INTO immunization(
+                                appoint_id,
+                                BCG
+                            )
+                            VALUES(?,?)");
+                            $insert_imm->bind_param('is', $id, $appoint_dates[$i]);
+                            $insert_imm->execute();
+                        } else if ($i == 2) {
+                            $insert_imm = $conn->prepare("INSERT INTO immunization(
+                                appoint_id,
+                                DRT
+                            )
+                            VALUES(?,?)");
+                            $insert_imm->bind_param('is', $id, $appoint_dates[$i]);
+                            $insert_imm->execute();
+                        } elseif ($i == 3) {
+                            $insert_imm = $conn->prepare("INSERT INTO immunization(
+                                appoint_id,
+                                CRV
+                            )
+                            VALUES(?,?)");
+                            $insert_imm->bind_param('is', $id, $appoint_dates[$i]);
+                            $insert_imm->execute();
+                        } else if ($i == 4) {
+                            $insert_imm = $conn->prepare("INSERT INTO immunization(
+                                appoint_id,
+                                HEPATITIS_B
+                            )
+                            VALUES(?,?)");
+                            $insert_imm->bind_param('is', $id, $appoint_dates[$i]);
+                            $insert_imm->execute();
+                        } else if ($i == 5) {
+                            $insert_imm = $conn->prepare("INSERT INTO immunization(
+                                appoint_id,
+                                MEASLES,
+                                VITAMIN_A,
+                                VITAMIN_K,
+                                DEWORMING,
+                                DENTAL_CHECK_UP
+                            )
+                            VALUES(?,?,?,?,?,?)");
+                            $insert_imm->bind_param('isssss', $id, 
+                            $appoint_dates[$i],
+                            $appoint_dates[$i], 
+                            $appoint_dates[$i], 
+                            $appoint_dates[$i],
+                            $appoint_dates[$i]);
+                            $insert_imm->execute();
+                        } else {
+                            $insert_imm = $conn->prepare("INSERT INTO immunization(
+                                appoint_id, /
+                                BCG, /
+                                DRT, /
+                                CRV,/
+                                HEPATITIS_B,/
+                                MEASLES,
+                                VITAMIN_A,
+                                VITAMIN_K,
+                                DEWORMING,
+                                DENTAL_CHECK_UP
+                            )
+                            VALUES(?,?,?,?,?,?,?,?,?,?)");
+                            $insert_imm->bind_param(
+                                'isssssssss',
+                                $id,
+                                $appoint_dates[$i],
+                                $appoint_dates[$i],
+                                $appoint_dates[$i],
+                                $appoint_dates[$i],
+                                $appoint_dates[$i],
+                                $appoint_dates[$i],
+                                $appoint_dates[$i],
+                                $appoint_dates[$i],
+                                $appoint_dates[$i]
+                            );
+                            $insert_imm->execute();
+                        }
+                    }
+
+
+
+?>
+                    <script>
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: "Appointment added succesfully",
+                            showConfirmButton: false,
+                            timer: 1500
+                        }).then(() => {
+                            window.location.href = "create-appointment.php"
+                        })
+                    </script>
+<?php
+                }
+            } else {
+                throw new Exception('Statement execution failed: ' . $stmt->error);
+            }
         }
 
 
@@ -186,10 +278,10 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
         // Close the connection
         $conn->close();
     }
-}else{
+} else {
     unset($_SESSION['error_p_fname']);
     unset($_SESSION['error_p_lname']);
     unset($_SESSION['error_c_fname']);
     unset($_SESSION['error_c_lname']);
-    unset($_SESSION['error_email']);
+    unset($_SESSION['error_contact_num']);
 }

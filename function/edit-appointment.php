@@ -13,7 +13,7 @@ if ($_GET['action'] === 'update-appointment') {
     $place_delivery = $_POST['place_delivery'];
     $birth_registered = $_POST['birth_registered'];
     $address = $_POST['address'];
-    $email = $_POST['email'];
+    $contact_num = $_POST['contact_num'];
 
     $m_fname = $_POST['m_fname'];
     $m_mname = $_POST['m_mname'];
@@ -47,19 +47,17 @@ if ($_GET['action'] === 'update-appointment') {
         unset($_SESSION['error_c_lname']);
     }
 
-    if (empty($email)) {
-        $_SESSION['error_email'] = "Please fill email*";
-    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $_SESSION['error_email'] = "Invalid email account";
+    if (empty($contact_num)) {
+        $_SESSION['error_contact_num'] = "Please fill contact_num*";
     } else {
-        unset($_SESSION['error_email']);
+        unset($_SESSION['error_contact_num']);
     }
 
     if (
         !empty($c_fname)
         && !empty($barangay)
         && !empty($c_lname)
-        && !empty($email)
+        && !empty($contact_num)
         && !empty($date_seen)
         && !empty($date_birth)
         && !empty($birth_weight)
@@ -81,7 +79,7 @@ if ($_GET['action'] === 'update-appointment') {
             place_delivery = ?,	
             birth_registered = ?,	
             address = ?,	
-            email = ?
+            contact_num = ?
         WHERE id = ?");
 
         // Check if the statement was prepared successfully
@@ -90,7 +88,7 @@ if ($_GET['action'] === 'update-appointment') {
         }
 
         // Bind parameters
-        $stmt->bind_param('sssssssssssssi', $barangay, $child_no,$c_fname, $c_mname, $c_lname, $gender, $date_seen, $date_birth, $birth_weight, $place_delivery, $birth_registered, $address, $email, $id);
+        $stmt->bind_param('sssssssssssssi', $barangay, $child_no,$c_fname, $c_mname, $c_lname, $gender, $date_seen, $date_birth, $birth_weight, $place_delivery, $birth_registered, $address, $contact_num, $id);
 
         // Execute the statement
         if ($stmt->execute()) {

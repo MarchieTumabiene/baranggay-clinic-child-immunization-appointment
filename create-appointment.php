@@ -26,7 +26,10 @@ $barangays = [
     "Kaongkod",
     "Bunakan",
     "Kangwayan",
-    "Pili"
+    "Pili",
+    "Tugas",
+    "Poblacion",
+    "Tabagak"
 ];
 
 

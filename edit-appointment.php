@@ -77,7 +77,10 @@ if (isset($_GET['message'])) {
                                             "Kaongkod",
                                             "Bunakan",
                                             "Kangwayan",
-                                            "Pili"
+                                            "Pili",
+                                            "Tugas",
+                                            "Poblacion",
+                                            "Tabagak"
                                         ];
 
                                         foreach ($barangays as $barangay) : ?>

@@ -270,7 +270,7 @@ $barangays = [
 
                                 <div class="col-lg-3 mt-auto">
                                     <label class="fw-bold">Contact Number*</label>
-                                    <input type="tel" class="form-control " pattern="[0-9]{12}" maxlength="12" minlength="12" placeholder="+639000000000" name="contact_num" value="<?= isset($_POST['contact_num']) ? $_POST['contact_num'] : '' ?>" required>
+                                    <input type="tel" class="form-control " pattern="[0-9]{12}" maxlength="12" minlength="12" placeholder="+639000000000" name="contact_num" onkeyup="this.value=this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')" value="<?= isset($_POST['contact_num']) ? $_POST['contact_num'] : '' ?>" required>
                                     <p class="text-danger"><?= isset($_SESSION['error_contact_num']) ? $_SESSION['error_contact_num'] : '' ?></p>
                                 </div>
 

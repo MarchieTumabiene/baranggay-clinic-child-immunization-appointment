@@ -318,7 +318,7 @@ if (isset($_GET['message'])) {
 
                                 <div class="col-lg-3 mt-auto">
                                      <label class="fw-bold">Contact Number*</label>
-                            <input type="tel" class="form-control " pattern="[0-9]{12}" maxlength="12" minlength="12" name="contact_num" min="<?= date('Y-m-d') ?>" placeholder="+639000000000" value="<?= isset($_POST['contact_num']) ? $_POST['contact_num'] : $row['contact_num'] ?>" required>
+                            <input type="tel" class="form-control " pattern="[0-9]{12}" maxlength="12" minlength="12" name="contact_num" min="<?= date('Y-m-d') ?>" placeholder="+639000000000" onkeyup="this.value=this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')" value="<?= isset($_POST['contact_num']) ? $_POST['contact_num'] : $row['contact_num'] ?>" required>
                             <p class="text-danger"><?= isset($_SESSION['error_contact_num']) ? $_SESSION['error_contact_num'] : '' ?></p>
                                 </div>
                                 

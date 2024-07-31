@@ -9,7 +9,9 @@ if ($_GET['action'] == 'update-immunization') {
 
     if ($stmt) {
 
+       if ($stat == 'stat_10') {
         $update = $conn->query("UPDATE appointments SET status = 2 WHERE id = '$appoint_id'");
+       }
 
     ?>
         <script>

@@ -402,29 +402,9 @@ if (isset($_GET['id'])) {
 
                         </tr>
                         <tr>
-                            <td>MEASLES (9mos.)</td>
-                            <td><?= $data_1st['MEASLES'] ?? '' ?>
-                            <?php
-                                if ($data_1st['stat_6'] == 1) {
-                                
-                                ?>
-                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $id ?>&stat=stat_6')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
-                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
-                                <?php
-                                } else {
-                                ?>
-                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
-                                <?php
-                                }
-                                ?>
+                            <td>VITAMIN A (start at 6mos.)
+                                <p>VITAMIN K</p>
                             </td>
-                            <td><?= $data_2nd['MEASLES'] ?? '' ?></td>
-                            <td><?= $data_3rd['MEASLES'] ?? '' ?>
-                            
-                        </td>
-                        </tr>
-                        <tr>
-                            <td>VITAMIN A / VITAMIN K (start at 6mos.)</td>
                             <td><?= $data_1st['VITAMIN_A'] ?? '' ?>
                             <?php
                                 if ($data_1st['stat_7'] == 1) {
@@ -459,6 +439,29 @@ if (isset($_GET['id'])) {
                           
                         </td>
                         </tr>
+                        <tr>
+                            <td>MEASLES (9mos.)</td>
+                            <td><?= $data_1st['MEASLES'] ?? '' ?>
+                            <?php
+                                if ($data_1st['stat_6'] == 1) {
+                                
+                                ?>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $id ?>&stat=stat_6')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
+                                <?php
+                                } else {
+                                ?>
+                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
+                                <?php
+                                }
+                                ?>
+                            </td>
+                            <td><?= $data_2nd['MEASLES'] ?? '' ?></td>
+                            <td><?= $data_3rd['MEASLES'] ?? '' ?>
+                            
+                        </td>
+                        </tr>
+                     
                         <!-- <tr>
                             <td>VITAMIN K</td>
                             <td><?= $data_1st['VITAMIN_K'] ?? '' ?></td>
@@ -487,7 +490,7 @@ if (isset($_GET['id'])) {
                         </td>
 
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>DENTAL CHECK-UP(1 year above)</td>
                             <td><?= $data_1st['DENTAL_CHECK_UP'] ?? '' ?>
                             <?php
@@ -508,7 +511,7 @@ if (isset($_GET['id'])) {
                             <td><?= $data_3rd['DENTAL_CHECK_UP'] ?? '' ?>
                         </td>
 
-                        </tr>
+                        </tr> -->
                         </td>
 
                         </tr>

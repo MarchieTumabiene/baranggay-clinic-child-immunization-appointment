@@ -2,6 +2,7 @@
   <script src="./assets/js/jquery.min.js"></script>
   <script src="./assets/js/dataTable.js"></script>
   <script src="./assets/js/bootstrap.js"></script>
+
   <?php 
       if (isset($_GET['logout'])) {
         session_destroy();

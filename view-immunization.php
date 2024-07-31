@@ -39,7 +39,7 @@ if (isset($_GET['id'])) {
                 <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#add"><i class="fa fa-plus"></i> Add</button>
             </div>
 
-            <div class="card">
+            <div class="card" id="card">
                 <div class="card-body table-responsive p-4">
                     <div class="d-flex justify-content-between align-items-center">
                         <img src="./assets/img/DOH_Logo.png" alt="" style="width: 70px;">
@@ -461,7 +461,7 @@ if (isset($_GET['id'])) {
                 </div>
 
                 <div class="card-footer text-end dont-print">
-                    <button type="button" onclick="print()" class="btn btn-primary"><i class="fa fa-print"></i> Print</button>
+                    <button type="button" id="downloadBtn" class="btn btn-primary"><i class="fa fa-download"></i> Save</button>
                 </div>
             </div>
         </div>
@@ -512,5 +512,44 @@ if (isset($_GET['id'])) {
         </div>
     </div>
 </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
+<script>
+ document.getElementById('downloadBtn').addEventListener('click', function() {
+    // Select the card element you want to capture
+    var card = document.querySelector('.card');
+    var button = document.getElementById('downloadBtn');
+    
+    // Hide the download button
+    button.classList.add("d-none");
+
+    // Use html2canvas to capture the card
+    html2canvas(card, {
+        scrollX: 0,
+        scrollY: -window.scrollY,
+        useCORS: true, // To handle CORS issues with external images
+        backgroundColor: null, // Transparent background
+    }).then(canvas => {
+        // Convert the canvas to a data URL
+        var imgData = canvas.toDataURL('image/png');
+
+        // Create a temporary link element
+        var link = document.createElement('a');
+        link.href = imgData;
+        link.download = 'card.png';
+
+        // Trigger the download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }).finally(() => {
+        // Show the button again after download
+        button.classList.remove("d-none");
+    });
+});
+
+
+    </script>
 <?php
 require './partials/footer.php';

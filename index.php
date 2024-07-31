@@ -21,7 +21,7 @@ require './partials/header.php';
               <div class="card-body">
 
                 <?php
-                $get_appointments = $conn->query("SELECT * FROM appointments WHERE status = 1");
+                $get_appointments = $conn->query("SELECT * FROM appointments");
                 ?>
                 <h1><?= $get_appointments->num_rows ?></h1>
                 <p class="mb-0"><i class="fa fa-calendar-check"></i> Appointments</p>
@@ -35,7 +35,7 @@ require './partials/header.php';
             <div class="card shadow-sm rounded-0 p-3">
               <div class="card-body">
                 <?php
-                $get_records = $conn->query("SELECT * FROM immunization");
+                $get_records = $conn->query("SELECT * FROM immunization GROUP BY appoint_id");
                 ?>
                 <h1><?= $get_records->num_rows ?></h1>
                 <p class="mb-0"><i class="fa fa-check-circle"></i> Immunization Records</p>
@@ -49,7 +49,7 @@ require './partials/header.php';
             <div class="card shadow-sm rounded-0 p-3">
               <div class="card-body">
                 <?php
-                $get_appoint_records = $conn->query("SELECT * FROM appointments WHERE status = 2");
+                $get_appoint_records = $conn->query("SELECT * FROM appointments");
                 ?>
                 <h1><?= $get_appoint_records->num_rows ?></h1>
                 <p class="mb-0"><i class="fa fa-folder-open"></i> Appointment Records</p>

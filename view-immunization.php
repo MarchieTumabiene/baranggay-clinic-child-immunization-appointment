@@ -202,16 +202,16 @@ if (isset($_GET['id'])) {
                             <td>1st</td>
                             <td>2nd</td>
                             <td>3rd</td>
-                            <td>4th</td>
+                            <!-- <td>4th</td>
                             <td>5th</td>
-                            <td>6th</td>
+                            <td>6th</td> -->
                         <tr>
                             <td colspan="1">NEWBORN SCREENING</td>
                             <td><?= $data_1st['newborn_screening'] ?? '' ?> 
                                 <?php
                                 if ($data_1st['stat_1'] == 1) {
                                 ?>
-                                <button type="button" onclick="showMessage('Are you sure?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $id ?>&stat=stat_1')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $id ?>&stat=stat_1')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else {
@@ -223,19 +223,17 @@ if (isset($_GET['id'])) {
                             </td>
                             <td></td>
                             <td></td>
+                            <!-- <td></td>
                             <td></td>
-                            <td></td>
-                            <td></td>
+                            <td></td> -->
                         </tr>
                         <tr>
                             <td>BCG (at birth)</td>
-                            <td><?= $data_1st['BCG'] ?? '' ?> </td>
-                            <td><?= $data_2nd['BCG'] ?? '' ?>
-                               
-                                <?php
-                                if ($data_2nd['stat_2'] == 1) {
+                            <td><?= $data_1st['BCG'] ?? '' ?> 
+                            <?php
+                                if ($data_1st['stat_2'] == 1) {
                                 ?>
-                                 <button type="button" class="btn btn-primary p-1 py-0" style="font-size: 10px;" onclick="showMessage('Are you sure?', 'question', '?action=update-immunization&update=<?= $data_2nd['id'] ?>&appoint=<?= $id ?>&stat=stat_2')"><i class="fa fa-edit"></i></button>
+                                 <button type="button" class="btn btn-primary p-1 py-0" style="font-size: 10px;" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $id ?>&stat=stat_2')"><i class="fa fa-edit"></i></button>
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else {
@@ -244,24 +242,55 @@ if (isset($_GET['id'])) {
                                 <?php
                                 }
                                 ?>
+                        </td>
+                            <td>
+                               
+                             
                             </td>
                             <td><?= $data_3rd['BCG'] ?? '' ?></td>
-                            <td><?= $data_4th['BCG'] ?? '' ?></td>
-                            <td><?= $data_5th['BCG'] ?? '' ?></td>
-                            <td><?= $data_6th['BCG'] ?? '' ?></td>
+                            
+                         
 
                         </tr>
                         <tr>
                             <td>DRT (6wks, 10wks, 14wks old)</td>
-                            <td><?= $data_1st['DRT'] ?? '' ?></td>
-                            <td><?= $data_2nd['DRT'] ?? '' ?></td>
+                            <td><?= $data_1st['DRT'] ?? '' ?>
+                            <?php
+                                if ($data_1st['stat_3'] == 1) {
+                                
+                                ?>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $id ?>&stat=stat_3')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
+                                <?php
+                                } else {
+                                ?>
+                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
+                                <?php
+                                }
+                                ?>
+                        </td>
+                            <td><?= $data_2nd['DRT'] ?? '' ?> 
+                            <?php
+                                if ($data_2nd['stat_3'] == 1) {
+                                
+                                ?>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_2nd['id'] ?>&appoint=<?= $id ?>&stat=stat_3')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
+                                <?php
+                                } else {
+                                ?>
+                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
+                                <?php
+                                }
+                                ?>
+                            </td>
                             <td><?= $data_3rd['DRT'] ?? '' ?>
                                 
                                 <?php
                                 if ($data_3rd['stat_3'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showMessage('Are you sure?', 'question', '?action=update-immunization&update=<?= $data_3rd['id'] ?>&appoint=<?= $id ?>&stat=stat_3')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_3rd['id'] ?>&appoint=<?= $id ?>&stat=stat_3')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else {
@@ -271,23 +300,19 @@ if (isset($_GET['id'])) {
                                 }
                                 ?>
                             </td>
-                            <td><?= $data_4th['DRT'] ?? '' ?></td>
+                            <!-- <td><?= $data_4th['DRT'] ?? '' ?></td>
                             <td><?= $data_5th['DRT'] ?? '' ?></td>
-                            <td><?= $data_6th['DRT'] ?? '' ?></td>
+                            <td><?= $data_6th['DRT'] ?? '' ?></td> -->
 
                         </tr>
                         <tr>
                             <td>CRV (6wks, 10wks, 14wks old)</td>
-                            <td><?= $data_1st['CRV'] ?? '' ?></td>
-                            <td><?= $data_2nd['CRV'] ?? '' ?></td>
-                            <td><?= $data_3rd['CRV'] ?? '' ?></td>
-                            <td><?= $data_4th['CRV'] ?? '' ?>
-                                
-                                <?php
-                                if ($data_4th['stat_4'] == 1) {
+                            <td><?= $data_1st['CRV'] ?? '' ?>
+                            <?php
+                                if ($data_1st['stat_4'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showMessage('Are you sure?', 'question', '?action=update-immunization&update=<?= $data_4th['id'] ?>&appoint=<?= $id ?>&stat=stat_4')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $id ?>&stat=stat_4')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else {
@@ -296,24 +321,46 @@ if (isset($_GET['id'])) {
                                 <?php
                                 }
                                 ?>
+                        
                             </td>
-                            <td><?= $data_5th['CRV'] ?? '' ?></td>
-                            <td><?= $data_6th['CRV'] ?? '' ?></td>
+                            <td><?= $data_2nd['CRV'] ?? '' ?> 
+                            <?php
+                                if ($data_2nd['stat_4'] == 1) {
+                                
+                                ?>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_2nd['id'] ?>&appoint=<?= $id ?>&stat=stat_4')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
+                                <?php
+                                } else {
+                                ?>
+                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
+                                <?php
+                                }
+                                ?>
+                        </td>
+                            <td><?= $data_3rd['CRV'] ?? '' ?>  <?php
+                                if ($data_3rd['stat_4'] == 1) {
+                                
+                                ?>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_3rd['id'] ?>&appoint=<?= $id ?>&stat=stat_4')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
+                                <?php
+                                } else {
+                                ?>
+                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
+                                <?php
+                                }
+                                ?>
 
                         </tr>
                         <tr>
                             <td>HEPATITIS B (6wks, 10wks, 14wks old)</td>
-                            <td><?= $data_1st['HEPATITIS_B'] ?? '' ?></td>
-                            <td><?= $data_2nd['HEPATITIS_B'] ?? '' ?></td>
-                            <td><?= $data_3rd['HEPATITIS_B'] ?? '' ?></td>
-                            <td><?= $data_4th['HEPATITIS_B'] ?? '' ?></td>
-                            <td><?= $data_5th['HEPATITIS_B'] ?? '' ?>
-                                
-                                <?php
-                                if ($data_5th['stat_5'] == 1) {
+                            <td><?= $data_1st['HEPATITIS_B'] ?? '' ?>
+                            <?php
+                                if ($data_1st['stat_5'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showMessage('Are you sure?', 'question', '?action=update-immunization&update=<?= $data_5th['id'] ?>&appoint=<?= $id ?>&stat=stat_5')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $id ?>&stat=stat_5')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else {
@@ -323,23 +370,82 @@ if (isset($_GET['id'])) {
                                 }
                                 ?>
                             </td>
-                            <td><?= $data_6th['HEPATITIS_B'] ?? '' ?></td>
+                            <td><?= $data_2nd['HEPATITIS_B'] ?? '' ?>
+                            <?php
+                                if ($data_2nd['stat_5'] == 1) {
+                                
+                                ?>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_2nd['id'] ?>&appoint=<?= $id ?>&stat=stat_5')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
+                                <?php
+                                } else {
+                                ?>
+                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
+                                <?php
+                                }
+                                ?>
+                            </td>
+                            <td><?= $data_3rd['HEPATITIS_B'] ?? '' ?>  <?php
+                                if ($data_3rd['stat_5'] == 1) {
+                                
+                                ?>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_3rd['id'] ?>&appoint=<?= $id ?>&stat=stat_5')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
+                                <?php
+                                } else {
+                                ?>
+                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
+                                <?php
+                                }
+                                ?>
+                            </td>
 
                         </tr>
                         <tr>
                             <td>MEASLES (9mos.)</td>
-                            <td><?= $data_1st['MEASLES'] ?? '' ?></td>
+                            <td><?= $data_1st['MEASLES'] ?? '' ?>
+                            <?php
+                                if ($data_1st['stat_6'] == 1) {
+                                
+                                ?>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $id ?>&stat=stat_6')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
+                                <?php
+                                } else {
+                                ?>
+                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
+                                <?php
+                                }
+                                ?>
+                            </td>
                             <td><?= $data_2nd['MEASLES'] ?? '' ?></td>
-                            <td><?= $data_3rd['MEASLES'] ?? '' ?></td>
-                            <td><?= $data_4th['MEASLES'] ?? '' ?></td>
-                            <td><?= $data_5th['MEASLES'] ?? '' ?></td>
-                            <td><?= $data_6th['MEASLES'] ?? '' ?>
-                                
-                                <?php
-                                if ($data_6th['stat_6'] == 1) {
+                            <td><?= $data_3rd['MEASLES'] ?? '' ?>
+                            
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>VITAMIN A / VITAMIN K (start at 6mos.)</td>
+                            <td><?= $data_1st['VITAMIN_A'] ?? '' ?>
+                            <?php
+                                if ($data_1st['stat_7'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showMessage('Are you sure?', 'question', '?action=update-immunization&update=<?= $data_6th['id'] ?>&appoint=<?= $id ?>&stat=stat_6')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $id ?>&stat=stat_7')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
+                                <?php
+                                } else {
+                                ?>
+                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
+                                <?php
+                                }
+                                ?>
+                        </td>
+                            <td><?= $data_2nd['VITAMIN_A'] ?? '' ?>
+                            <?php
+                                if ($data_2nd['stat_7'] == 1) {
+                                
+                                ?>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_2nd['id'] ?>&appoint=<?= $id ?>&stat=stat_7')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else {
@@ -349,47 +455,46 @@ if (isset($_GET['id'])) {
                                 }
                                 ?>
                             </td>
-
+                            <td><?= $data_3rd['VITAMIN_A'] ?? '' ?>
+                          
+                        </td>
                         </tr>
-                        <tr>
-                            <td>VITAMIN A (start at 6mos.)</td>
-                            <td><?= $data_1st['VITAMIN_A'] ?? '' ?></td>
-                            <td><?= $data_2nd['VITAMIN_A'] ?? '' ?></td>
-                            <td><?= $data_3rd['VITAMIN_A'] ?? '' ?></td>
-                            <td><?= $data_4th['VITAMIN_A'] ?? '' ?></td>
-                            <td><?= $data_5th['VITAMIN_A'] ?? '' ?></td>
-                            <td><?= $data_6th['VITAMIN_A'] ?? '' ?>
-                                
-                                <?php
-                                if ($data_6th['stat_7'] == 1) {
-                                
-                                ?>
-                                <button type="button" onclick="showMessage('Are you sure?', 'question', '?action=update-immunization&update=<?= $data_6th['id'] ?>&appoint=<?= $id ?>&stat=stat_7')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
-                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
-                                <?php
-                                } else {
-                                ?>
-                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
-                                <?php
-                                }
-                                ?>
-                            </td>
-
-                        </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>VITAMIN K</td>
                             <td><?= $data_1st['VITAMIN_K'] ?? '' ?></td>
                             <td><?= $data_2nd['VITAMIN_K'] ?? '' ?></td>
-                            <td><?= $data_3rd['VITAMIN_K'] ?? '' ?></td>
-                            <td><?= $data_4th['VITAMIN_K'] ?? '' ?></td>
-                            <td><?= $data_5th['VITAMIN_K'] ?? '' ?></td>
-                            <td><?= $data_6th['VITAMIN_K'] ?? '' ?>
-                                
-                                <?php
-                                if ($data_6th['stat_8'] == 1) {
+                            <td><?= $data_3rd['VITAMIN_K'] ?? '' ?>
+                        </td> -->
+
+                        </tr>
+                        <tr>
+                            <td>DEWORMING(1 year above)</td>
+                            <td><?= $data_1st['DEWORMING'] ?? '' ?>  <?php
+                                if ($data_1st['stat_9'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showMessage('Are you sure?', 'question', '?action=update-immunization&update=<?= $data_6th['id'] ?>&appoint=<?= $id ?>&stat=stat_8')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $id ?>&stat=stat_9')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
+                                <?php
+                                } else {
+                                ?>
+                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
+                                <?php
+                                }
+                                ?></td>
+                            <td></td>
+                            <td>
+                        </td>
+
+                        </tr>
+                        <tr>
+                            <td>DENTAL CHECK-UP(1 year above)</td>
+                            <td><?= $data_1st['DENTAL_CHECK_UP'] ?? '' ?>
+                            <?php
+                                if ($data_1st['stat_10'] == 1) {
+                                
+                                ?>
+                                <button type="button" onclick="showMessage('Click yes if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $id ?>&stat=stat_10')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else {
@@ -399,56 +504,9 @@ if (isset($_GET['id'])) {
                                 }
                                 ?>
                             </td>
-
-                        </tr>
-                        <tr>
-                            <td>DEWORMING</td>
-                            <td><?= $data_1st['DEWORMING'] ?? '' ?></td>
-                            <td><?= $data_2nd['DEWORMING'] ?? '' ?></td>
-                            <td><?= $data_3rd['DEWORMING'] ?? '' ?></td>
-                            <td><?= $data_4th['DEWORMING'] ?? '' ?></td>
-                            <td><?= $data_5th['DEWORMING'] ?? '' ?></td>
-                            <td><?= $data_6th['DEWORMING'] ?? '' ?>
-                                
-                                <?php
-                                if ($data_6th['stat_9'] == 1) {
-                                
-                                ?>
-                                <button type="button" onclick="showMessage('Are you sure?', 'question', '?action=update-immunization&update=<?= $data_6th['id'] ?>&appoint=<?= $id ?>&stat=stat_9')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
-                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
-                                <?php
-                                } else {
-                                ?>
-                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
-                                <?php
-                                }
-                                ?>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>DENTAL CHECK-UP</td>
-                            <td><?= $data_1st['DENTAL_CHECK_UP'] ?? '' ?></td>
                             <td><?= $data_2nd['DENTAL_CHECK_UP'] ?? '' ?></td>
-                            <td><?= $data_3rd['DENTAL_CHECK_UP'] ?? '' ?></td>
-                            <td><?= $data_4th['DENTAL_CHECK_UP'] ?? '' ?></td>
-                            <td><?= $data_5th['DENTAL_CHECK_UP'] ?? '' ?></td>
-                            <td><?= $data_6th['DENTAL_CHECK_UP'] ?? '' ?>
-                                
-                                <?php
-                                if ($data_6th['stat_10'] == 1) {
-                                
-                                ?>
-                                <button type="button" onclick="showMessage('Are you sure?', 'question', '?action=update-immunization&update=<?= $data_6th['id'] ?>&appoint=<?= $id ?>&stat=stat_10')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
-                                    <p class="mb-0" style="font-size: 10px;">Pending</p>
-                                <?php
-                                } else {
-                                ?>
-                                    <p class="mb-0 text-success" style="font-size: 10px;">Finished</p>
-                                <?php
-                                }
-                                ?>
-                            </td>
+                            <td><?= $data_3rd['DENTAL_CHECK_UP'] ?? '' ?>
+                        </td>
 
                         </tr>
                         </td>

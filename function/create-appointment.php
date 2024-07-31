@@ -106,34 +106,34 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
         if ($check->num_rows > 0) {
             $_SESSION['error'] = "Appointment date and time already exist";
 
-            $stmt = $conn->prepare("INSERT INTO immunization(
-                appoint_id,
-                newborn_screening,
-                BCG,
-                DRT,
-                CRV,
-                HEPATITIS_B,
-                MEASLES,
-                VITAMIN_A,
-                VITAMIN_K,
-                DEWORMING,
-                DENTAL_CHECK_UP
-            )
-            VALUES(?,?,?,?,?,?,?,?,?,?,?)");
-            $stmt->bind_param(
-                'issssssssss',
-                $id,
-                $newborn_screening,
-                $BCG,
-                $DRT,
-                $CRV,
-                $HEPATITIS_B,
-                $MEASLES,
-                $VITAMIN_A,
-                $VITAMIN_K,
-                $DEWORMING,
-                $DENTAL_CHECK_UP
-            );
+            // $stmt = $conn->prepare("INSERT INTO immunization(
+            //     appoint_id,
+            //     newborn_screening,
+            //     BCG,
+            //     DRT,
+            //     CRV,
+            //     HEPATITIS_B,
+            //     MEASLES,
+            //     VITAMIN_A,
+            //     VITAMIN_K,
+            //     DEWORMING,
+            //     DENTAL_CHECK_UP
+            // )
+            // VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+            // $stmt->bind_param(
+            //     'issssssssss',
+            //     $id,
+            //     $newborn_screening,
+            //     $BCG,
+            //     $DRT,
+            //     $CRV,
+            //     $HEPATITIS_B,
+            //     $MEASLES,
+            //     $VITAMIN_A,
+            //     $VITAMIN_K,
+            //     $DEWORMING,
+            //     $DENTAL_CHECK_UP
+            // );
         } else {
             // Execute the statement
             if ($stmt->execute()) {
@@ -160,91 +160,93 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
 
                     for ($i = 0; $i < $max; $i++) {
                         $appoint_dates[$i] = date("Y-m-d", strtotime($base_date . " +$i month"));
+                        $one = date("Y-m-d", strtotime($base_date . " +". $i ." month"));
+                        $two = date("Y-m-d", strtotime($base_date . " +". $i + 1 ." month"));
+                        $three = date("Y-m-d", strtotime($base_date . " +". $i + 3 ." month"));
+                        $four = date("Y-m-d", strtotime($base_date . " +". $i + 4 ." month"));
+                        $five = date("Y-m-d", strtotime($base_date . " +". $i + 5 ." month"));
+                        $six = date("Y-m-d", strtotime($base_date . " +". $i + 6 ." month"));
+                        $seven = date("Y-m-d", strtotime($base_date . " +". $i + 7 + 6 ." month"));
+                        $eight = date("Y-m-d", strtotime($base_date . " +". $i + 8 ." month"));
+                        $nine = date("Y-m-d", strtotime($base_date . " +". $i ." year"));
+                        $ten = date("Y-m-d", strtotime($base_date . " +". $i ." year"));
+                        $eleven = date("Y-m-d", strtotime($base_date . " +". $i + 11 ." month"));
+                        $twelve = date("Y-m-d", strtotime($base_date . " +". $i + 12 ." month"));
+                        $thirteen = date("Y-m-d", strtotime($base_date . " +". $i + 13 ." month"));
+                        $fourtheen = date("Y-m-d", strtotime($base_date . " +". $i + 14 + 6 ." month"));
+                        $fiftheen = date("Y-m-d", strtotime($base_date . " +". $i + 15 ." month"));
+                        $sixtheen = date("Y-m-d", strtotime($base_date . " +". $i + 16 ." month"));
+                        $seventheen = date("Y-m-d", strtotime($base_date . " +". $i + 17 ." month"));
+                        $eighteen = date("Y-m-d", strtotime($base_date . " +". $i + 18 ." month"));
+                        $nineteen = date("Y-m-d", strtotime($base_date . " +". $i + 19 ." month"));
                         // echo $appoint_dates[$i] . "\n";
 
                         if ($i == 0) {
                             $insert_imm = $conn->prepare("INSERT INTO immunization(
                                 appoint_id,
-                                newborn_screening
+                                newborn_screening, 
+                                BCG, 
+                                DRT, 
+                                CRV,
+                                HEPATITIS_B,
+                                MEASLES,
+                                VITAMIN_A,
+                                VITAMIN_K,
+                                DEWORMING,
+                                DENTAL_CHECK_UP
                             )
-                            VALUES(?,?)");
-                            $insert_imm->bind_param('is', $id, $appoint_dates[$i]);
+                            VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+                            $insert_imm->bind_param(
+                                'issssssssss',
+                                $id,
+                                $one,
+                                $two,
+                                $three,
+                                $four,
+                                $five,
+                                $six,
+                                $seven,
+                                $eight,
+                                $nine,
+                                $ten
+                            );
                             $insert_imm->execute();
                         } else if ($i == 1) {
                             $insert_imm = $conn->prepare("INSERT INTO immunization(
                                 appoint_id,
-                                BCG
+                                DRT, 
+                                CRV,
+                                HEPATITIS_B,
+                                VITAMIN_A,
+                                DEWORMING
                             )
-                            VALUES(?,?)");
-                            $insert_imm->bind_param('is', $id, $appoint_dates[$i]);
+                            VALUES(?,?,?,?,?,?)");
+                            $insert_imm->bind_param(
+                                'isssss',
+                                $id,
+                                $eleven,
+                                $twelve,
+                                $thirteen,
+                                $fourtheen,
+                                $fiftheen
+                            );
                             $insert_imm->execute();
                         } else if ($i == 2) {
                             $insert_imm = $conn->prepare("INSERT INTO immunization(
                                 appoint_id,
-                                DRT
+                                DRT, 
+                                CRV,
+                                HEPATITIS_B,
+                                DEWORMING
                             )
-                            VALUES(?,?)");
-                            $insert_imm->bind_param('is', $id, $appoint_dates[$i]);
-                            $insert_imm->execute();
-                        } elseif ($i == 3) {
-                            $insert_imm = $conn->prepare("INSERT INTO immunization(
-                                appoint_id,
-                                CRV
-                            )
-                            VALUES(?,?)");
-                            $insert_imm->bind_param('is', $id, $appoint_dates[$i]);
-                            $insert_imm->execute();
-                        } else if ($i == 4) {
-                            $insert_imm = $conn->prepare("INSERT INTO immunization(
-                                appoint_id,
-                                HEPATITIS_B
-                            )
-                            VALUES(?,?)");
-                            $insert_imm->bind_param('is', $id, $appoint_dates[$i]);
-                            $insert_imm->execute();
-                        } else if ($i == 5) {
-                            $insert_imm = $conn->prepare("INSERT INTO immunization(
-                                appoint_id,
-                                MEASLES,
-                                VITAMIN_A,
-                                VITAMIN_K,
-                                DEWORMING,
-                                DENTAL_CHECK_UP
-                            )
-                            VALUES(?,?,?,?,?,?)");
-                            $insert_imm->bind_param('isssss', $id, 
-                            $appoint_dates[$i],
-                            $appoint_dates[$i], 
-                            $appoint_dates[$i], 
-                            $appoint_dates[$i],
-                            $appoint_dates[$i]);
-                            $insert_imm->execute();
-                        } else {
-                            $insert_imm = $conn->prepare("INSERT INTO immunization(
-                                appoint_id, /
-                                BCG, /
-                                DRT, /
-                                CRV,/
-                                HEPATITIS_B,/
-                                MEASLES,
-                                VITAMIN_A,
-                                VITAMIN_K,
-                                DEWORMING,
-                                DENTAL_CHECK_UP
-                            )
-                            VALUES(?,?,?,?,?,?,?,?,?,?)");
+                            VALUES(?,?,?,?,?)");
                             $insert_imm->bind_param(
-                                'isssssssss',
+                                'issss',
                                 $id,
-                                $appoint_dates[$i],
-                                $appoint_dates[$i],
-                                $appoint_dates[$i],
-                                $appoint_dates[$i],
-                                $appoint_dates[$i],
-                                $appoint_dates[$i],
-                                $appoint_dates[$i],
-                                $appoint_dates[$i],
-                                $appoint_dates[$i]
+                                $sixtheen,
+                                $seventheen,
+                                $eighteen,
+                                $nineteen
                             );
                             $insert_imm->execute();
                         }

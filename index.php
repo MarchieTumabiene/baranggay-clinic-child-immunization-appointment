@@ -69,6 +69,10 @@ require './partials/header.php';
         </div>
       </div>
 
+      <footer class="py-3 text-center">
+          <p class="text-secondary">&copy; Barangay Immunization 2024</p>
+      </footer>
+
     </div>
 
   </div>

@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
         <div class="p-4">
             <div class="mb-3 dont-print">
                 <a href="immunization.php" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Back</a>
-                <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#add"><i class="fa fa-plus"></i> Add</button>
+                <!-- <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#add"><i class="fa fa-plus"></i> Add</button> -->
             </div>
 
             <div class="card" id="card">

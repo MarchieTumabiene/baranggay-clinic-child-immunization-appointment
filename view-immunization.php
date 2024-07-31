@@ -471,7 +471,7 @@ if (isset($_GET['id'])) {
 
                         </tr>
                         <tr>
-                            <td>DEWORMING(1 year above)</td>
+                            <td>And Other vaccines / vitamins(1 year above)</td>
                             <td><?= $data_1st['DEWORMING'] ?? '' ?>  <?php
                                 if ($data_1st['stat_9'] == 1) {
                                 

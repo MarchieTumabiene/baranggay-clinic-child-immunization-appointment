@@ -9,8 +9,14 @@ if ($_GET['action'] == 'update-immunization') {
 
     if ($stmt) {
 
-       if ($stat == 'stat_10') {
-        $update = $conn->query("UPDATE appointments SET status = 2 WHERE id = '$appoint_id'");
+
+        $check = $conn->query("SELECT * FROM immunization WHERE appoint_id = '$appoint_id' ORDER BY id DESC");
+        $fetch = $check->fetch_assoc();
+
+       if ($fetch['appoint_id'] == $appoint_id) {
+        if ($stat == 'stat_5') {
+            $update = $conn->query("UPDATE appointments SET status = 2 WHERE id = '$appoint_id'");
+           }
        }
 
     ?>

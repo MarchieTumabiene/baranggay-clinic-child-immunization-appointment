@@ -203,26 +203,26 @@ if (isset($_GET['id'])) {
                                 <td>1st</td>
                                 <td>2nd</td>
                                 <td>3rd</td>
-                                <td>4th</td>
+                                <!-- <td>4th</td>
                                 <td>5th</td>
-                                <td>6th</td>
+                                <td>6th</td> -->
                             <tr>
                                 <td colspan="1">NEWBORN SCREENING</td>
                                 <td><?= $data_1st['newborn_screening'] ?? '' ?></td>
-                                <td><?= $data_2nd['newborn_screening'] ?? '' ?></td>
-                                <td><?= $data_3rd['newborn_screening'] ?? '' ?></td>
-                                <td><?= $data_4th['newborn_screening'] ?? '' ?></td>
-                                <td><?= $data_5th['newborn_screening'] ?? '' ?></td>
-                                <td><?= $data_6th['newborn_screening'] ?? '' ?></td>
+                                <td></td>
+                                <td></td>
+                                <!-- <td></td>
+                                <td></td>
+                                <td></td> -->
                             </tr>
                             <tr>
                                 <td>BCG (at birth)</td>
                                 <td><?= $data_1st['BCG'] ?? '' ?></td>
-                                <td><?= $data_2nd['BCG'] ?? '' ?></td>
-                                <td><?= $data_3rd['BCG'] ?? '' ?></td>
-                                <td><?= $data_4th['BCG'] ?? '' ?></td>
-                                <td><?= $data_5th['BCG'] ?? '' ?></td>
-                                <td><?= $data_6th['BCG'] ?? '' ?></td>
+                                <td></td>
+                                <td></td>
+                                <!-- <td></td>
+                                <td></td>
+                                <td></td> -->
 
                             </tr>
                             <tr>
@@ -230,9 +230,9 @@ if (isset($_GET['id'])) {
                                 <td><?= $data_1st['DRT'] ?? '' ?></td>
                                 <td><?= $data_2nd['DRT'] ?? '' ?></td>
                                 <td><?= $data_3rd['DRT'] ?? '' ?></td>
-                                <td><?= $data_4th['DRT'] ?? '' ?></td>
+                                <!-- <td><?= $data_4th['DRT'] ?? '' ?></td>
                                 <td><?= $data_5th['DRT'] ?? '' ?></td>
-                                <td><?= $data_6th['DRT'] ?? '' ?></td>
+                                <td><?= $data_6th['DRT'] ?? '' ?></td> -->
 
                             </tr>
                             <tr>
@@ -240,42 +240,47 @@ if (isset($_GET['id'])) {
                                 <td><?= $data_1st['CRV'] ?? '' ?></td>
                                 <td><?= $data_2nd['CRV'] ?? '' ?></td>
                                 <td><?= $data_3rd['CRV'] ?? '' ?></td>
-                                <td><?= $data_4th['CRV'] ?? '' ?></td>
+                                <!-- <td><?= $data_4th['CRV'] ?? '' ?></td>
                                 <td><?= $data_5th['CRV'] ?? '' ?></td>
-                                <td><?= $data_6th['CRV'] ?? '' ?></td>
+                                <td><?= $data_6th['CRV'] ?? '' ?></td> -->
 
                             </tr>
+                        
                             <tr>
                                 <td>HEPATITIS B (6wks, 10wks, 14wks old)</td>
                                 <td><?= $data_1st['HEPATITIS_B'] ?? '' ?></td>
                                 <td><?= $data_2nd['HEPATITIS_B'] ?? '' ?></td>
                                 <td><?= $data_3rd['HEPATITIS_B'] ?? '' ?></td>
-                                <td><?= $data_4th['HEPATITIS_B'] ?? '' ?></td>
+                                <!-- <td><?= $data_4th['HEPATITIS_B'] ?? '' ?></td>
                                 <td><?= $data_5th['HEPATITIS_B'] ?? '' ?></td>
-                                <td><?= $data_6th['HEPATITIS_B'] ?? '' ?></td>
+                                <td><?= $data_6th['HEPATITIS_B'] ?? '' ?></td> -->
 
                             </tr>
+                           
+                            <tr>
+                            <td>VITAMIN A (start at 6mos.)
+                                <p >VITAMIN K</p>
+                            </td>
+                                <td><?= $data_1st['VITAMIN_A'] ?? '' ?></td>
+                                <td><?= $data_2nd['VITAMIN_A'] ?? '' ?></td>
+                                <td></td>
+                                <!-- <td><?= $data_4th['VITAMIN_A'] ?? '' ?></td>
+                                <td><?= $data_5th['VITAMIN_A'] ?? '' ?></td>
+                                <td><?= $data_6th['VITAMIN_A'] ?? '' ?></td> -->
+
+                            </tr>
+
                             <tr>
                                 <td>MEASLES (9mos.)</td>
                                 <td><?= $data_1st['MEASLES'] ?? '' ?></td>
-                                <td><?= $data_2nd['MEASLES'] ?? '' ?></td>
-                                <td><?= $data_3rd['MEASLES'] ?? '' ?></td>
-                                <td><?= $data_4th['MEASLES'] ?? '' ?></td>
+                                <td></td>
+                                <td></td>
+                                <!-- <td><?= $data_4th['MEASLES'] ?? '' ?></td>
                                 <td><?= $data_5th['MEASLES'] ?? '' ?></td>
-                                <td><?= $data_6th['MEASLES'] ?? '' ?></td>
+                                <td><?= $data_6th['MEASLES'] ?? '' ?></td> -->
 
                             </tr>
-                            <tr>
-                                <td>VITAMIN A (start at 6mos.)</td>
-                                <td><?= $data_1st['VITAMIN_A'] ?? '' ?></td>
-                                <td><?= $data_2nd['VITAMIN_A'] ?? '' ?></td>
-                                <td><?= $data_3rd['VITAMIN_A'] ?? '' ?></td>
-                                <td><?= $data_4th['VITAMIN_A'] ?? '' ?></td>
-                                <td><?= $data_5th['VITAMIN_A'] ?? '' ?></td>
-                                <td><?= $data_6th['VITAMIN_A'] ?? '' ?></td>
-
-                            </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td>VITAMIN K</td>
                                 <td><?= $data_1st['VITAMIN_K'] ?? '' ?></td>
                                 <td><?= $data_2nd['VITAMIN_K'] ?? '' ?></td>
@@ -284,18 +289,18 @@ if (isset($_GET['id'])) {
                                 <td><?= $data_5th['VITAMIN_K'] ?? '' ?></td>
                                 <td><?= $data_6th['VITAMIN_K'] ?? '' ?></td>
 
-                            </tr>
+                            </tr> -->
                             <tr>
-                                <td>DEWORMING</td>
+                            <td>And Other vaccines / vitamins(1 year above)</td>
                                 <td><?= $data_1st['DEWORMING'] ?? '' ?></td>
-                                <td><?= $data_2nd['DEWORMING'] ?? '' ?></td>
-                                <td><?= $data_3rd['DEWORMING'] ?? '' ?></td>
-                                <td><?= $data_4th['DEWORMING'] ?? '' ?></td>
+                                <td></td>
+                                <td></td>
+                                <!-- <td><?= $data_4th['DEWORMING'] ?? '' ?></td>
                                 <td><?= $data_5th['DEWORMING'] ?? '' ?></td>
-                                <td><?= $data_6th['DEWORMING'] ?? '' ?></td>
+                                <td><?= $data_6th['DEWORMING'] ?? '' ?></td> -->
 
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td>DENTAL CHECK-UP</td>
                                 <td><?= $data_1st['DENTAL_CHECK_UP'] ?? '' ?></td>
                                 <td><?= $data_2nd['DENTAL_CHECK_UP'] ?? '' ?></td>
@@ -304,7 +309,7 @@ if (isset($_GET['id'])) {
                                 <td><?= $data_5th['DENTAL_CHECK_UP'] ?? '' ?></td>
                                 <td><?= $data_6th['DENTAL_CHECK_UP'] ?? '' ?></td>
 
-                            </tr>
+                            </tr> -->
                             </td>
 
                             </tr>

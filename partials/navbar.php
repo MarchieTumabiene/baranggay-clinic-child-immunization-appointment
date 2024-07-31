@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background: #fff;z-index: 1;">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top dont-print" style="background: #fff;z-index: 1;">
     <div class="container">
         <button type="button" class="navbar-toggler " id="sidebar-toggler"><i class="fa fa-bars"></i></button>
 

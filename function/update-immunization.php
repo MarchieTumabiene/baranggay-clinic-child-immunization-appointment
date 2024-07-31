@@ -8,6 +8,9 @@ if ($_GET['action'] == 'update-immunization') {
     $stmt = $conn->query("UPDATE immunization SET $stat = '$status' WHERE id = '$id'");
 
     if ($stmt) {
+
+        $update = $conn->query("UPDATE appointments SET status = 2 WHERE id = '$appoint_id'");
+
     ?>
         <script>
             Swal.fire({

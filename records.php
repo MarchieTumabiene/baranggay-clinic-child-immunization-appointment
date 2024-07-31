@@ -9,6 +9,7 @@ $get_appointments = $conn->query("SELECT
     appointments a 
     INNER JOIN 
         appoint_parents p ON a.id = p.appoint_id
+    WHERE status = 2
     ");
 ?>
 <div class="container-fluid">

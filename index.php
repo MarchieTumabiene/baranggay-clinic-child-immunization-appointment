@@ -49,7 +49,7 @@ require './partials/header.php';
             <div class="card shadow-sm rounded-0 p-3">
               <div class="card-body">
                 <?php
-                $get_appoint_records = $conn->query("SELECT * FROM appointments");
+                $get_appoint_records = $conn->query("SELECT * FROM appointments WHERE status = 2");
                 ?>
                 <h1><?= $get_appoint_records->num_rows ?></h1>
                 <p class="mb-0"><i class="fa fa-folder-open"></i> Appointment Records</p>

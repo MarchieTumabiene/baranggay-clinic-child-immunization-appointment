@@ -35,6 +35,17 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
     $f_education = $_POST['f_education'];
     $f_occupation = $_POST['f_occupation'];
 
+    $newborn = date('Y-m-d', strtotime($date_birth . '+1 day'));
+    $bcg = date('Y-m-d', strtotime($date_birth . '+2 days'));
+    $drt1 = date("Y-m-d", strtotime($date_birth . " +6 weeks"));
+    $drt2 = date("Y-m-d", strtotime($date_birth . " +10 weeks"));
+    $drt3 = date("Y-m-d", strtotime($date_birth . " +14 weeks"));
+    $vita1 = date("Y-m-d", strtotime($date_birth . " +6 months"));
+    $vita2 = date("Y-m-d", strtotime($vita1 . " +6 months"));
+    $measles = date("Y-m-d", strtotime($date_birth . " +9 months"));
+    $deworm = date("Y-m-d", strtotime($date_birth . " +1 year"));
+    // $crv1 = date("Y-m-d", strtotime($date_birth . " +6 week"));
+
     if (empty($m_fname)) {
         $_SESSION['error_p_fname'] = "Please fill firstname*";
     } else {
@@ -161,8 +172,8 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
                     for ($i = 0; $i < $max; $i++) {
                         $appoint_dates[$i] = date("Y-m-d", strtotime($base_date . " +$i month"));
                         $one = date("Y-m-d", strtotime($base_date . " +". $i ." month"));
-                        $two = date("Y-m-d", strtotime($base_date . " +". $i + 1 ." month"));
-                        $three = date("Y-m-d", strtotime($base_date . " +". $i + 3 ." month"));
+                        $two = date("Y-m-d", strtotime($base_date . " +". $i + 1 ." day"));
+                       
                         $four = date("Y-m-d", strtotime($base_date . " +". $i + 4 ." month"));
                         $five = date("Y-m-d", strtotime($base_date . " +". $i + 5 ." month"));
                         $six = date("Y-m-d", strtotime($base_date . " +". $i + 6 ." month"));
@@ -170,7 +181,7 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
                         $eight = date("Y-m-d", strtotime($base_date . " +". $i + 8 ." month"));
                         $nine = date("Y-m-d", strtotime($base_date . " +". $i ." year"));
                         $ten = date("Y-m-d", strtotime($base_date . " +". $i ." year"));
-                        $eleven = date("Y-m-d", strtotime($base_date . " +". $i + 11 ." month"));
+                        // $drt2 = date("Y-m-d", strtotime($base_date . " +". $i + 11 ." month"));
                         $twelve = date("Y-m-d", strtotime($base_date . " +". $i + 12 ." month"));
                         $thirteen = date("Y-m-d", strtotime($base_date . " +". $i + 13 ." month"));
                         $fourtheen = date("Y-m-d", strtotime($base_date . " +". $i + 14 + 6 ." month"));
@@ -191,23 +202,21 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
                                 HEPATITIS_B,
                                 MEASLES,
                                 VITAMIN_A,
-                                VITAMIN_K,
                                 DEWORMING,
                                 DENTAL_CHECK_UP
                             )
-                            VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+                            VALUES(?,?,?,?,?,?,?,?,?,?)");
                             $insert_imm->bind_param(
-                                'issssssssss',
+                                'isssssssss',
                                 $id,
-                                $one,
-                                $two,
-                                $three,
-                                $four,
-                                $five,
-                                $six,
-                                $seven,
-                                $eight,
-                                $nine,
+                                $newborn,
+                                $bcg,
+                                $drt1,
+                                $drt1,
+                                $drt1,
+                                $measles,
+                                $vita1,
+                                $deworm,
                                 $ten
                             );
                             $insert_imm->execute();
@@ -224,10 +233,10 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
                             $insert_imm->bind_param(
                                 'isssss',
                                 $id,
-                                $eleven,
-                                $twelve,
-                                $thirteen,
-                                $fourtheen,
+                                $drt2,
+                                $drt2,
+                                $drt2,
+                                $vita2,
                                 $fiftheen
                             );
                             $insert_imm->execute();
@@ -243,9 +252,9 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
                             $insert_imm->bind_param(
                                 'issss',
                                 $id,
-                                $sixtheen,
-                                $seventheen,
-                                $eighteen,
+                                $drt3,
+                                $drt3,
+                                $drt3,
                                 $nineteen
                             );
                             $insert_imm->execute();

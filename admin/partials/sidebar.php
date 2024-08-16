@@ -14,18 +14,22 @@
 
         <ul class="nav flex-column mt-3">
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link <?= $url == '/index.php' ? $active : $inactive ?>"> <i class="fa fa-home"></i> Dashboard</a>
+                    <a href="index.php" class="nav-link <?= $url == '/admin/index.php' ? $active : $inactive ?>"> <i class="fa fa-home"></i> Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="appointments.php" class="nav-link <?= str_contains($url, '/appointments.php') || str_contains($url, '/create-appointment.php') || str_contains($url, '/edit-appointment.php')  ? $active : $inactive ?>"> <i class="fa fa-calendar-check"></i> Appointments</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="immunization.php" class="nav-link <?= str_contains($url, '/immunization.php') || str_contains($url, '/view-immunization.php') ? $active : $inactive ?>"> <i class="fa fa-syringe"></i> Immunization</a>
+                    <a href="appointments.php" class="nav-link <?= str_contains($url, '/admin/appointments.php') || str_contains($url, '/admin/create-appointment.php') || str_contains($url, '/admin/edit-appointment.php')  ? $active : $inactive ?>"> <i class="fa fa-calendar-check"></i> Appointments</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="records.php" class="nav-link <?= $url == '/records.php' || str_contains($url ,'/view-record') ? $active : $inactive ?>"> <i class="fa fa-folder-open"></i> Records</a>
+                    <a href="immunization.php" class="nav-link <?= str_contains($url, '/admin/immunization.php') || str_contains($url, '/admin/view-immunization.php') ? $active : $inactive ?>"> <i class="fa fa-syringe"></i> Immunization</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="records.php" class="nav-link <?= $url == '/admin/records.php' || str_contains($url ,'/view-record') ? $active : $inactive ?>"> <i class="fa fa-folder-open"></i> Records</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="settings.php" class="nav-link <?= $url == '/admin/settings.php' ? $active : $inactive ?>"> <i class="fa fa-gear"></i> Settings</a>
                 </li>
               
                 <li class="nav-item">

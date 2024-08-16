@@ -4,11 +4,12 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-require __DIR__ . "../../phpmailer/src/Exception.php";
-require __DIR__ . "../../phpmailer/src/PHPMailer.php";
-require __DIR__ . "../../phpmailer/src/SMTP.php";
+require __DIR__ . "../../../phpmailer/src/Exception.php";
+require __DIR__ . "../../../phpmailer/src/PHPMailer.php";
+require __DIR__ . "../../../phpmailer/src/SMTP.php";
 
 if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
+    $reference_id = uniqid();
     $barangay = $_POST['barangay'];
     $child_no = $_POST['child_no'];
     $c_fname = $_POST['c_fname'];
@@ -20,6 +21,11 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
     $birth_weight = $_POST['birth_weight'];
     $place_delivery = $_POST['place_delivery'];
     $birth_registered = $_POST['birth_registered'];
+    $weight = $_POST['weight'];
+    $height = $_POST['height'];
+    $recommendation = $_POST['recommendation'];
+    $nurse = $_POST['nurse'];
+    $bhw = $_POST['bhw'];
     $address = $_POST['address'];
     $contact_num = $_POST['contact_num'];
     $date_appoint = date('Y-m-d h:i', strtotime($_POST['date_appoint']));
@@ -73,6 +79,30 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
         unset($_SESSION['error_contact_num']);
     }
 
+    if (empty($weight)) {
+        $_SESSION['error_weight'] = "Please fill weight*";
+    } else {
+        unset($_SESSION['error_weight']);
+    }
+
+    if (empty($height)) {
+        $_SESSION['error_height'] = "Please fill height*";
+    } else {
+        unset($_SESSION['error_height']);
+    }
+
+    if (empty($nurse)) {
+        $_SESSION['error_nurse'] = "Please fill nurse*";
+    } else {
+        unset($_SESSION['error_nurse']);
+    }
+
+    if (empty($bhw)) {
+        $_SESSION['error_bhw'] = "Please fill bhw*";
+    } else {
+        unset($_SESSION['error_bhw']);
+    }
+
     if (
         !empty($c_fname)
         && !empty($barangay)
@@ -88,6 +118,7 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
 
         // Prepare the SQL statement
         $stmt = $conn->prepare("INSERT INTO appointments(
+            reference_id,
             barangay,
             child_no,
             c_fname,	
@@ -101,8 +132,13 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
             birth_registered,	
             address,	
             contact_num,
-            date_appoint
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?)");
+            date_appoint,
+            weight,
+            height,
+            recommendation,
+            nurse,
+            bhw
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?)");
 
         // Check if the statement was prepared successfully
         if ($stmt === false) {
@@ -110,7 +146,7 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
         }
 
         // Bind parameters
-        $stmt->bind_param('ssssssssssssss', $barangay, $child_no, $c_fname, $c_mname, $c_lname, $gender, $date_seen, $date_birth, $birth_weight, $place_delivery, $birth_registered, $address, $contact_num, $date_appoint);
+        $stmt->bind_param('sssssssssssssssddsss', $reference_id,$barangay, $child_no, $c_fname, $c_mname, $c_lname, $gender, $date_seen, $date_birth, $birth_weight, $place_delivery, $birth_registered, $address, $contact_num, $date_appoint, $weight, $height, $recommendation, $nurse, $bhw);
 
         $check = $conn->query("SELECT * FROM appointments WHERE date_appoint = '$date_appoint' AND barangay = '$barangay'");
 
@@ -284,10 +320,10 @@ if ($_GET['action'] === 'create-appointment' && isset($_POST['barangay'])) {
 
 
         // Close the statement
-        $stmt->close();
+        // $stmt->close();
 
         // Close the connection
-        $conn->close();
+        // $conn->close();
     }
 } else {
     unset($_SESSION['error_p_fname']);

@@ -1,10 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-light sticky-top dont-print" style="background: #fff;z-index: 1;">
+<?php 
+    
+?>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top dont-print" style="background: #fff;z-index: 1;">
     <div class="container">
+
+        <h1 class="navbar-brand" >Barangay Immunization</h1>
+
         <button type="button" class="navbar-toggler " id="sidebar-toggler"><i class="fa fa-bars"></i></button>
 
-        <ul class="ms-auto navbar-nav">
+        <ul class="ms-auto navbar-nav gap-lg-3">
+
+        
+        <li class="nav-item">
+                <a href="?view=immunization" class="nav-link <?= isset($_GET['view']) ? $_GET['view'] == 'immunization' ? 'active' : ''  : 'active' ?>">Immunizaition</a>
+            </li>
+            <li class="nav-item">
+                <a href="?view=child" class="nav-link  <?= isset($_GET['view']) ? $_GET['view'] == 'child' ? 'active' : ''  : '' ?>">Child</a>
+            </li>
+            
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-user"></i> <?= $_SESSION['USERNAME'] ?></a>
+                <a href="#" class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown"><i class="fa fa-gear"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end">
 
                     <li class="dropdown-item">

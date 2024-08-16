@@ -17,6 +17,4 @@
 
     if ($conn->error > 0) {
         throw new ErrorException();
-    }
-
-    
+    }    

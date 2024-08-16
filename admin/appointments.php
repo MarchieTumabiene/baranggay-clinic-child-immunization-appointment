@@ -33,6 +33,7 @@ $get_appointments = $conn->query("SELECT
                         <table id="table">
                             <thead>
                                 <th>#</th>
+                                <th>Ref. #</th>
                                 <th>Mother</th>
                                 <th>Father</th>
                                 <th>Child</th>
@@ -48,6 +49,7 @@ $get_appointments = $conn->query("SELECT
                                 ?>
                                     <tr>
                                         <td><?= $i++ ?></td>
+                                        <td><?= $row['reference_id'] ?? '' ?></td>
                                         <td><?= $row['mother'] ?></td>
                                         <td><?= $row['father'] ?></td>
                                         <td><?= $row['child'] ?></td>

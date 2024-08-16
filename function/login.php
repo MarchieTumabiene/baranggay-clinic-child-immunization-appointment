@@ -1,26 +1,22 @@
 <?php
 
-    $uname = $_POST['uname'];
-    $password = $_POST['password'];
+    $reference_id = $_POST['reference_id'];
 
-    $stmt = $conn->prepare("SELECT * FROM admin WHERE username = ?");
-    $stmt->bind_param('s', $uname);
+    $stmt = $conn->prepare("SELECT * FROM appointments WHERE reference_id = ?");
+    $stmt->bind_param('s', $reference_id);
 
     if ($stmt->execute()) {
         $result = $stmt->get_result();
         if ($result->num_rows > 0) {
+            
             $row = $result->fetch_array();
+            $success = "*Account logged in successfully, redirecting in 3 seconds";
+            $_SESSION['ID'] = $row['id'];
+            $_SESSION['REFERENCE_ID'] = $row['reference_id'];
+            header('refresh:3;url=index.php');
 
-            if (password_verify($password, $row['password'])) {
-                $success = "*Account logged in successfully, redirecting in 3 seconds";
-                $_SESSION['ID'] = $row['id'];
-                $_SESSION['USERNAME'] = $row['username'];
-                header('refresh:3;url=index.php');
-            }else{
-                $error = "*Incorrect username or password";
-            }
 
         }else{
-            $error = "*Account doesn't exist";
+            $error = "*Incorrect reference id";
         }
     }

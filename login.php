@@ -1,13 +1,16 @@
 <?php 
-    require __DIR__ . '/function/config.php';
-    if (isset($_SESSION['ID']) && isset($_SESSION['USERNAME'])) {
+    require './function/config.php';
+    $isActive = isset($_SESSION['REFERENCE_ID']) ? true : false;
+
+    if ($isActive) {
         header('location: index.php');
     }
+
     $error = "";
     $success = "";
 
     if (isset($_GET['login'])) {
-        require __DIR__ . '/function/login.php';
+        require './function/login.php';
     }
 ?>
 <!DOCTYPE html>
@@ -25,21 +28,11 @@
 
         <div class="card rounded-0 shadow" style="width: 500px;">
             <div class="card-body p-3">
-                <h3 class="text-center my-4">Barangay Child Immunization Appointment System</h3>
-                <h5 class="mb-3">Login Account</h5>
+                <h3 class="text-center my-5">Barangay Child Immunization Appointment System</h3>
                 <form action="?login" method="post">
-                    <label for="">Username</label>
-                    <input type="text" name="uname" class="form-control my-2" placeholder="Enter Username">
-                    <label for="">Password</label>
-                    <div class="position-relative">
-                    <input type="password" class="form-control my-2" placeholder="********" name="password" required>
-                    <i class="fa fa-eye position-absolute top-0 end-0 me-2" style="cursor: pointer; margin-top: 12px;" id="show-pass"></i>
-                   </div>
-
-                    <button type="submit" class="btn btn-primary w-100 my-3">Login</button>
-
-                    <a href="forgot-password.php">Forgot Password</a>
-
+                    <label for="">Reference ID</label>
+                    <input type="text" name="reference_id" class="form-control my-2" placeholder="Enter Username">
+                    <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
                     <?php if($error !== null): ?>
                         <p class="text-danger mt-2"><?= $error ?></p>
                     <?php endif; ?>
@@ -51,21 +44,5 @@
         </div>
 
     </div>
-
-    <script>
-        let showPass = document.getElementById('show-pass');
-        showPass.onclick = () => {
-            let passwordInp = document.forms[0]['password'];
-            if (passwordInp.getAttribute('type') == 'password') {
-                showPass.classList.replace('fa-eye', 'fa-eye-slash')
-                
-                passwordInp.setAttribute('type', 'text')
-            }else{
-                showPass.classList.replace('fa-eye-slash', 'fa-eye')
-                passwordInp.setAttribute('type', 'password')
-            }
-        }
-    </script>
-
 </body>
 </html>

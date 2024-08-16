@@ -190,7 +190,7 @@ $barangays = [
 
                             </div>
 
-                            <h6 class="fw-bold">Child</h6>
+                            <h6 class="fw-bold mb-1 mt-2">Child</h6>
 
                             <label for="">Name</label>
                             <div class="row g-2">
@@ -243,13 +243,25 @@ $barangays = [
 
                             
 
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
                                     <label>Birth Weight*</label>
-                                    <input type="text" name="birth_weight" class="form-control " value="<?= isset($_POST['birth_weight']) ? $_POST['birth_weight'] : '' ?>" required>
+                                    <input type="text" name="birth_weight" class="form-control " value="<?= isset($_POST['birth_weight']) ? $_POST['birth_weight'] : '' ?>" onkeyup="this.value=this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')" required>
                                     <p class="text-danger"><?= isset($_SESSION['error_birth_weight']) ? $_SESSION['error_birth_weight'] : '' ?></p>
                                 </div>
 
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
+                                    <label>Latest Weight*</label>
+                                    <input type="text" name="weight" class="form-control " value="<?= isset($_POST['weight']) ? $_POST['weight'] : '' ?>" onkeyup="this.value=this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')" required>
+                                    <p class="text-danger"><?= isset($_SESSION['error_weight']) ? $_SESSION['error_weight'] : '' ?></p>
+                                </div>
+
+                                <div class="col-lg-2 mt-auto">
+                                    <label>Latest Height*</label>
+                                    <input type="text" name="height" class="form-control " value="<?= isset($_POST['height']) ? $_POST['height'] : '' ?>" onkeyup="this.value=this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')" required>
+                                    <p class="text-danger"><?= isset($_SESSION['error_height']) ? $_SESSION['error_height'] : '' ?></p>
+                                </div>
+
+                                <div class="col-lg-3 mt-auto">
                                     <label>Place of Delivery*</label>
                                     <input type="text" name="place_delivery" class="form-control " value="<?= isset($_POST['place_delivery']) ? $_POST['place_delivery'] : '' ?>" required>
                                     <p class="text-danger"><?= isset($_SESSION['error_place_delivery']) ? $_SESSION['error_place_delivery'] : '' ?></p>
@@ -278,6 +290,27 @@ $barangays = [
                                     <label class="fw-bold">Date and Time Appointed*</label>
                                     <input type="datetime-local" min="<?= date('Y-m-d 08:00:00') ?>" max="<?= date('05:00:00 PM') ?>" class="form-control " name="date_appoint" min="<?= date('Y-m-d') ?>" value="<?= isset($_POST['date_appoint']) ? $_POST['date_appoint'] : '' ?>" required>
                                     <p class="text-danger"><?= isset($_SESSION['error_date_appoint']) ? $_SESSION['error_date_appoint'] : '' ?></p>
+                                </div>
+
+                                <div class="col-3 mt-auto">
+                                    <label >Recommend Vitamins / Feeding</label>
+                                    <input type="text" name="recommendation" class="form-control " value="<?= isset($_POST['recommendation']) ? $_POST['recommendation'] : '' ?>">
+                                    <p class="text-danger"><?= isset($_SESSION['error_recommendation']) ? $_SESSION['error_recommendation'] : '' ?></p>
+
+                                </div>
+
+                                <div class="col-3 mt-auto">
+                                    <label >Nurse*</label>
+                                    <input type="text" name="nurse" class="form-control " value="<?= isset($_POST['nurse']) ? $_POST['nurse'] : $settings['nurse'] ?>" readonly required>
+                                    <p class="text-danger"><?= isset($_SESSION['error_nurse']) ? $_SESSION['error_nurse'] : '' ?></p>
+
+                                </div>
+
+                                <div class="col-3 mt-auto">
+                                    <label >BHW*</label>
+                                    <input type="text" name="bhw" class="form-control " value="<?= isset($_POST['bhw']) ? $_POST['bhw'] : $settings['bhw'] ?>" readonly required>
+                                    <p class="text-danger"><?= isset($_SESSION['error_bhw']) ? $_SESSION['error_bhw'] : '' ?></p>
+
                                 </div>
 
                             </div>

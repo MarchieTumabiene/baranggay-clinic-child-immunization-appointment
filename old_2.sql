@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 16, 2024 at 04:05 PM
+-- Generation Time: Jul 30, 2024 at 04:30 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -52,7 +52,6 @@ INSERT INTO `admin` (`id`, `username`, `email`, `password`, `verification`, `cre
 
 CREATE TABLE `appointments` (
   `id` int(11) NOT NULL,
-  `reference_id` varchar(255) NOT NULL,
   `barangay` text NOT NULL,
   `child_no` varchar(100) DEFAULT NULL,
   `c_fname` text NOT NULL,
@@ -62,16 +61,11 @@ CREATE TABLE `appointments` (
   `date_seen` date NOT NULL,
   `date_birth` date NOT NULL,
   `birth_weight` float NOT NULL,
-  `weight` float DEFAULT NULL,
-  `height` float DEFAULT NULL,
   `place_delivery` text NOT NULL,
   `birth_registered` date DEFAULT NULL,
   `address` text NOT NULL,
   `contact_num` varchar(255) NOT NULL,
   `date_appoint` text NOT NULL,
-  `recommendation` text DEFAULT NULL,
-  `nurse` text DEFAULT NULL,
-  `bhw` text DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -129,26 +123,6 @@ CREATE TABLE `immunization` (
   `stat_10` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `settings`
---
-
-CREATE TABLE `settings` (
-  `id` int(11) NOT NULL,
-  `bhw` text DEFAULT NULL,
-  `nurse` text DEFAULT NULL,
-  `nurse_signature` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `settings`
---
-
-INSERT INTO `settings` (`id`, `bhw`, `nurse`, `nurse_signature`) VALUES
-(1, 'BWH ONE', 'NURSE ONE', '0816220426.png');
-
 --
 -- Indexes for dumped tables
 --
@@ -178,12 +152,6 @@ ALTER TABLE `immunization`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `settings`
---
-ALTER TABLE `settings`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -210,12 +178,6 @@ ALTER TABLE `appoint_parents`
 --
 ALTER TABLE `immunization`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `settings`
---
-ALTER TABLE `settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

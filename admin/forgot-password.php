@@ -1,5 +1,5 @@
 <?php 
-    require __DIR__ . '/function/config.php';
+    require __DIR__ . '../../function/config.php';
     if (isset($_SESSION['ID']) && isset($_SESSION['USERNAME'])) {
         header('location: index.php');
     }
@@ -7,7 +7,7 @@
     $success = "";
 
     if (isset($_GET['login'])) {
-        require __DIR__ . '/function/forgot-password.php';
+        require __DIR__ . '../../function/forgot-password.php';
     }
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barangay Child Immunization Appointment System</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
-    <script src="./assets/js/sweet_alert.js"></script>
+    <script src="../assets/js/sweet_alert.js"></script>
 </head>
 <body>
     
@@ -52,9 +52,9 @@
          use PHPMailer\PHPMailer\Exception;
          use PHPMailer\PHPMailer\SMTP;
          
-         require "./phpmailer/src/Exception.php";
-         require "./phpmailer/src/PHPMailer.php";
-         require "./phpmailer/src/SMTP.php";
+         require "../phpmailer/src/Exception.php";
+         require "../phpmailer/src/PHPMailer.php";
+         require "../phpmailer/src/SMTP.php";
            if (isset($_POST['submit'])) {
                $email = trim($_POST['email']);
                 $verification = uniqid();

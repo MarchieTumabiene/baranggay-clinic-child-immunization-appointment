@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barangay Child Immunization Appointment System</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/fontawesome6/css/all.min.css"/>
+    <link rel="stylesheet" href="../assets/fontawesome6/css/all.min.css"/>
 </head>
 <body>
     

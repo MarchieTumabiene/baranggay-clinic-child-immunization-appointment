@@ -1,5 +1,5 @@
 <?php 
-    require __DIR__ . '/function/config.php';
+    require __DIR__ . '../../function/config.php';
     if (isset($_SESSION['ID']) && isset($_SESSION['USERNAME'])) {
         header('location: index.php');
     }
@@ -7,7 +7,7 @@
     $success = "";
 
     if (isset($_GET['login'])) {
-        require __DIR__ . '/function/login.php';
+        require __DIR__ . '../../function/login.php';
     }
 ?>
 <!DOCTYPE html>
@@ -17,8 +17,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barangay Child Immunization Appointment System</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/fontawesome6/css/all.min.css"/>
-    <script src="./assets/js/sweet_alert.js"></script>
+    <link rel="stylesheet" href="../assets/fontawesome6/css/all.min.css"/>
+    <script src="../assets/js/sweet_alert.js"></script>
 </head>
 <body>
     

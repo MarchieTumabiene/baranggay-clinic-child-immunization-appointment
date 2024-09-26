@@ -4,8 +4,8 @@
     $inactive = "text-light";
 ?>
 <style>
-    .nav .flex-column{
-        
+    .nav .flex-column figure img{
+        width: 16px;
     }
 </style>
 <div class="col-lg-2 col-10 d-lg-block d-none bg-primary px-0 dont-print" style="height: 100vh;z-index: 100 !important;" id="menu">

@@ -22,7 +22,7 @@
 
         <ul class="nav flex-column mt-3">
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link d-flex g-2 <?= $url == '/admin/index.php' ? $active : $inactive ?>"> <figure class="me-1"><img src="../assets/img/home.png" style="filter: brightness(0) saturate(100%) invert(99%) sepia(83%) saturate(2%) hue-rotate(324deg) brightness(113%) contrast(100%);"/></figure> Dashboard</a>
+                    <a href="index.php" class="nav-link d-flex g-2 <?= $url == '/admin/index.php' ? $active : $inactive ?>"> <figure class="me-1"><img src="../assets/img/home.png"/></figure> Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a href="appointments.php" class="nav-link d-flex <?= str_contains($url, '/admin/appointments.php') || str_contains($url, '/admin/create-appointment.php') || str_contains($url, '/admin/edit-appointment.php')  ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/appointment.png"/></figure> Appointments</a>

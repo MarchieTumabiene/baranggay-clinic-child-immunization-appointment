@@ -4,7 +4,7 @@
     $inactive = "text-light";
 ?>
 <style>
-    .nav .flex-column li a figure img{
+    .nav .flex-column li a figure{
         width: 16px !important;
     }
 </style>

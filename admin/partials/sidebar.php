@@ -7,6 +7,10 @@
     .nav .flex-column li a figure{
         width: 16px !important;
     }
+    .nav .flex-column li a{
+        display: flex;
+        gap: 10px;
+}
 </style>
 <div class="col-lg-2 col-10 d-lg-block d-none bg-primary px-0 dont-print" style="height: 100vh;z-index: 100 !important;" id="menu">
 <a href="#" class="position-absolute top-0 fs-1 end-0 m-3 text-light d-lg-none d-block" id="close-sidebar"><i class="fa fa-xmark"></i></a>

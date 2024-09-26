@@ -10,7 +10,7 @@
     .nav .flex-column li a{
         display: flex;
         gap: 10px;
-}
+     }
 </style>
 <div class="col-lg-2 col-10 d-lg-block d-none bg-primary px-0 dont-print" style="height: 100vh;z-index: 100 !important;" id="menu">
 <a href="#" class="position-absolute top-0 fs-1 end-0 m-3 text-light d-lg-none d-block" id="close-sidebar"><i class="fa fa-xmark"></i></a>
@@ -23,7 +23,7 @@
 
         <ul class="nav flex-column mt-3">
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link <?= $url == '/admin/index.php' ? $active : $inactive ?>"> <figure><img src="../assets/img/home.png"/></figure> Dashboard</a>
+                    <a href="index.php" class="nav-link d-flex g-2 <?= $url == '/admin/index.php' ? $active : $inactive ?>"> <figure><img src="../assets/img/home.png"/></figure> Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a href="appointments.php" class="nav-link <?= str_contains($url, '/admin/appointments.php') || str_contains($url, '/admin/create-appointment.php') || str_contains($url, '/admin/edit-appointment.php')  ? $active : $inactive ?>">  <figure><img src="../assets/img/appointment.png"/></figure> Appointments</a>

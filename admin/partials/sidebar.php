@@ -8,7 +8,7 @@
         width: 16px !important;
     }
     .nav .flex-column li a{
-        display: flex;
+        display: flex ;
         gap: 10px;
      }
 </style>
@@ -23,18 +23,18 @@
 
         <ul class="nav flex-column mt-3">
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link d-flex g-2 <?= $url == '/admin/index.php' ? $active : $inactive ?>"> <figure><img src="../assets/img/home.png"/></figure> Dashboard</a>
+                    <a href="index.php" class="nav-link d-flex g-2 <?= $url == '/admin/index.php' ? $active : $inactive ?>"> <figure class="me-1"><img src="../assets/img/home.png"/></figure> Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="appointments.php" class="nav-link <?= str_contains($url, '/admin/appointments.php') || str_contains($url, '/admin/create-appointment.php') || str_contains($url, '/admin/edit-appointment.php')  ? $active : $inactive ?>">  <figure><img src="../assets/img/appointment.png"/></figure> Appointments</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="immunization.php" class="nav-link <?= str_contains($url, '/admin/immunization.php') || str_contains($url, '/admin/view-immunization.php') ? $active : $inactive ?>">  <figure><img src="../assets/img/immunization.png"/></figure> Immunization</a>
+                    <a href="appointments.php" class="nav-link d-flex <?= str_contains($url, '/admin/appointments.php') || str_contains($url, '/admin/create-appointment.php') || str_contains($url, '/admin/edit-appointment.php')  ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/appointment.png"/></figure> Appointments</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="records.php" class="nav-link <?= $url == '/admin/records.php' || str_contains($url ,'/view-record') ? $active : $inactive ?>">  <figure><img src="../assets/img/record.png"/></figure> Records</a>
+                    <a href="immunization.php" class="nav-link d-flex <?= str_contains($url, '/admin/immunization.php') || str_contains($url, '/admin/view-immunization.php') ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/immunization.png"/></figure> Immunization</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="records.php" class="nav-link d-flex <?= $url == '/admin/records.php' || str_contains($url ,'/view-record') ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/record.png"/></figure> Records</a>
                 </li>
 
                 <li class="nav-item">

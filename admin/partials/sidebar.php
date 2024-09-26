@@ -17,15 +17,15 @@
                     <a href="index.php" class="nav-link <?= $url == '/admin/index.php' ? $active : $inactive ?>"> <figure><img src="../assets/img/home.png"/></figure> Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="appointments.php" class="nav-link <?= str_contains($url, '/admin/appointments.php') || str_contains($url, '/admin/create-appointment.php') || str_contains($url, '/admin/edit-appointment.php')  ? $active : $inactive ?>"> <i class="fa fa-calendar-check"></i> Appointments</a>
+                    <a href="appointments.php" class="nav-link <?= str_contains($url, '/admin/appointments.php') || str_contains($url, '/admin/create-appointment.php') || str_contains($url, '/admin/edit-appointment.php')  ? $active : $inactive ?>">  <figure><img src="../assets/img/appointment.png"/></figure> Appointments</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="immunization.php" class="nav-link <?= str_contains($url, '/admin/immunization.php') || str_contains($url, '/admin/view-immunization.php') ? $active : $inactive ?>"> <i class="fa fa-syringe"></i> Immunization</a>
+                    <a href="immunization.php" class="nav-link <?= str_contains($url, '/admin/immunization.php') || str_contains($url, '/admin/view-immunization.php') ? $active : $inactive ?>">  <figure><img src="../assets/img/immunization.png"/></figure> Immunization</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="records.php" class="nav-link <?= $url == '/admin/records.php' || str_contains($url ,'/view-record') ? $active : $inactive ?>"> <i class="fa fa-folder-open"></i> Records</a>
+                    <a href="records.php" class="nav-link <?= $url == '/admin/records.php' || str_contains($url ,'/view-record') ? $active : $inactive ?>">  <figure><img src="../assets/img/record.png"/></figure> Records</a>
                 </li>
 
                 <li class="nav-item">

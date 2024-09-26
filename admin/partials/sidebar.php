@@ -1,6 +1,6 @@
 <?php 
     $url = implode(explode('/barangay_immunization', strtolower($_SERVER['REQUEST_URI'])));
-    $active = "text-dark bg-light";
+    $active = "text-dark bg-light active";
     $inactive = "text-light";
 ?>
 <style>

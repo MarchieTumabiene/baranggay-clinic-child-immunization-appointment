@@ -8,8 +8,7 @@
         width: 16px !important;
     }
     .nav .flex-column li a{
-        display: flex ;
-        gap: 10px;
+        filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(292deg) brightness(104%) contrast(101%);
      }
 </style>
 <div class="col-lg-2 col-10 d-lg-block d-none bg-primary px-0 dont-print" style="height: 100vh;z-index: 100 !important;" id="menu">

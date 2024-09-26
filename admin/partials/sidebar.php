@@ -14,7 +14,7 @@
 
         <ul class="nav flex-column mt-3">
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link <?= $url == '/admin/index.php' ? $active : $inactive ?>"> <i class="fa fa-home"></i> Dashboard</a>
+                    <a href="index.php" class="nav-link <?= $url == '/admin/index.php' ? $active : $inactive ?>"> <img src="../assets/img/town-hall.png"/> Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a href="appointments.php" class="nav-link <?= str_contains($url, '/admin/appointments.php') || str_contains($url, '/admin/create-appointment.php') || str_contains($url, '/admin/edit-appointment.php')  ? $active : $inactive ?>"> <i class="fa fa-calendar-check"></i> Appointments</a>

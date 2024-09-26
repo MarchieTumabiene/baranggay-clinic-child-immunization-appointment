@@ -7,7 +7,7 @@
     .nav .flex-column li a figure{
         width: 16px !important;
     }
-    .nav .flex-column li a{
+    .nav.flex-column li a{
         filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(292deg) brightness(104%) contrast(101%);
      }
 </style>

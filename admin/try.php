@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
     left JOIN 
         immunization i ON a.id = i.appoint_id
     WHERE 
-        a.id = $ids and a
+        a.id = $ids
     ");
     $row = $get_appointments->fetch_array();
 }

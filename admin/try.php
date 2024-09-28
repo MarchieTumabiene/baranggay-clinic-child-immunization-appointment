@@ -323,7 +323,7 @@ if (isset($_GET['id'])) {
                                 if ($data_2nd['stat_3'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showAlert('Click status if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_2nd['id'] ?>&appoint=<?= $ids ?>&stat=stat_3')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 }else if ($data_2nd['stat_3'] == 2) {
@@ -355,7 +355,7 @@ if (isset($_GET['id'])) {
                                 if ($data_3rd['stat_3'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showAlert('Click status if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_3rd['id'] ?>&appoint=<?= $ids ?>&stat=stat_3')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else if ($data_3rd['stat_3'] == 2) {
@@ -393,7 +393,7 @@ if (isset($_GET['id'])) {
                                 if ($data_1st['stat_4'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showAlert('Click status if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $ids ?>&stat=stat_4')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else if ($data_1st['stat_4'] == 2) {
@@ -425,7 +425,7 @@ if (isset($_GET['id'])) {
                                 if ($data_2nd['stat_4'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showAlert('Click status if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_2nd['id'] ?>&appoint=<?= $ids ?>&stat=stat_4')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else if ($data_2nd['stat_4'] == 2) {
@@ -455,7 +455,7 @@ if (isset($_GET['id'])) {
                                 if ($data_3rd['stat_4'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showAlert('Click status if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_3rd['id'] ?>&appoint=<?= $ids ?>&stat=stat_4')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else if ($data_3rd['stat_4'] == 2) {
@@ -489,7 +489,7 @@ if (isset($_GET['id'])) {
                                 if ($data_1st['stat_5'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showAlert('Click status if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $ids ?>&stat=stat_5')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else if ($data_1st['stat_5'] == 2) {
@@ -520,7 +520,7 @@ if (isset($_GET['id'])) {
                                 if ($data_2nd['stat_5'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showAlert('Click status if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_2nd['id'] ?>&appoint=<?= $ids ?>&stat=stat_5')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else if ($data_2nd['stat_5'] == 2) {
@@ -550,7 +550,7 @@ if (isset($_GET['id'])) {
                                 if ($data_3rd['stat_5'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showAlert('Click status if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_3rd['id'] ?>&appoint=<?= $ids ?>&stat=stat_5')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else if ($data_3rd['stat_5'] == 2) {
@@ -587,7 +587,7 @@ if (isset($_GET['id'])) {
                                 if ($data_1st['stat_7'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showAlert('Click status if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $ids ?>&stat=stat_7')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else if ($data_1st['stat_7'] == 2) {
@@ -618,7 +618,7 @@ if (isset($_GET['id'])) {
                                 if ($data_2nd['stat_7'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showAlert('Click status if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_2nd['id'] ?>&appoint=<?= $ids ?>&stat=stat_7')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 }  else if ($data_2nd['stat_7'] == 2) {
@@ -655,7 +655,7 @@ if (isset($_GET['id'])) {
                                 if ($data_1st['stat_6'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showAlert('Click status if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $ids ?>&stat=stat_6')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else if ($data_1st['stat_6'] == 2) {
@@ -701,7 +701,7 @@ if (isset($_GET['id'])) {
                                 if ($data_1st['stat_9'] == 1) {
                                 
                                 ?>
-                                <button type="button" onclick="showAlert('Click status if you done immunized?', 'question', '?action=update-immunization&update=<?= $data_1st['id'] ?>&appoint=<?= $ids ?>&stat=stat_9')" class="btn btn-primary p-1 py-0 m-0" style="font-size: 10px;"><i class="fa fa-edit"></i></button>
+                                
                                     <p class="mb-0" style="font-size: 10px;">Pending</p>
                                 <?php
                                 } else if ($data_1st['stat_9'] == 2) {

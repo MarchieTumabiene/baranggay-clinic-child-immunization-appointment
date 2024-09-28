@@ -4,6 +4,8 @@
 
     if ($isActive) {
         header('location: index.php');
+    }else{
+        header('location: admin/login.php');
     }
 
     $error = "";

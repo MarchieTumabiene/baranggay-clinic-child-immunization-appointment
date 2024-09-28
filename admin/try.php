@@ -763,7 +763,7 @@ if (isset($_GET['id'])) {
                 </div>
 
                 <div class="card-footer text-end dont-print">
-                    <button type="button" onclick="print()" class="btn btn-primary"><i class="fa fa-print"></i> Print</button>
+                    <button type="button" onclick="printContent('card');" class="btn btn-primary"><i class="fa fa-print"></i> Print</button>
                 </div>
             </div>
         </div>
@@ -784,6 +784,13 @@ if (isset($_GET['id'])) {
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
 <script>
     $("#card").printElement();
+    function printContent(el){
+var restorepage = $('body').html();
+var printcontent = $('#' + el).clone();
+$('body').empty().html(printcontent);
+window.print();
+$('body').html(restorepage);
+    }
 
 
     </script>

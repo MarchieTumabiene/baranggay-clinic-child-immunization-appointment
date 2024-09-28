@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
     left JOIN 
         immunization i ON a.id = i.appoint_id
     WHERE 
-        a.id = $ids
+        a.id = $ids and a
     ");
     $row = $get_appointments->fetch_array();
 }
@@ -763,7 +763,7 @@ if (isset($_GET['id'])) {
                 </div>
 
                 <div class="card-footer text-end dont-print">
-                    <button type="button" id="downloadBtn" class="btn btn-primary"><i class="fa fa-download"></i> Save</button>
+                    <button type="button" onclick="print()" class="btn btn-primary"><i class="fa fa-print"></i> Print</button>
                 </div>
             </div>
         </div>

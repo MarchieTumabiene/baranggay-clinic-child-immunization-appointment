@@ -23,6 +23,12 @@
         ");
         $row = $get_appointments->fetch_array();
         $ids = $row['id'];
+
+        $sql = $conn->prepare('SHOW TABLE');
+        $sql->execute();
+        $result = $sql->get_result();
+        var_dump($result);
+
     ?>
     <?php require './partials/navbar.php' ?>
 

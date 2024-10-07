@@ -10,6 +10,7 @@ $id = $_SESSION['ID'];
 $get_tables = $conn->query("SELECT * FROM admin WHERE id = $id");
 var_dump($get_tables->fetch_all());
 
+$conn->query("ALTER TABLE admin MODIFY COLUMN user_brgy_locate TEXT");
 if ($get_child->num_rows > 0) {
   foreach ($get_child as $child) {
       $id = $child['id'];

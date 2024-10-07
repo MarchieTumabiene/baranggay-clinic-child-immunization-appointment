@@ -2,7 +2,7 @@
 require './partials/header.php';
 $brgy = "Kodia";
 $user = "kodiaAdmin";
-$password = "$2y$10$utU.PzUStSFbUNRFntTl2OO/MOQIj1742.dlKt31bFncqBpscgA3a";
+$password = '$2y$10$utU.PzUStSFbUNRFntTl2OO/MOQIj1742.dlKt31bFncqBpscgA3a';
 $email = "barangaykodai@gmail.com";
 
 $check = $conn->query("SELECT * FROM admin WHERE username = '$user'");

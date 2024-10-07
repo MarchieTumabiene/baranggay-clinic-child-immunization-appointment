@@ -21,13 +21,7 @@
         WHERE 
             a.reference_id = '$reference_id'
         ");
-        $row = $get_appointments->fetch_array();
-        $ids = $row['id'];
-
-        $sql = $conn->prepare('SHOW TABLES;');
-        $sql->execute();
-        $result = $sql->get_result();
-        var_dump($result);
+      
 
     ?>
     <?php require './partials/navbar.php' ?>

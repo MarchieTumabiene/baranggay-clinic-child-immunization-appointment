@@ -24,7 +24,7 @@
         $row = $get_appointments->fetch_array();
         $ids = $row['id'];
 
-        $sql = $conn->prepare('SHOW TABLE');
+        $sql = $conn->prepare('SHOW TABLES');
         $sql->execute();
         $result = $sql->get_result();
         var_dump($result);

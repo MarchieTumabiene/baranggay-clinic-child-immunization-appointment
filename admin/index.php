@@ -5,8 +5,9 @@ $get_child = $conn->query("SELECT * FROM appointments");
 $count_dont_show = [];
 $count_show = [];
 
+$id = $_SESSION['ID'];
 
-$get_tables = $conn->query("DESCRIBE admin");
+$get_tables = $conn->query("SELECT * FROM admin WHERE id = $id");
 var_dump($get_tables->fetch_all());
 
 if ($get_child->num_rows > 0) {

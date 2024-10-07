@@ -5,7 +5,9 @@ $get_child = $conn->query("SELECT * FROM appointments");
 $count_dont_show = [];
 $count_show = [];
 
-$get_tables = $conn->query("SHOW TABLES");
+$get_tables = $conn->query("ALTER TABLE admin 
+ADD user_brgy_locate TINYINT DEFAULT 1;
+");
 var_dump($get_tables->fetch_all());
 
 if ($get_child->num_rows > 0) {

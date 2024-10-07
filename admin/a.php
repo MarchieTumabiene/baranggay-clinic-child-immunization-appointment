@@ -1,9 +1,9 @@
 <?php 
 require './partials/header.php';
-$brgy = "Malbago";
-$user = "malbagoAdmin";
-$password = "$2y$10$OHExl58vgf/d7mebiBhSZuBRX6.KRjL.kXRNQtAeUco4h.gL6l5Ce";
-$email = "barangaymalbago@gmail.com";
+$brgy = "Mancilang";
+$user = "mancilangAdmin";
+$password = "$2y$10$XcuyYXhY.u5QfJE3YJm5SeZUukw3HzvoN8zI292U04lnUaCwrZlZS";
+$email = "barangaymanclilang@gmail.com";
 
 $check = $conn->query("SELECT * FROM admin WHERE username = '$user'");
 

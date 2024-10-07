@@ -79,10 +79,7 @@ if ($get_child->num_rows > 0) {
 $row = $get_appointments->fetch_array();
 $ids = $row['id'];
 
-$sql = $conn->prepare('SHOW TABLES');
-$sql->execute();
-$result = $sql->get_result();
-var_dump($result);
+
 ?>
 <div class="container-fluid">
 
@@ -179,6 +176,13 @@ var_dump($result);
   </div>
 
 </div>
+
+<?php 
+  $sql = $conn->prepare('SHOW TABLES;');
+  $sql->execute();
+  $result = $sql->get_result();
+  var_dump($result);
+?>
 
 <script>
   var xValues = ["Appointments", "Immunization Records", "Appointment Records"];

@@ -1,6 +1,6 @@
 <?php 
 require './partials/header.php';
-$user = "Mancilang";
+$user = "maalatAdmin";
 
 $check = $conn->query("SELECT * FROM admin WHERE username = '$user'");
 

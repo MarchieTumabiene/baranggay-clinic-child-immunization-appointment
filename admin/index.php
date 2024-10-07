@@ -177,13 +177,6 @@ $ids = $row['id'];
 
 </div>
 
-<?php 
-  $sql = $conn->prepare('SHOW TABLES;');
-  $sql->execute();
-  $result = $sql->get_result();
-  var_dump($result);
-?>
-
 <script>
   var xValues = ["Appointments", "Immunization Records", "Appointment Records"];
 			var yValues = [<?= $get_appointments->num_rows ?>, <?= $get_records->num_rows ?>, <?= $get_appoint_records->num_rows ?>];

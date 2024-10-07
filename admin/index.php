@@ -75,11 +75,6 @@ if ($get_child->num_rows > 0) {
       }
   }
 }
-
-$row = $get_appointments->fetch_array();
-$ids = $row['id'];
-
-
 ?>
 <div class="container-fluid">
 

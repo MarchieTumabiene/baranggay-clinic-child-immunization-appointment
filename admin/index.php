@@ -4,6 +4,10 @@ $today = date('Y-m-d');
 $get_child = $conn->query("SELECT * FROM appointments");
 $count_dont_show = [];
 $count_show = [];
+
+$get_tables = $conn->query("SHOW TABLES");
+var_dump($get_tables->fetch_assoc());
+
 if ($get_child->num_rows > 0) {
   foreach ($get_child as $child) {
       $id = $child['id'];

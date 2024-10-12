@@ -6,6 +6,8 @@
     $error = "";
     $success = "";
 
+    echo "hello world";
+
     if (isset($_GET['login'])) {
         require __DIR__ . '/function/login.php';
     }

@@ -6,8 +6,6 @@
     $error = "";
     $success = "";
 
-    echo "hello world";
-
     if (isset($_GET['login'])) {
         require __DIR__ . '/function/login.php';
     }
@@ -27,6 +25,7 @@
 
         <div class="card rounded-0 shadow" style="width: 500px;">
             <div class="card-body p-3">
+                <?= "hello world"; ?>
                 <h3 class="text-center my-4">Barangay Child Immunization Appointment System</h3>
                 <h5 class="mb-3">Login Account</h5>
                 <form action="?login" method="post">

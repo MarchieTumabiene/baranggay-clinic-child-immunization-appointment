@@ -1,5 +1,7 @@
 <?php 
     require './partials/header.php';
+
+echo "hello world";
     
         $reference_id = $_SESSION['REFERENCE_ID'];
 

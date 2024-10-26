@@ -9,6 +9,8 @@
     if (isset($_GET['login'])) {
         require __DIR__ . '/function/login.php';
     }
+
+    echo "HELLO WORLD";
 ?>
 <!DOCTYPE html>
 <html lang="en">

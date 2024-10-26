@@ -1,5 +1,5 @@
 <?php 
-    require './function/config.php';
+    require './function/config.php'
 
 echo "hello world";
     $isActive = isset($_SESSION['REFERENCE_ID']) ? true : false;

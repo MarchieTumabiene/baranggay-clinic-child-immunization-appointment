@@ -2,13 +2,13 @@
     require './function/config.php';
 
 // echo "hello world";
-    $isActive = isset($_SESSION['REFERENCE_ID']) ? true : false;
+    // $isActive = isset($_SESSION['REFERENCE_ID']) ? true : false;
 
-    if ($isActive) {
-        header('location: index.php');
-    }else{
-        header('location: admin/login.php');
-    }
+    // if ($isActive) {
+    //     header('location: index.php');
+    // }else{
+    //     header('location: admin/login.php');
+    // }
 
     $error = "";
     $success = "";

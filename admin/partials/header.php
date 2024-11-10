@@ -5,8 +5,8 @@
   }
 
   
-// $barangay = $_SESSION['BARANGAY'];
-// $logo = $_SESSION['LOGO'];
+$barangay = $_SESSION['BARANGAY'];
+$logo = $_SESSION['LOGO'];
 
   $get_settings = $conn->query("SELECT * FROM settings WHERE barangay = '$barangay'");
 $settings = $get_settings->fetch_assoc();

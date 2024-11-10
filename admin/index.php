@@ -7,7 +7,7 @@ $count_show = [];
 if ($get_child->num_rows > 0) {
   foreach ($get_child as $child) {
       $id = $child['id'];
-      $check_child_immunization = $conn->query("SELECT i.*, a.c_fname, a.c_mname, a.c_lname FROM immunization i INNER JOIN appointments a ON i.appoint_id = a.id WHERE appoint_id = '$id' AND a.barangay = '$barangay'");
+      $check_child_immunization = $conn->query("SELECT i.*, a.c_fname, a.c_mname, a.c_lname FROM immunization i INNER JOIN appointments a ON i.appoint_id = a.id WHERE appoint_id = '$id' ");
       foreach ($check_child_immunization as $key => $value) {
           if ($value['newborn_screening'] == $today) {
               if ($value['stat_1'] == 1) {

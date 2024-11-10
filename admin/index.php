@@ -4,17 +4,10 @@ $today = date('Y-m-d');
 $get_child = $conn->query("SELECT * FROM appointments");
 $count_dont_show = [];
 $count_show = [];
-
-$id = $_SESSION['ID'];
-
-// $get_tables = $conn->query("SELECT * FROM admin WHERE id = $id");
-// var_dump($get_tables->fetch_all());
-
-// $conn->query("ALTER TABLE admin MODIFY COLUMN user_brgy_locate TEXT");
 if ($get_child->num_rows > 0) {
   foreach ($get_child as $child) {
       $id = $child['id'];
-      $check_child_immunization = $conn->query("SELECT i.*, a.c_fname, a.c_mname, a.c_lname FROM immunization i INNER JOIN appointments a ON i.appoint_id = a.id WHERE appoint_id = '$id'");
+      $check_child_immunization = $conn->query("SELECT i.*, a.c_fname, a.c_mname, a.c_lname FROM immunization i INNER JOIN appointments a ON i.appoint_id = a.id WHERE appoint_id = '$id' AND a.barangay = '$barangay'");
       foreach ($check_child_immunization as $key => $value) {
           if ($value['newborn_screening'] == $today) {
               if ($value['stat_1'] == 1) {
@@ -103,7 +96,7 @@ if ($get_child->num_rows > 0) {
               <div class="card-body">
 
                 <?php
-                $get_appointments = $conn->query("SELECT * FROM appointments WHERE status = 1");
+                $get_appointments = $conn->query("SELECT * FROM appointments WHERE status = 1 AND barangay = '$barangay'");
                 ?>
                 <h1><?= $get_appointments->num_rows ?></h1>
                 <p class="mb-0"><i class="fa fa-calendar-check"></i> Appointments</p>
@@ -117,7 +110,7 @@ if ($get_child->num_rows > 0) {
             <div class="card shadow-sm rounded-0 p-3">
               <div class="card-body">
                 <?php
-                $get_records = $conn->query("SELECT * FROM appointments WHERE status = 1");
+                $get_records = $conn->query("SELECT * FROM appointments WHERE status = 1 AND barangay = '$barangay'");
                 ?>
                 <h1><?= $get_records->num_rows ?></h1>
                 <p class="mb-0"><i class="fa fa-check-circle"></i> Immunization Records</p>

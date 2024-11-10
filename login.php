@@ -1,14 +1,12 @@
 <?php 
     require './function/config.php';
+    $isActive = isset($_SESSION['REFERENCE_ID']) ? true : false;
 
-// echo "hello world";
-    // $isActive = isset($_SESSION['REFERENCE_ID']) ? true : false;
-
-    if ($isActive) {
-        header('location: index.php');
-    }else{
-        header('location: admin/login.php');
-    }
+    // if ($isActive) {
+    //     header('location: index.php');
+    // }else{
+    //     header('location: admin/login.php');
+    // }
 
     $error = "";
     $success = "";
@@ -44,7 +42,13 @@
                         <p class="text-success mt-2"><?= $success ?></p>
                     <?php endif; ?>
                 </form>
+
             </div>
+
+            <div class="card-footer text-center">
+            <a href="admin/login.php" class="mx-auto text-decoration-none">Login as Admin</a>
+            </div>
+
         </div>
 
     </div>

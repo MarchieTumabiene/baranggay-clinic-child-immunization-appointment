@@ -10,6 +10,7 @@
         require __DIR__ . '/function/login.php';
     }
 
+    // echo password_hash("kodiaAdmin@123", PASSWORD_DEFAULT);
 ?>
 <!DOCTYPE html>
 <html lang="en">

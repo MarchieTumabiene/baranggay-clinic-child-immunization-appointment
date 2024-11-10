@@ -19,13 +19,16 @@
     <h4 class="text-light mx-3">
         <a href="" class="text-decoration-none text-light">
             Barangay Immunization 
-            <span style="font-size: 15px; font-weight: normal;">Appointment System</span>
+            <br>
+            <hr class="mt-2 mb-0" />
+            <span style="font-size: 15px; font-weight: normal;">Barangay: <span class="fw-bold"><?= strtoupper($barangay) ?></span></span>
+            <hr class="mt-1" />
         </a>
     </h4>
 
         <ul class="nav flex-column mt-3">
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link d-flex g-2 <?= $url == '/admin/index.php' ? $active : $inactive ?>"> <figure class="me-1"><img src="../assets/img/home.png"/></figure> Dashboard</a>
+                    <a href="index.php" class="nav-link d-flex g-2 <?= str_contains($url,'/admin/index.php') ? $active : $inactive ?>"> <figure class="me-1"><img src="../assets/img/home.png"/></figure> Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a href="appointments.php" class="nav-link d-flex <?= str_contains($url, '/admin/appointments.php') || str_contains($url, '/admin/create-appointment.php') || str_contains($url, '/admin/edit-appointment.php')  ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/appointment.png"/></figure> Appointments</a>
@@ -36,11 +39,11 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="records.php" class="nav-link d-flex <?= $url == '/admin/records.php' || str_contains($url ,'/view-record') ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/record.png"/></figure> Records</a>
+                    <a href="records.php" class="nav-link d-flex <?= str_contains($url, '/admin/records.php') || str_contains($url ,'/view-record') ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/record.png"/></figure> Records</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="settings.php" class="nav-link <?= $url == '/admin/settings.php' ? $active : $inactive ?>"> <i class="fa fa-gear"></i> Settings</a>
+                    <a href="settings.php" class="nav-link <?= str_contains($url, '/admin/settings.php') ? $active : $inactive ?>"> <i class="fa fa-gear"></i> Settings</a>
                 </li>
               
                 <li class="nav-item">

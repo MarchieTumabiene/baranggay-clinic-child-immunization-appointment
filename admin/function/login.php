@@ -15,6 +15,8 @@
                 $success = "*Account logged in successfully, redirecting in 3 seconds";
                 $_SESSION['ID'] = $row['id'];
                 $_SESSION['USERNAME'] = $row['username'];
+                $_SESSION['BARANGAY'] = $row['barangay'];
+                $_SESSION['LOGO'] = $row['logo'];
                 header('refresh:3;url=index.php');
             }else{
                 $error = "*Incorrect username or password";

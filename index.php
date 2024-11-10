@@ -1,7 +1,5 @@
 <?php 
     require './partials/header.php';
-
-echo "hello world";
     
         $reference_id = $_SESSION['REFERENCE_ID'];
 
@@ -23,8 +21,8 @@ echo "hello world";
         WHERE 
             a.reference_id = '$reference_id'
         ");
-      
-
+        $row = $get_appointments->fetch_array();
+        $ids = $row['id'];
     ?>
     <?php require './partials/navbar.php' ?>
 

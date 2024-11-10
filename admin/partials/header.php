@@ -4,8 +4,13 @@
     header('location: login.php');
   }
 
-  $get_settings = $conn->query("SELECT * FROM settings");
+  
+$barangay = $_SESSION['BARANGAY'];
+$logo = $_SESSION['LOGO'];
+
+  $get_settings = $conn->query("SELECT * FROM settings WHERE barangay = '$barangay'");
 $settings = $get_settings->fetch_assoc();
+
 
 ?>
 

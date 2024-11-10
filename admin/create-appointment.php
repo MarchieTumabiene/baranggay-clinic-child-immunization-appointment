@@ -15,22 +15,24 @@ if (isset($_SESSION['error'])) {
 }
 
 
-$barangays = [
-    "Kodia",
-    "Maalat",
-    "San Agustin",
-    "Malbago",
-    "Tarong",
-    "Talangnan",
-    "Mancilang",
-    "Kaongkod",
-    "Bunakan",
-    "Kangwayan",
-    "Pili",
-    "Tugas",
-    "Poblacion",
-    "Tabagak"
-];
+// $barangays = [
+//     "Kodia",
+//     "Maalat",
+//     "San Agustin",
+//     "Malbago",
+//     "Tarong",
+//     "Talangnan",
+//     "Mancilang",
+//     "Kaongkod",
+//     "Bunakan",
+//     "Kangwayan",
+//     "Pili",
+//     "Tugas",
+//     "Poblacion",
+//     "Tabagak"
+// ];
+
+$barangays = [$barangay];
 
 
 ?>
@@ -78,7 +80,7 @@ $barangays = [
                                                     <option value="<?= $barangay ?>"><?= $barangay ?></option>
                                                 <?php endif; ?>
                                             <?php else : ?>
-                                                <option value="<?= $barangay ?>"><?= $barangay ?></option>
+                                                <option selected value="<?= $barangay ?>"><?= $barangay ?></option>
                                             <?php endif; ?>
                                         <?php endforeach; ?>
                                     </select>

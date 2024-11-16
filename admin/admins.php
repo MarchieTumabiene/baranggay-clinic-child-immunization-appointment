@@ -100,7 +100,7 @@ $barangays = [
                 <label for="">Email</label>
                 <input type="email" name="email" class="my-2 form-control" required>
                 <label for="">Barangay</label>
-                <select name="barangay"class="form-control my-2" required>
+                <select name="barangay"class="form-select my-2" required>
                     <?php 
                         foreach ($barangay as $key => $value) {
                             ?>

@@ -20,7 +20,7 @@
         <a href="" class="text-decoration-none text-light">
             <div class="row">
                 <div class="col-3 h-100">
-                    <img src="../assets/img/<?= $_SESSION['LOGO'] ?>" alt="" class="w-100 my-auto"> 
+                    <img src="../assets/img/<?= $_SESSION['LOGO'] ?>" alt="" class="w-100 mt-3"> 
                 </div>
                 <div class="col-9">
                 Barangay Immunization 

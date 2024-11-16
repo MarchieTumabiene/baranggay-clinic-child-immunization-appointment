@@ -62,7 +62,7 @@ $barangays = [
                                         </td>
                                     </tr>
 
-                                    <div class="modal" id="update-<?= $row['id'] ?>">
+                                    <div class="modal" id="edit-<?= $row['id'] ?>">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header bg-primary">

@@ -50,6 +50,7 @@ $barangays = [
                                 <?php
                                 $i = 1;
                                 foreach ($get_barangayAdmins as $row) :
+                                    if($row['barangay'] != 'admin'):
                                 ?>
                                     <tr>
                                         <td><?= $i++ ?></td>
@@ -107,7 +108,9 @@ $barangays = [
                                     
                                     </tr>
 
-                                <?php endforeach; ?>
+                                <?php 
+                                    endif;
+                                    endforeach; ?>
                             </tbody>
 
                         </table>

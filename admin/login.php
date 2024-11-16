@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/fontawesome6/css/all.min.css"/>
 </head>
-<body  style="background: url('./assets/img/main-bnr.jpeg');">
+<body  style="background: url('./assets/img/main-bnr.jpeg') no-repeat cover/center;">
     
     <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
 

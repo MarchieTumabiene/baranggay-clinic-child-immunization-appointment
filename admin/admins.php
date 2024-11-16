@@ -60,9 +60,7 @@ $barangays = [
                                             <a href="#"  onclick="showMessage('Are you sure you want to delete this admin?', 'question', '?action=delete-admin&id=<?= $row['id'] ?>')" class="btn btn-secondary d-flex align-items-center gap-1" onclick="return confirm('Are you sure you want to delete this?')"><i class="fa fa-trash"></i> Delete</a>
                                             <a href="#" data-bs-toggle="modal" data-bs-target="#edit-<?= $row['id'] ?>" class="btn btn-primary d-flex align-items-center gap-1"><i class="fa fa-edit"></i> Edit</a>
                                         </td>
-                                    </tr>
-
-                                    <div class="modal" id="edit-<?= $row['id'] ?>">
+                                        <div class="modal" id="edit-<?= $row['id'] ?>">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header bg-primary">
@@ -105,6 +103,7 @@ $barangays = [
                                             </div>
                                         </div>
                                     </div>
+                                    </tr>
 
                                 <?php endforeach; ?>
                             </tbody>

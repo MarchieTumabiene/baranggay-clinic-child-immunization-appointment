@@ -12,24 +12,47 @@ if ($_GET['action'] == 'add-admin') {
     $stmt = $conn->prepare("INSERT INTO admin(username,email,password,barangay,logo) VALUES(?,?,?,?,?)");
     $stmt->bind_param("sssss", $username, $email, $password, $barangay, $filename);
 
-    if($stmt->execute()){
-        move_uploaded_file($filename, $folder);
+    $check = $conn->prepare("SELECT * FROM admin WHERE username = ?");
+    $check->bind_param("s", $username);
+    
+    if($check->execute()){
+        $result = $check->get_result();
 
-        ?>
-        <script>
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: "Admin added succesfully",
-                showConfirmButton: false,
-                timer: 1500
-            }).then(() => {
-                 window.location.href = "admins.php"
-            })
-        </script>
-        <?php
+        if($result->num_rows > 0){
+            ?>
+            <script>
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: "Admin already exist",
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                     window.location.href = "admins.php"
+                })
+            </script>
+            <?php
+        }else{
+            if($stmt->execute()){
+                move_uploaded_file($filename, $folder);
+        
+                ?>
+                <script>
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: "Admin added succesfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(() => {
+                         window.location.href = "admins.php"
+                    })
+                </script>
+                <?php
+        
+            }
+        }
 
     }
-
 
 }

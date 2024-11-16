@@ -115,6 +115,9 @@ if ($get_child->num_rows > 0) {
               <div class="card-body">
                 <?php
                 $get_records = $conn->query("SELECT * FROM appointments WHERE status = 1 AND barangay = '$barangay'");
+                if($barangay == 'admin'){
+                  $get_records = $conn->query("SELECT * FROM appointments WHERE status = 1");
+                }
                 ?>
                 <h1><?= $get_records->num_rows ?></h1>
                 <p class="mb-0"><i class="fa fa-check-circle"></i> Immunization Records</p>

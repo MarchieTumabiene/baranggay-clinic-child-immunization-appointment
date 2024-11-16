@@ -1,6 +1,22 @@
 <?php
 require './partials/header.php';
-$get_appointments = $conn->query("SELECT 
+
+
+if ($barangay == 'admin') {
+    $get_appointments = $conn->query("SELECT 
+    a.*, 
+    CONCAT(p.m_fname, ' ', p.m_mname, ' ', p.m_lname) AS mother, 
+    CONCAT(p.f_fname, ' ', p.f_mname, ' ', p.f_lname) AS father, 
+    CONCAT(c_fname, ' ', c_mname, ' ', c_lname) AS child
+FROM 
+appointments a 
+INNER JOIN 
+    appoint_parents p ON a.id = p.appoint_id
+WHERE 
+    a.status = 1
+");
+}else{
+    $get_appointments = $conn->query("SELECT 
         a.*, 
         CONCAT(p.m_fname, ' ', p.m_mname, ' ', p.m_lname) AS mother, 
         CONCAT(p.f_fname, ' ', p.f_mname, ' ', p.f_lname) AS father, 
@@ -12,6 +28,7 @@ $get_appointments = $conn->query("SELECT
     WHERE 
         a.status = 1 AND a.barangay = '$barangay'
     ");
+}
 ?>
 <div class="container-fluid">
 

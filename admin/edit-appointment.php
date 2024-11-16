@@ -20,6 +20,8 @@ if (isset($_GET['id'])) {
         appoint_parents p ON a.id = p.appoint_id
     WHERE a.id = $id");
     $row = $stmt->fetch_array();
+
+    
 }
 
 $message = null;

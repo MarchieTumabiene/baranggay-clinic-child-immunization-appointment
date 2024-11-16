@@ -15,24 +15,29 @@ if (isset($_SESSION['error'])) {
 }
 
 
-// $barangays = [
-//     "Kodia",
-//     "Maalat",
-//     "San Agustin",
-//     "Malbago",
-//     "Tarong",
-//     "Talangnan",
-//     "Mancilang",
-//     "Kaongkod",
-//     "Bunakan",
-//     "Kangwayan",
-//     "Pili",
-//     "Tugas",
-//     "Poblacion",
-//     "Tabagak"
-// ];
 
-$barangays = [$barangay];
+
+
+if ($barangay == 'admin') {
+    $barangays = [
+        "Kodia",
+        "Maalat",
+        "San Agustin",
+        "Malbago",
+        "Tarong",
+        "Talangnan",
+        "Mancilang",
+        "Kaongkod",
+        "Bunakan",
+        "Kangwayan",
+        "Pili",
+        "Tugas",
+        "Poblacion",
+        "Tabagak"
+    ];
+}else{
+    $barangays = [$barangay];
+}
 
 
 ?>

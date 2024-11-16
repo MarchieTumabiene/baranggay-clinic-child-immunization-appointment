@@ -26,7 +26,7 @@ WHERE status = 2
     ");
 }
 
-$location = implode(explod('/admin/', $_SERVER['REQUEST_URI']));
+$location = implode(explode('/admin/', $_SERVER['REQUEST_URI']));
 echo $location;
 ?>
 <div class="container-fluid">

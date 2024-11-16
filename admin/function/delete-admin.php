@@ -1,6 +1,6 @@
 <?php 
 
-if ($_GET['action'] == 'add-admin') {
+if ($_GET['action'] == 'delete-admin') {
     $id = $_GET['id'];
 
     $stmt = $conn->prepare("DELETE FROM admin WHERE id = ?");

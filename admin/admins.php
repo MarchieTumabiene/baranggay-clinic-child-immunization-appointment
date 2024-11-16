@@ -91,9 +91,9 @@ $barangays = [
                                                         ?>
                                                     </select>
                                                     <label for="">Barangay Logo</label>
-                                                    <input type="file" name="logo" class="my-2 form-control" required>
+                                                    <input type="file" name="logo" class="my-2 form-control">
                                                     <label for="">Password</label>
-                                                    <input type="text" name="password" class="my-2 form-control" required>
+                                                    <input type="text" name="password" class="my-2 form-control">
 
                                                     <div class="d-flex gap-2 mt-3">
                                                         <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cancel</button>

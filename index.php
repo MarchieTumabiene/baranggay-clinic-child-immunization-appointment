@@ -26,7 +26,7 @@
     ?>
     <?php require './partials/navbar.php' ?>
 
-    <div class="container" style="background: url('./assets/img/main-bnr.jpeg');">
+    <div class="container">
         <?php 
             if (isset($_GET['view'])) {
                 $view = $_GET['view'];

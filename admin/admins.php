@@ -57,7 +57,7 @@ $barangays = [
                                         <td><?= $row['email'] ?></td>
                                         <td><?= $row['barangay'] ?></td>
                                         <td class="d-flex align-items-center gap-2">
-                                            <a href="#"  onclick="showMessage('Are you sure you want to delete this appointment?', 'question', '?action=delete-appointment&id=<?= $row['id'] ?>')" class="btn btn-secondary d-flex align-items-center gap-1" onclick="return confirm('Are you sure you want to delete this?')"><i class="fa fa-trash"></i> Delete</a>
+                                            <a href="#"  onclick="showMessage('Are you sure you want to delete this admin?', 'question', '?action=delete-appointment&id=<?= $row['id'] ?>')" class="btn btn-secondary d-flex align-items-center gap-1" onclick="return confirm('Are you sure you want to delete this?')"><i class="fa fa-trash"></i> Delete</a>
                                             <?php 
                                              if (!$barangay == 'admin') {
                                                 ?>

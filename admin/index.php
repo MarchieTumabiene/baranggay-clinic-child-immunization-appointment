@@ -104,7 +104,7 @@ if ($get_child->num_rows > 0) {
                     <div class="card shadow-sm rounded-0 p-3">
                       <div class="card-body">
                       <h1><?= $adminsCount ?></h1>
-                        <p class="mb-0"><i class="fa fa-check-circle"></i> Barangay Admins</p>
+                        <p class="mb-0"><i class="fa fa-user"></i> Barangay Admins</p>
                       </div>
                     </div>
 
@@ -114,7 +114,7 @@ if ($get_child->num_rows > 0) {
                 ?>
 
 
-          <div class="col-lg-4">
+          <div class="col-lg-6">
 
             <div class="card shadow-sm rounded-0 p-3">
               <div class="card-body">
@@ -133,7 +133,7 @@ if ($get_child->num_rows > 0) {
 
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-6">
 
             <div class="card shadow-sm rounded-0 p-3">
               <div class="card-body">
@@ -167,7 +167,7 @@ if ($get_child->num_rows > 0) {
 
           </div>
 
-          <div class="col-lg-6">
+          <div class="col-lg-4">
              <div class="card">
               <div class="card-body">
                 <h1><?= array_sum($count_show) ?></h1>
@@ -176,7 +176,7 @@ if ($get_child->num_rows > 0) {
              </div>
           </div>
 
-          <div class="col-lg-6">
+          <div class="col-lg-4">
              <div class="card">
               <div class="card-body">
                 <h1><?= array_sum($count_dont_show) ?></h1>

@@ -19,10 +19,10 @@
     <h4 class="text-light mx-3">
         <a href="" class="text-decoration-none text-light">
             <div class="row">
-                <div class="col-4">
+                <!-- <div class="col-4">
                     <img src="../assets/img/<?= $_SESSION['LOGO'] ?>" alt="" class="w-100"> 
-                </div>
-                <div class="col-8">
+                </div> -->
+                <div class="col-12">
                 Barangay Immunization 
                 </div>
             </div>

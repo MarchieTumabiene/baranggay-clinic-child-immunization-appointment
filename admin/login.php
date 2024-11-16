@@ -25,7 +25,7 @@
     
     <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
 
-        <div class="card rounded-0 shadow" style="width: 500px;">
+        <div class="card rounded-0 shadow bg-transparent" style="width: 500px; backdrop-filter: 3px;">
             <div class="card-body p-3">
                 <h3 class="text-center my-4">Barangay Child Immunization Appointment System</h3>
                 <h5 class="mb-3">Login Account</h5>

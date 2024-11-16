@@ -89,6 +89,30 @@ if ($get_child->num_rows > 0) {
       <div class="p-4">
         <div class="row g-3">
          
+         
+                <?php
+                if($barangay == 'admin'){
+                  $get_barangayAdmins = $conn->query("SELECT * FROM admins");
+                  $adminsCount = 0;
+                  foreach ($get_barangayAdmins as $key => $value) {
+                    $adminCount++;
+                  }
+
+                  ?>
+                   <div class="col-lg-4">
+
+                    <div class="card shadow-sm rounded-0 p-3">
+                      <div class="card-body">
+                      <h1><?= $adminsCount ?></h1>
+                        <p class="mb-0"><i class="fa fa-check-circle"></i> Immunization Records</p>
+                      </div>
+                    </div>
+
+                  </div>
+                  <?php 
+                }
+                ?>
+
 
           <div class="col-lg-4">
 

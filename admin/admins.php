@@ -102,7 +102,7 @@ $barangays = [
                 <label for="">Barangay</label>
                 <select name="barangay"class="form-select my-2" required>
                     <?php 
-                        foreach ($barangay as $key => $value) {
+                        foreach ($barangays as $key => $value) {
                             ?>
                             <option value="<?= $value ?>"><?= $value ?></option>
                             <?php 

@@ -16,7 +16,7 @@ $get_barangayAdmins = $conn->query("SELECT * FROM admin");
                     <div class="card-header d-flex align-items-center gap-2">
                         <h5 class="mb-0"><i class="fa fa-calendar-check"></i> Appointments</h5>
                       
-                          <a href="./create-appointment.php" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+                          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add"><i class="fa fa-plus"></i></a>
                         
                     </div>
                     <div class="card-body table-responsive">
@@ -70,5 +70,21 @@ $get_barangayAdmins = $conn->query("SELECT * FROM admin");
     </div>
 
 </div>
+
+
+<div class="modal" id="add">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Add Admin</h5>
+                <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
 <?php
 require './partials/footer.php';

@@ -75,12 +75,12 @@ $get_barangayAdmins = $conn->query("SELECT * FROM admin");
 <div class="modal" id="add">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5>Add Admin</h5>
+            <div class="modal-header bg-primary">
+                <h5 class="mb-0">Add Admin</h5>
                 <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                
+
             </div>
         </div>
     </div>

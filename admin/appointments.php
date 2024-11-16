@@ -41,7 +41,13 @@ $get_appointments = $conn->query("SELECT
                 <div class="card">
                     <div class="card-header d-flex align-items-center gap-2">
                         <h5 class="mb-0"><i class="fa fa-calendar-check"></i> Appointments</h5>
-                        <a href="./create-appointment.php" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+                       <?php 
+                        if (!$barangay == 'admin') {
+                         ?>
+                          <a href="./create-appointment.php" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+                         <?php    
+                        }
+                       ?>
                     </div>
                     <div class="card-body table-responsive">
 
@@ -72,7 +78,13 @@ $get_appointments = $conn->query("SELECT
                                         <td><?= $row['date_appoint'] ?></td>
                                         <td class="d-flex align-items-center gap-2">
                                             <a href="#"  onclick="showMessage('Are you sure you want to delete this appointment?', 'question', '?action=delete-appointment&id=<?= $row['id'] ?>')" class="btn btn-secondary d-flex align-items-center gap-1" onclick="return confirm('Are you sure you want to delete this?')"><i class="fa fa-trash"></i> Delete</a>
-                                            <a href="edit-appointment.php?id=<?= $row['id'] ?>" class="btn btn-primary d-flex align-items-center gap-1"><i class="fa fa-edit"></i> Edit</a>
+                                            <?php 
+                                             if (!$barangay == 'admin') {
+                                                ?>
+                                                <a href="edit-appointment.php?id=<?= $row['id'] ?>" class="btn btn-primary d-flex align-items-center gap-1"><i class="fa fa-edit"></i> Edit</a>
+                                                <?php    
+                                               }
+                                            ?>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

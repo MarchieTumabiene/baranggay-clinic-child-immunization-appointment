@@ -94,7 +94,7 @@ $barangays = [
             <div class="modal-header bg-primary">
                 <h5 class="mb-0 text-light">Add Admin</h5>
             </div>
-            <form class="modal-body">
+            <form class="modal-body" method="POST" enctype="multipart/form-data">
                 <label for="">Username</label>
                 <input type="text" name="uname" class="my-2 form-control" required>
                 <label for="">Email</label>
@@ -109,6 +109,16 @@ $barangays = [
                         }
                     ?>
                 </select>
+                <label for="">Barangay Logo</label>
+                <input type="file" name="logo" class="my-2 form-control" required>
+                <label for="">Password</label>
+                <input type="text" name="password" class="my-2 form-control" required>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>
+                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cancel</button>
+                </div>
+
             </form>
         </div>
     </div>

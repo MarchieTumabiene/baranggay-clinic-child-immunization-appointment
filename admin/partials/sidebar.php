@@ -56,6 +56,12 @@
                         <a href="settings.php" class="nav-link <?= str_contains($url, '/admin/settings.php') ? $active : $inactive ?>"> <i class="fa fa-gear"></i> Settings</a>
                     </li>
                     <?php 
+                }else{
+                    ?>
+                    <li class="nav-item">
+                        <a href="settings.php" class="nav-link <?= str_contains($url, '/admin/admins.php') ? $active : $inactive ?>"> <i class="fa fa-gear"></i> Barangay Admins</a>
+                    </li>
+                    <?php 
                 }
                ?>
               

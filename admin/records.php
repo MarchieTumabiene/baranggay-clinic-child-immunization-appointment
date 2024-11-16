@@ -77,7 +77,7 @@ WHERE status = 2
                                             ?>
                                         </td>
                                         <td class="d-flex gap-2">
-                                            <a href="#"  onclick="showMessage('Are you sure you want to delete this appointment?', 'question', '?action=delete-appointment&id=<?= $row['id'] ?>')" class="btn btn-secondary d-flex align-items-center gap-1" onclick="return confirm('Are you sure you want to delete this?')"><i class="fa fa-trash"></i> Delete</a>
+                                            <a href="#"  onclick="showMessage('Are you sure you want to delete this record?', 'question', '?action=delete-appointment&id=<?= $row['id'] ?>')" class="btn btn-secondary d-flex align-items-center gap-1" onclick="return confirm('Are you sure you want to delete this?')"><i class="fa fa-trash"></i> Delete</a>
                                             <a href="view-record.php?id=<?= $row['id'] ?>" class="btn btn-primary d-flex align-items-center justify-content-between" style="width: 80px;"><i class="fa fa-file-lines"></i> View</a>
                                         </td>
                                     </tr>

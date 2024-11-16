@@ -5,7 +5,7 @@ if ($_GET['action'] == 'add-admin') {
     $email = $_POST['email'];
     $barangay = $_POST['barangay'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $filename = $username;
+    $filename = $username . ".png";
     $tmp_name = $_FILES['logo']['tmp_name'];
     $folder = "../assets/img/". $filename;
 
@@ -20,7 +20,7 @@ if ($_GET['action'] == 'add-admin') {
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
-                title: "Appointment added succesfully",
+                title: "Admin added succesfully",
                 showConfirmButton: false,
                 timer: 1500
             }).then(() => {

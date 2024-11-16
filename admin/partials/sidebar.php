@@ -19,7 +19,7 @@
     <h4 class="text-light mx-3">
         <a href="" class="text-decoration-none text-light">
             <div class="row">
-                <div class="col-3">
+                <div class="col-3 h-100">
                     <img src="../assets/img/<?= $_SESSION['LOGO'] ?>" alt="" class="w-100 my-auto"> 
                 </div>
                 <div class="col-9">

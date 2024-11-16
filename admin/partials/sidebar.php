@@ -27,7 +27,7 @@
                 </div>
             </div>
             <br>
-            <hr class="mt-2 mb-0" />
+            <hr class="mt-0 mb-0" />
             <span style="font-size: 15px; font-weight: normal;">Barangay: <span class="fw-bold"><?= strtoupper($barangay) ?></span></span>
             <hr class="mt-1" />
         </a>

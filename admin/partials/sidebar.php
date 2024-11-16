@@ -18,14 +18,15 @@
 <a href="#" class="position-absolute top-0 fs-1 end-0 m-3 text-light d-lg-none d-block" id="close-sidebar"><i class="fa fa-xmark"></i></a>
     <h4 class="text-light mx-3">
         <a href="" class="text-decoration-none text-light">
-            <div class="row">
+            <!-- <div class="row"> -->
                 <!-- <div class="col-4">
                     <img src="../assets/img/<?= $_SESSION['LOGO'] ?>" alt="" class="w-100"> 
                 </div> -->
-                <div class="col-12">
-                Barangay Immunization 
+                <!-- <div class="col-12">
+               
                 </div>
-            </div>
+            </div> -->
+            Barangay Immunization 
             <br>
             <hr class="mt-2 mb-0" />
             <span style="font-size: 15px; font-weight: normal;">Barangay: <span class="fw-bold"><?= strtoupper($barangay) ?></span></span>

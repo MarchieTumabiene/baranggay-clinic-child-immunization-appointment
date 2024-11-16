@@ -114,7 +114,7 @@ if ($get_child->num_rows > 0) {
                 ?>
 
 
-          <div class="col-lg-6">
+          <div class="col-lg-4">
 
             <div class="card shadow-sm rounded-0 p-3">
               <div class="card-body">
@@ -133,7 +133,7 @@ if ($get_child->num_rows > 0) {
 
           </div>
 
-          <div class="col-lg-6">
+          <div class="col-lg-4">
 
             <div class="card shadow-sm rounded-0 p-3">
               <div class="card-body">

@@ -132,6 +132,9 @@ if ($get_child->num_rows > 0) {
               <div class="card-body">
                 <?php
                 $get_appoint_records = $conn->query("SELECT * FROM appointments WHERE status = 2");
+                if($barangay == 'admin'){
+                  $get_records = $conn->query("SELECT * FROM appointments WHERE status = 2");
+                }
                 ?>
                 <h1><?= $get_appoint_records->num_rows ?></h1>
                 <p class="mb-0"><i class="fa fa-folder-open"></i> Appointment Records</p>

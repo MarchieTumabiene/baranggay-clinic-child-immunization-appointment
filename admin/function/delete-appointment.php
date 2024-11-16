@@ -19,7 +19,7 @@
                       showConfirmButton: false,
                       timer: 1500
                     }).then(() => {
-                      window.location.href = $location . ".php"
+                      window.location.href =<?= $location ?> +".php"
                     })
             </script>
             <?php

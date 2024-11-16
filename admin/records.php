@@ -25,6 +25,9 @@ WHERE status = 2
     WHERE status = 2 AND a.barangay = '$barangay'
     ");
 }
+
+$location = $_SERVER['REQUEST_URI'];
+echo $location;
 ?>
 <div class="container-fluid">
 

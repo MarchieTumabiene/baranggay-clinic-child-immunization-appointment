@@ -1,6 +1,7 @@
 <?php 
     if ($_GET['action'] == 'delete-appointment') {
         $id = $_GET['id'];
+        $location = $_SERVER['REQUEST_URI'];
 
         $stmt = $conn->prepare("DELETE FROM appointments WHERE id = ?");
         $stmt->bind_param('i', $id);

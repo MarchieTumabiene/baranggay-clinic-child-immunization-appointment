@@ -14,6 +14,8 @@
     if (isset($_GET['login'])) {
         require './function/login.php';
     }
+
+    echo password_hash("admin@123", PASSWORD_DEFAULT);
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -57,6 +57,8 @@ $settings = $get_settings->fetch_assoc();
       require __DIR__ . '../../function/add-immunization.php';
       require __DIR__ . '../../function/update-immunization.php';
       require __DIR__ . '../../function/add-admin.php';
+      require __DIR__ . '../../function/delete-admin.php';
+      require __DIR__ . '../../function/update-admin.php';
       require __DIR__ . '../../function/logout.php';
     }
 ?>

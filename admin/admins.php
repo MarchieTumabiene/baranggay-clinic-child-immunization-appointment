@@ -1,6 +1,22 @@
 <?php
 require './partials/header.php';
 $get_barangayAdmins = $conn->query("SELECT * FROM admin");
+$barangays = [
+    "Kodia",
+    "Maalat",
+    "San Agustin",
+    "Malbago",
+    "Tarong",
+    "Talangnan",
+    "Mancilang",
+    "Kaongkod",
+    "Bunakan",
+    "Kangwayan",
+    "Pili",
+    "Tugas",
+    "Poblacion",
+    "Tabagak"
+];
 ?>
 <div class="container-fluid">
 
@@ -77,11 +93,23 @@ $get_barangayAdmins = $conn->query("SELECT * FROM admin");
         <div class="modal-content">
             <div class="modal-header bg-primary">
                 <h5 class="mb-0 text-light">Add Admin</h5>
-                <button type="button" class="btn btn-close text-light" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body">
-
-            </div>
+            <form class="modal-body">
+                <label for="">Username</label>
+                <input type="text" name="uname" class="my-2 form-control" required>
+                <label for="">Email</label>
+                <input type="email" name="email" class="my-2 form-control" required>
+                <label for="">Barangay</label>
+                <select name="barangay"class="form-control my-2" required>
+                    <?php 
+                        foreach ($barangay as $key => $value) {
+                            ?>
+                            <option value="<?= $value ?>"><?= $value ?></option>
+                            <?php 
+                        }
+                    ?>
+                </select>
+            </form>
         </div>
     </div>
 </div>

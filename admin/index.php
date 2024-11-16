@@ -96,7 +96,11 @@ if ($get_child->num_rows > 0) {
               <div class="card-body">
 
                 <?php
-                $get_appointments = $conn->query("SELECT * FROM appointments WHERE status = 1 AND barangay = '$barangay'");
+                if($barangay == 'admin'){
+                  $get_appointments = $conn->query("SELECT * FROM appointments WHERE status = 1");
+                }else{
+                  $get_appointments = $conn->query("SELECT * FROM appointments WHERE status = 1 AND barangay = '$barangay'");
+                }
                 ?>
                 <h1><?= $get_appointments->num_rows ?></h1>
                 <p class="mb-0"><i class="fa fa-calendar-check"></i> Appointments</p>

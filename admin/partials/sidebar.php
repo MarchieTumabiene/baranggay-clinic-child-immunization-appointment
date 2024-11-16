@@ -49,9 +49,15 @@
                     <a href="records.php" class="nav-link d-flex <?= str_contains($url, '/admin/records.php') || str_contains($url ,'/view-record') ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/record.png"/></figure> Records</a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="settings.php" class="nav-link <?= str_contains($url, '/admin/settings.php') ? $active : $inactive ?>"> <i class="fa fa-gear"></i> Settings</a>
-                </li>
+               <?php 
+                if($barangay != 'admin'){
+                    ?>
+                    <li class="nav-item">
+                        <a href="settings.php" class="nav-link <?= str_contains($url, '/admin/settings.php') ? $active : $inactive ?>"> <i class="fa fa-gear"></i> Settings</a>
+                    </li>
+                    <?php 
+                }
+               ?>
               
                 <li class="nav-item">
                     <a href="#" class="nav-link text-light" onclick="showMessage('Are you sure you want to logout?', 'info', '?logout')"> <i class="fa fa-sign-out"></i> Logout</a>

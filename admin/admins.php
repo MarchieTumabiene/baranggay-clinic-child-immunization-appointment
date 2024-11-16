@@ -114,9 +114,9 @@ $barangays = [
                 <label for="">Password</label>
                 <input type="text" name="password" class="my-2 form-control" required>
 
-                <div class="d-flex gap-2">
-                    <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>
+                <div class="d-flex gap-2 mt-3">
                     <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>
                 </div>
 
             </form>

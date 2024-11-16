@@ -41,11 +41,10 @@ $get_appointments = $conn->query("SELECT
                 <div class="card">
                     <div class="card-header d-flex align-items-center gap-2">
                         <h5 class="mb-0"><i class="fa fa-calendar-check"></i> Appointments</h5>
-                        <a href="./create-appointment.php" class="btn btn-primary"><i class="fa fa-plus"></i></a>
                        <?php 
-                        if (!$barangay == 'admin') {
+                        if ($barangay != 'admin') {
                          ?>
-                        
+                          <a href="./create-appointment.php" class="btn btn-primary"><i class="fa fa-plus"></i></a>
                          <?php    
                         }
                        ?>

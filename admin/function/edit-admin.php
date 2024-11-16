@@ -1,6 +1,6 @@
 <?php 
 
-if ($_GET['action'] == 'add-admin') {
+if ($_GET['action'] == 'update-admin') {
     $id = $_POST['id'];
     $username = $_POST['uname'];
     $email = $_POST['email'];
@@ -43,7 +43,7 @@ if ($_GET['action'] == 'add-admin') {
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
-                title: "Admin added succesfully",
+                title: "Admin updated succesfully",
                 showConfirmButton: false,
                 timer: 1500
             }).then(() => {

@@ -67,7 +67,7 @@ $barangays = [
                                                 <div class="modal-header bg-primary">
                                                     <h5 class="mb-0 text-light">Update Admin</h5>
                                                 </div>
-                                                <form action="?action=add-admin" class="modal-body" method="POST" enctype="multipart/form-data">
+                                                <form action="?action=update-admin" class="modal-body" method="POST" enctype="multipart/form-data">
                                                     <input type="hidden" name="id" value="<?= $row['id'] ?>">
                                                     <label for="">Username</label>
                                                     <input type="text" name="uname" class="my-2 form-control" value="<?= $row['username'] ?>" required>

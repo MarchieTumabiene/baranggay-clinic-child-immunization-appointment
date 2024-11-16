@@ -18,7 +18,7 @@
 <a href="#" class="position-absolute top-0 fs-1 end-0 m-3 text-light d-lg-none d-block" id="close-sidebar"><i class="fa fa-xmark"></i></a>
     <h4 class="text-light mx-3">
         <a href="" class="text-decoration-none text-light">
-            <div class="row">
+            <div class="row mb-0">
                 <div class="col-3 h-100">
                     <img src="../assets/img/<?= $_SESSION['LOGO'] ?>" alt="" class="w-100 mt-3"> 
                 </div>

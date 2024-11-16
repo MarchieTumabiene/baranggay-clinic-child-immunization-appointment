@@ -18,7 +18,7 @@
 <a href="#" class="position-absolute top-0 fs-1 end-0 m-3 text-light d-lg-none d-block" id="close-sidebar"><i class="fa fa-xmark"></i></a>
     <h4 class="text-light mx-3">
         <a href="" class="text-decoration-none text-light">
-            Barangay Immunization 
+            <img src="../assets/img/<?= $_SESSION['LOGO'] ?>" alt=""> Barangay Immunization 
             <br>
             <hr class="mt-2 mb-0" />
             <span style="font-size: 15px; font-weight: normal;">Barangay: <span class="fw-bold"><?= strtoupper($barangay) ?></span></span>

@@ -18,7 +18,14 @@
 <a href="#" class="position-absolute top-0 fs-1 end-0 m-3 text-light d-lg-none d-block" id="close-sidebar"><i class="fa fa-xmark"></i></a>
     <h4 class="text-light mx-3">
         <a href="" class="text-decoration-none text-light">
-            <img src="../assets/img/<?= $_SESSION['LOGO'] ?>" alt=""> Barangay Immunization 
+            <div class="row">
+                <div class="col-2">
+                <img src="../assets/img/<?= $_SESSION['LOGO'] ?>" alt=""> 
+                </div>
+                <div class="col-10">
+                Barangay Immunization 
+                </div>
+            </div>
             <br>
             <hr class="mt-2 mb-0" />
             <span style="font-size: 15px; font-weight: normal;">Barangay: <span class="fw-bold"><?= strtoupper($barangay) ?></span></span>

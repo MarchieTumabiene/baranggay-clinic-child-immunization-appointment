@@ -64,7 +64,7 @@ $barangays = [
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header bg-primary">
-                                                    <h5 class="mb-0 text-light">Add Admin</h5>
+                                                    <h5 class="mb-0 text-light">Update Admin</h5>
                                                 </div>
                                                 <form action="?action=add-admin" class="modal-body" method="POST" enctype="multipart/form-data">
                                                     <input type="hidden" name="id" value="<?= $row['id'] ?>">

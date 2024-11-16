@@ -10,8 +10,30 @@ if ($_GET['action'] == 'add-admin') {
     $tmp_name = $_FILES['logo']['tmp_name'];
     $folder = "../assets/img/". $filename;
 
-    $stmt = $conn->prepare("INSERT INTO admin(username,email,password,barangay,logo) VALUES(?,?,?,?,?)");
-    $stmt->bind_param("sssss", $username, $email, $password, $barangay, $filename);
+    if ($_FILES['logo']['error'] > 0) {
+       
+        if (empty($password)) {
+            $stmt = $conn->prepare("INSERT INTO admin(username,email,barangay) VALUES(?,?,?)");
+            $stmt->bind_param("sss", $username, $email, $barangay);
+        }else{
+            $stmt = $conn->prepare("INSERT INTO admin(username,email,password,barangay) VALUES(?,?,?,?)");
+            $stmt->bind_param("ssss", $username, $email, $password, $barangay);
+        }
+    
+    }else{
+      
+        
+        if (empty($password)) {
+            $stmt = $conn->prepare("INSERT INTO admin(username,email,barangay,logo) VALUES(?,?,?,?)");
+            $stmt->bind_param("ssss", $username, $email, $barangay, $filename);
+        }else{
+            $stmt = $conn->prepare("INSERT INTO admin(username,email,password,barangay,logo) VALUES(?,?,?,?,?)");
+            $stmt->bind_param("sssss", $username, $email, $password, $barangay, $filename);
+        }
+    
+    }
+
+
 
     if($stmt->execute()){
         move_uploaded_file($filename, $folder);
@@ -31,6 +53,5 @@ if ($_GET['action'] == 'add-admin') {
         <?php
 
     }
-
-
+    $stmt->close();
 }

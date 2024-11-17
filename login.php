@@ -15,8 +15,6 @@
         require './function/login.php';
     }
 
-    ECHO "HELLO WORLD";
-
     // echo password_hash("admin@123", PASSWORD_DEFAULT);
 ?>
 <!DOCTYPE html>
@@ -32,7 +30,7 @@
     
     <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
 
-        <div class="card rounded-0 shadow" style="width: 500px; backdrop-filter: blur(3px);">
+        <div class="card rounded-0 shadow bg-transparent" style="width: 500px; backdrop-filter: blur(3px);">
             <div class="card-body p-3">
                 <h3 class="text-center my-5">Barangay Child Immunization Appointment System</h3>
                 <form action="?login" method="post">

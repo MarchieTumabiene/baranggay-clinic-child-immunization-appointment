@@ -237,7 +237,7 @@ if ($get_child->num_rows > 0) {
 
 <script>
   var xValues = ["Appointments", "Immunization Records", "Appointment Records"];
-console.p
+console.log(<?php $data ?>)
 			var yValues = [];
 			var barColors = ["#0d6efd", "#0d6efd", "#0d6efd"];
 

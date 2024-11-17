@@ -124,7 +124,7 @@ if ($get_child->num_rows > 0) {
                       <div class="card shadow-sm rounded-0 p-3 h-100">
                         <div class="card-body">
                         <h1><?= $value['COUNT'] ?></h1>
-                          <p class="mb-0"><i class="fa fa-user"></i> Barangay Admins</p>
+                          <p class="mb-0"><i class="fa fa-user"></i> <?= strtoupper($value['barangay']) ?></p>
                         </div>
                       </div>
 

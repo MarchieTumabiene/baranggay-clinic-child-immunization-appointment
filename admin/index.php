@@ -113,6 +113,27 @@ if ($get_child->num_rows > 0) {
                 }
                 ?>
 
+                <?php
+                if($barangay == 'admin'){
+                  $get_barangayAdmins = $conn->query("SELECT COUNT(*) AS COUNT FROM appointments GROUP BY barangay");
+                  $adminsCount = 0;
+                  foreach ($get_barangayAdmins as $key => $value) {
+                    ?>
+                     <div class="col-lg-4">
+
+                      <div class="card shadow-sm rounded-0 p-3 h-100">
+                        <div class="card-body">
+                        <h1><?= $value['COUNT'] ?></h1>
+                          <p class="mb-0"><i class="fa fa-user"></i> Barangay Admins</p>
+                        </div>
+                      </div>
+
+                      </div>
+                    <?php 
+                  }
+                }
+                ?>
+
 
           <div class="col-lg-4">
 

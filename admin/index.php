@@ -228,38 +228,38 @@ if ($get_child->num_rows > 0) {
 </div>
 
 <?php 
+  // Assuming $conn is your database connection
   $appoint_by_barangay = $conn->query("SELECT COUNT(*) AS RECORD FROM appointments GROUP BY barangay");
   $data = [];
-  foreach ($appoint_by_barangay as $key => $value) {
+  foreach ($appoint_by_barangay as $value) {
     $data[] = $value['RECORD'];
   }
 ?>
 
 <script>
   var xValues = ["Appointments", "Immunization Records", "Appointment Records"];
-console.log(<?php $data ?>)
-			var yValues = [];
-			var barColors = ["#0d6efd", "#0d6efd", "#0d6efd"];
+  var yValues = <?php echo json_encode($data); ?>; // Convert PHP array to JSON
+  var barColors = ["#0d6efd", "#0d6efd", "#0d6efd"];
 
-			new Chart("barChart", {
-				type: "bar",
-				data: {
-					labels: xValues,
-					datasets: [{
-						backgroundColor: barColors,
-						data: yValues
-					}]
-				},
-				options: {
-					legend: {
-						display: false
-					},
-					title: {
-						display: false,
-						text: "Records"
-					}
-				}
-			});
+  new Chart("barChart", {
+    type: "bar",
+    data: {
+      labels: xValues,
+      datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+      }]
+    },
+    options: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: false,
+        text: "Records"
+      }
+    }
+  });
 </script>
 <?php
 require './partials/footer.php';

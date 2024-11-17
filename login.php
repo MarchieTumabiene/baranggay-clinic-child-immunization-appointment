@@ -31,7 +31,7 @@
     <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
 
         <div class="card rounded-0 shadow bg-transparent" style="width: 500px; backdrop-filter: blur(3px);">
-            <div class="card-body p-3">
+            <div class="card-body p-3 text-light">
                 <h3 class="text-center my-5">Barangay Child Immunization Appointment System</h3>
                 <form action="?login" method="post">
                     <label for="">Reference ID</label>

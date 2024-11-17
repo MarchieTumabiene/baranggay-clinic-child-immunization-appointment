@@ -227,9 +227,17 @@ if ($get_child->num_rows > 0) {
 
 </div>
 
+<?php 
+  $appoint_by_barangay = $conn->query("SELECT COUNT(*) AS RECORD FROM appointments GROUP BY barangay");
+  $data = [];
+  foreach ($appoint_by_barangay as $key => $value) {
+    $data[] = $value['RECORD'];
+  }
+?>
+
 <script>
   var xValues = ["Appointments", "Immunization Records", "Appointment Records"];
-			var yValues = [<?= $get_appointments->num_rows ?>, <?= $get_records->num_rows ?>, <?= $get_appoint_records->num_rows ?>];
+			var yValues = [<?php $data ?>];
 			var barColors = ["#0d6efd", "#0d6efd", "#0d6efd"];
 
 			new Chart("barChart", {

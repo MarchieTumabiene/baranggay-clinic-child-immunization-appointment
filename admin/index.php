@@ -234,7 +234,7 @@ if ($get_child->num_rows > 0) {
   $barangays = [];
   foreach ($appoint_by_barangay as $value) {
     $count[] = $value['RECORD'];
-    $barangays[] = $value['barangays'];
+    $barangays[] = $value['barangay'];
   }
 ?>
 

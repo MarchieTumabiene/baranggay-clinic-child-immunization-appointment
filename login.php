@@ -28,7 +28,7 @@
 </head>
 <body style="background: url('./assets/img/main-bnr.jpeg') no-repeat center/cover; ">
     
-    <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh; width: 500px; backdrop-filter: blur(3px);">
 
         <div class="card rounded-0 shadow" style="width: 500px;">
             <div class="card-body p-3">

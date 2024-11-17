@@ -15,6 +15,8 @@
         require './function/login.php';
     }
 
+    ECHO "HELLO WORLD";
+
     // echo password_hash("admin@123", PASSWORD_DEFAULT);
 ?>
 <!DOCTYPE html>

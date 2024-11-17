@@ -230,7 +230,7 @@ if ($get_child->num_rows > 0) {
 <?php 
   // Assuming $conn is your database connection
   $appoint_by_barangay = $conn->query("SELECT COUNT(*) AS RECORD, barangay FROM appointments GROUP BY barangay");
-  $kodia = $conn->query("SELECT COUNT(*) AS RECORD, barangay FROM appointments WHERE barangay = 'Kodia'");
+  
 
   $count = [];
   $barangays = [];
@@ -241,8 +241,8 @@ if ($get_child->num_rows > 0) {
 ?>
 
 <script>
-  var xValues = ["Kodia"];
-  var yValues = <?= $kodia->num_rows ?>; // Convert PHP array to JSON
+  var xValues = <?php echo json_encode($barangays); ?>;
+  var yValues = <?php echo json_encode($data); ?>; // Convert PHP array to JSON
   var barColors = ["#0d6efd", "#0d6efd", "#0d6efd"];
 
   new Chart("barChart", {

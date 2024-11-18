@@ -1,7 +1,11 @@
 <?php
 require './partials/header.php';
 $today = date('Y-m-d');
-$get_child = $conn->query("SELECT * FROM appointments");
+if($barangay != 'admin'){
+  $get_child = $conn->query("SELECT * FROM appointments WHERE barangay = '$barangay'");
+}else{
+  $get_child = $conn->query("SELECT * FROM appointments");
+}
 $count_dont_show = [];
 $count_show = [];
 if ($get_child->num_rows > 0) {

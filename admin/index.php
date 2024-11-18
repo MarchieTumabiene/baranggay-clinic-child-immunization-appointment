@@ -134,7 +134,7 @@ if ($get_child->num_rows > 0) {
                 }
                 ?>
 
-<!-- 
+
           <div class="col-lg-4">
 
             <div class="card shadow-sm rounded-0 p-3 h-100">
@@ -204,7 +204,7 @@ if ($get_child->num_rows > 0) {
                 <p class="mb-0"><i class="fa fa-user-xmark"></i> Not Immunized</p>
               </div>
              </div>
-          </div> -->
+          </div>
 
           <div class="col-12">
             <div class="card">

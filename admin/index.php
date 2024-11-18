@@ -244,7 +244,11 @@ if ($get_child->num_rows > 0) {
   }
 ?>
 
-<script>
+
+
+
+<?php if($barangay == 'admin'): ?>
+  <script>
   var xValues = <?php echo json_encode($barangays); ?>;
   var yValues = <?php echo json_encode($count); ?>; // Convert PHP array to JSON
   var barColors = ["#0d6efd", "#0d6efd", "#0d6efd"];
@@ -269,5 +273,33 @@ if ($get_child->num_rows > 0) {
     }
   });
 </script>
+<?php else: ?>
+  <script>
+  var xValues = ["Appointments", "Immunization Records", "Appointment Records"];
+			var yValues = [<?= $get_appointments->num_rows ?>, <?= $get_records->num_rows ?>, <?= $get_appoint_records->num_rows ?>];
+			var barColors = ["#0d6efd", "#0d6efd", "#0d6efd"];
+
+			new Chart("barChart", {
+				type: "bar",
+				data: {
+					labels: xValues,
+					datasets: [{
+						backgroundColor: barColors,
+						data: yValues
+					}]
+				},
+				options: {
+					legend: {
+						display: false
+					},
+					title: {
+						display: false,
+						text: "Records"
+					}
+				}
+			});
+</script>
+<?php endif; ?>
+
 <?php
 require './partials/footer.php';

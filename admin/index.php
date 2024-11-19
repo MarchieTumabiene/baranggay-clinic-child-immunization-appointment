@@ -192,6 +192,7 @@ if ($get_child->num_rows > 0) {
 
           </div>
 
+        <?php if($barangay != 'admin'): ?>
           <div class="col-lg-4">
              <div class="card h-100">
               <div class="card-body">
@@ -209,6 +210,7 @@ if ($get_child->num_rows > 0) {
               </div>
              </div>
           </div>
+        <?php endif; ?>
 
           <div class="col-12">
             <div class="card">

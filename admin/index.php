@@ -139,6 +139,10 @@ if ($get_child->num_rows > 0) {
                 ?>
 
 
+
+          
+        <?php if($barangay != 'admin'): ?>
+          
           <div class="col-lg-4">
 
             <div class="card shadow-sm rounded-0 p-3 h-100">
@@ -158,8 +162,6 @@ if ($get_child->num_rows > 0) {
 
           </div>
 
-          
-        <?php if($barangay != 'admin'): ?>
           <div class="col-lg-4">
 
             <div class="card shadow-sm rounded-0 p-3 h-100">

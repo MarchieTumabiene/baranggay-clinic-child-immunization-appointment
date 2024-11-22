@@ -30,7 +30,7 @@ $barangays = [
             <div class="p-4">
                 <div class="card">
                     <div class="card-header d-flex align-items-center gap-2">
-                        <h5 class="mb-0"><i class="fa fa-calendar-check"></i> Appointments</h5>
+                        <h5 class="mb-0"><i class="fa fa-users"></i> Admins</h5>
                       
                           <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add"><i class="fa fa-plus"></i></a>
                         

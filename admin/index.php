@@ -1,25 +1,3 @@
-<?php
-require './partials/header.php';
-$today = date('Y-m-d');
-if($barangay != 'admin'){
-  $get_child = $conn->query("SELECT * FROM appointments WHERE barangay = '$barangay'");
-}else{
-  $get_child = $conn->query("SELECT * FROM appointments");
-}
-$count_dont_show = [];
-$count_show = [];
-if ($get_child->num_rows > 0) {
-  foreach ($get_child as $child) {
-      $id = $child['id'];
-      $check_child_immunization = $conn->query("SELECT i.*, a.c_fname, a.c_mname, a.c_lname FROM immunization i INNER JOIN appointments a ON i.appoint_id = a.id WHERE appoint_id = '$id' ");
-      foreach ($check_child_immunization as $key => $value) {
-          if ($value['newborn_screening'] == $today) {
-              if ($value['stat_1'] == 1) {
-                  $count_dont_show[] = 1;
-              }else{
-                $count_show[] = 1;
-              }
-          }
 
           if ($value['BCG'] == $today) {
               if ($value['stat_2'] == 1) {
@@ -310,3 +288,4 @@ if ($get_child->num_rows > 0) {
 
 <?php
 require './partials/footer.php';
+

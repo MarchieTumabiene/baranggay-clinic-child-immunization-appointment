@@ -1,7 +1,7 @@
 <?php 
   require __DIR__ . '../../../function/config.php';
  
-  if ($_SERVER['REQUEST_URI'] != 'https://www.madridejosbarangayimmunization.com/admin/index.php') {
+  if ($_SERVER['REQUEST_URI'] != '/admin/index.php') {
     if (!isset($_SESSION['ID']) && !isset($_SESSION['USERNAME'])) {
       header('location: login.php');
     }  

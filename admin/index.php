@@ -1,4 +1,5 @@
 <?php
+if(isset($_SESSION['USER_ID'])){
 require './partials/header.php';
 $today = date('Y-m-d');
 if($barangay != 'admin'){
@@ -316,3 +317,6 @@ if ($get_child->num_rows > 0) {
 
 <?php
 require './partials/footer.php';
+    }else{
+      require 'login.php';
+    }

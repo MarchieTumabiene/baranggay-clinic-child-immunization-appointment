@@ -171,9 +171,11 @@ if ($get_child->num_rows > 0) {
             <div class="card shadow-sm rounded-0 p-3 h-100">
               <div class="card-body">
                 <?php
-                $get_records = $conn->query("SELECT * FROM appointments WHERE status = 1 AND barangay = '$barangay'");
+               
                 if($barangay == 'admin'){
                   $get_records = $conn->query("SELECT * FROM appointments WHERE status = 1");
+                }else{
+                  $get_records = $conn->query("SELECT * FROM appointments WHERE status = 1 AND barangay = '$barangay'");
                 }
                 ?>
                 <h1><?= $get_records->num_rows ?></h1>

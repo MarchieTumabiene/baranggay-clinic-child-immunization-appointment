@@ -33,7 +33,7 @@
 
                     <button type="submit" name="submit" class="btn btn-primary w-100 my-2">Submit</button>
 
-                    <a href="/"> Cancel</a>
+                    <a href="login.php">Cancel</a>
 
                     <?php if($error !== null): ?>
                         <p class="text-danger"><?= $error ?></p>

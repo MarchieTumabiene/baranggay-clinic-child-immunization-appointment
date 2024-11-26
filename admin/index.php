@@ -109,7 +109,7 @@ if ($get_child->num_rows > 0) {
                   ?>
                    <div class="col-lg-4">
 
-                    <div class="card shadow-sm rounded-0 p-3 h-100">
+                    <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
                       <div class="card-body">
                       <h1><?= $adminsCount ?></h1>
                         <p class="mb-0"><i class="fa fa-user"></i> Barangay Admins</p>

@@ -36,7 +36,7 @@
                 <form action="?login" method="post">
                     <label for="">Reference ID</label>
                     <input type="text" name="reference_id" class="form-control my-2" placeholder="Enter Username">
-                    <p><input type="checkbox" name="terms" class="form-check-input">  <a href="https://www.madridejosbarangayimmunization.com/assets/pdf/Terms-And-Conditions.pdf" target="_blank" rel="noopener noreferrer"></a></p>
+                    <p><input type="checkbox" required name="terms" class="form-check-input">  <a href="https://www.madridejosbarangayimmunization.com/assets/pdf/Terms-And-Conditions.pdf" target="_blank" rel="noopener noreferrer">Terms and Condition</a></p>
                     <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
                     <?php if($error !== null): ?>
                         <p class="text-danger mt-2"><?= $error ?></p>

@@ -50,6 +50,11 @@
                     <?php endif; ?>
                 </form>
             </div>
+
+            
+            <div class="card-footer text-center">
+            <a href="activate-user.php" class="mx-auto text-decoration-none">Cancel</a>
+            </div>
         </div>
 
     </div>

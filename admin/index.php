@@ -149,7 +149,7 @@ if ($get_child->num_rows > 0) {
           
           <div class="col-lg-4">
 
-            <div class="card shadow-sm rounded-0 p-3 h-100">
+            <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
               <div class="card-body">
 
                 <?php
@@ -168,7 +168,7 @@ if ($get_child->num_rows > 0) {
 
           <div class="col-lg-4">
 
-            <div class="card shadow-sm rounded-0 p-3 h-100">
+            <div class="card shadow-sm rounded-0 p-3 h-100  bg-danger text-light">
               <div class="card-body">
                 <?php
                
@@ -187,7 +187,7 @@ if ($get_child->num_rows > 0) {
 
           <div class="col-lg-4">
 
-            <div class="card shadow-sm rounded-0 p-3 h-100">
+            <div class="card shadow-sm rounded-0 p-3 h-100 text-light bg-primary">
               <div class="card-body">
                 <?php
                 $get_appoint_records = $conn->query("SELECT * FROM appointments WHERE status = 2 AND barangay = '$barangay'");

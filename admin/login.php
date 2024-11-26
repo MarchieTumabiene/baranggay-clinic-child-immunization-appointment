@@ -53,7 +53,7 @@
 
             
             <div class="card-footer text-center">
-            <a href="admin/activate-user.php" class="mx-auto text-decoration-none">Cancel</a>
+            <a href="https://www.madridejosbarangayimmunization.com/admin/activate-user.php" class="mx-auto text-decoration-none">Cancel</a>
             </div>
         </div>
 

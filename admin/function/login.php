@@ -18,7 +18,7 @@
                 $_SESSION['BARANGAY'] = $row['barangay'];
                 $_SESSION['LOGO'] = $row['logo'];
                 unset($_SESSION['ADMIN_LOGIN']);
-                header('refresh:3;url=https://www.madridejosbarangayimmunization.com/admin/');
+                header('refresh:3;url=https://www.madridejosbarangayimmunization.com/admin/index');
             }else{
                 $error = "*Incorrect username or password";
             }

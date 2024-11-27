@@ -1,7 +1,16 @@
 RewriteEngine On
+
+# Ensure the requested file exists before rewriting
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^/]+)/$ $1.php
-RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.php
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite rule to handle single-segment URLs like /example/ -> /example.php
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# Rewrite rule to handle two-segment URLs like /example/test/ -> /example/test.php
+RewriteRule ^([^/]+)/([^/]+)/?$ $1/$2.php [L]
+
+# Ensure URLs do not end with a file extension or slash, and redirect to add a trailing slash
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$

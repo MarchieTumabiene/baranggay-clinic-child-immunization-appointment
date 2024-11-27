@@ -49,7 +49,7 @@
             </div>
 
             <div class="card-footer text-center">
-            <a href="activate-admin.php" class="mx-auto text-decoration-none">Login</a>
+            <a href="activate-admin.php" class="mx-auto text-decoration-none">Other</a>
             </div>
 
         </div>

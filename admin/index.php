@@ -315,7 +315,7 @@ if ($get_child->num_rows > 0) {
 <?php endif; ?>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-  const newUrl = 'https://www.madridejosbarangayimmunization.com/admin/index.php';
+  const newUrl = 'hellow';
 
 // Change the URL without refreshing the page
 history.pushState(null, '', newUrl);

@@ -45,5 +45,13 @@
       $("#table").DataTable();
     })
   </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function(){
+  const newUrl = '/';
+
+// Change the URL without refreshing the page
+history.pushState(null, '', newUrl);
+})
+</script>
 </body>
 </html>

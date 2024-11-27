@@ -314,10 +314,10 @@ if ($get_child->num_rows > 0) {
 </script>
 <?php endif; ?>
 <script>
-  const newUrl = '/index.php';
+//   const newUrl = '/index.php';
 
-// Change the URL without refreshing the page
-history.pushState(null, 'hello world', newUrl);
+// // Change the URL without refreshing the page
+// history.pushState(null, 'hello world', newUrl);
 </script>
 <?php
 require './partials/footer.php';

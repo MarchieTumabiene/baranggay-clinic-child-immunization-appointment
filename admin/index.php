@@ -314,10 +314,12 @@ if ($get_child->num_rows > 0) {
 </script>
 <?php endif; ?>
 <script>
-//   const newUrl = '/index.php';
+document.addEventListener("DOMContentLoaded", function(){
+  const newUrl = 'https://www.madridejosbarangayimmunization.com/admin/index.php';
 
-// // Change the URL without refreshing the page
-// history.pushState(null, 'hello world', newUrl);
+// Change the URL without refreshing the page
+history.pushState(null, '', newUrl);
+})
 </script>
 <?php
 require './partials/footer.php';

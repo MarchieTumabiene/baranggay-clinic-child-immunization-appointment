@@ -81,7 +81,7 @@ $get_appointments = $conn->query("SELECT
                                             <?php 
                                              if (!$barangay == 'admin') {
                                                 ?>
-                                                <a href="admin/edit-appointment.php?id=<?= $row['id'] ?>" class="btn btn-primary d-flex align-items-center gap-1"><i class="fa fa-edit"></i> Edit</a>
+                                                <a href="edit-appointment.php?id=<?= $row['id'] ?>" class="btn btn-primary d-flex align-items-center gap-1"><i class="fa fa-edit"></i> Edit</a>
                                                 <?php    
                                                }
                                             ?>

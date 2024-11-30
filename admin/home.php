@@ -313,13 +313,5 @@ if ($get_child->num_rows > 0) {
 			});
 </script>
 <?php endif; ?>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  const newUrl = '/';
-
-// Change the URL without refreshing the page
-history.pushState(null, '', newUrl);
-})
-</script>
 <?php
 require './partials/footer.php';

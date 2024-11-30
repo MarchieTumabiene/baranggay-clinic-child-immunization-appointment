@@ -1,7 +1,7 @@
 <?php 
     require __DIR__ . '../../function/config.php';
     if (isset($_SESSION['ID']) && isset($_SESSION['USERNAME'])) {
-        header('location: index.php');
+        header('location: admin/index.php');
     }
     $error = "";
     $success = "";

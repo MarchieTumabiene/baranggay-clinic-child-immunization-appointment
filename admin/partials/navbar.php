@@ -312,7 +312,7 @@ $all_notifications = array_sum($notifications);
                 <ul class="dropdown-menu dropdown-menu-end">
 
                     <li class="dropdown-item">
-                        <a href="#" onclick="showMessage('Are you sure you want to logout?', 'info', '?logout')" class="text-dark text-decoration-none"><i class="fa fa-sign-out"></i> Logout</a>
+                        <a href="#" onclick="showMessage('Are you sure you want to logout?', 'info', '/admin/index.php?logout')" class="text-dark text-decoration-none"><i class="fa fa-sign-out"></i> Logout</a>
                     </li>
                 </ul>
             </li>

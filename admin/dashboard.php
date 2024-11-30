@@ -109,7 +109,7 @@ if ($get_child->num_rows > 0) {
                   ?>
                    <div class="col-lg-4">
 
-                    <div class="card shadow-sm rounded-0 p-3 h-100">
+                    <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
                       <div class="card-body">
                       <h1><?= $adminsCount ?></h1>
                         <p class="mb-0"><i class="fa fa-user"></i> Barangay Admins</p>
@@ -129,7 +129,7 @@ if ($get_child->num_rows > 0) {
                     ?>
                      <div class="col-lg-4">
 
-                      <div class="card shadow-sm rounded-0 p-3 h-100">
+                      <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
                         <div class="card-body">
                         <h1><?= $value['COUNT'] ?></h1>
                           <p class="mb-0"><i class="fa fa-user"></i> <?= strtoupper($value['barangay']) ?></p>
@@ -149,7 +149,7 @@ if ($get_child->num_rows > 0) {
           
           <div class="col-lg-4">
 
-            <div class="card shadow-sm rounded-0 p-3 h-100">
+            <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
               <div class="card-body">
 
                 <?php
@@ -168,7 +168,7 @@ if ($get_child->num_rows > 0) {
 
           <div class="col-lg-4">
 
-            <div class="card shadow-sm rounded-0 p-3 h-100">
+            <div class="card shadow-sm rounded-0 p-3 h-100  bg-primary text-light">
               <div class="card-body">
                 <?php
                
@@ -187,7 +187,7 @@ if ($get_child->num_rows > 0) {
 
           <div class="col-lg-4">
 
-            <div class="card shadow-sm rounded-0 p-3 h-100">
+            <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
               <div class="card-body">
                 <?php
                 $get_appoint_records = $conn->query("SELECT * FROM appointments WHERE status = 2 AND barangay = '$barangay'");
@@ -205,7 +205,7 @@ if ($get_child->num_rows > 0) {
 
 
           <div class="col-lg-4">
-             <div class="card h-100">
+             <div class="card h-100 bg-primary text-light">
               <div class="card-body">
                 <h1><?= array_sum($count_show) ?></h1>
                 <p class="mb-0"><i class="fa fa-user-check"></i> Immunized</p>
@@ -214,7 +214,7 @@ if ($get_child->num_rows > 0) {
           </div>
 
           <div class="col-lg-4">
-             <div class="card h-100">
+             <div class="card h-100 bg-primary text-light">
               <div class="card-body">
                 <h1><?= array_sum($count_dont_show) ?></h1>
                 <p class="mb-0"><i class="fa fa-user-xmark"></i> Not Immunized</p>
@@ -313,6 +313,13 @@ if ($get_child->num_rows > 0) {
 			});
 </script>
 <?php endif; ?>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const newUrl = '/';
 
+// Change the URL without refreshing the page
+history.pushState(null, '', newUrl);
+})
+</script>
 <?php
 require './partials/footer.php';

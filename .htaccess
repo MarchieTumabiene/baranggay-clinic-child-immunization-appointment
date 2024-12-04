@@ -1,13 +1,13 @@
-# Enable URL rewriting
-RewriteEngine On
+# # Enable URL rewriting
+# RewriteEngine On
 
-# Base directory if needed (uncomment and set if required)
-# RewriteBase /
+# # Base directory if needed (uncomment and set if required)
+# # RewriteBase /
 
-# Remove .php extension from URLs
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^([^/]+)/?$ $1.php [L]
+# # Remove .php extension from URLs
+# RewriteCond %{REQUEST_FILENAME}.php -f
+# RewriteRule ^([^/]+)/?$ $1.php [L]
 
-# Optional: Redirect from .php URLs to clean URLs
-RewriteCond %{THE_REQUEST} \s/([^.]+)\.php[?\s] [NC]
-RewriteRule ^ %1 [R=301,L]
+# # Optional: Redirect from .php URLs to clean URLs
+# RewriteCond %{THE_REQUEST} \s/([^.]+)\.php[?\s] [NC]
+# RewriteRule ^ %1 [R=301,L]

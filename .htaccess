@@ -1,14 +1,8 @@
-#Script for URL rewriting
-#The line below may exist.
-# RewriteEngine On
-# #Rewrite all the rules, with / as the base, not requesting any other file or folder.
-# RewriteBase /
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteCond %{REQUEST_FILENAME}\.php -f
-# RewriteRule ^([a-z]+)\/?$ $1.php [NC]
-
-
+# Enable URL rewriting
 RewriteEngine On
+
+# Base directory if needed (uncomment and set if required)
+# RewriteBase /
 
 # Remove .php extension from URLs
 RewriteCond %{REQUEST_FILENAME}.php -f

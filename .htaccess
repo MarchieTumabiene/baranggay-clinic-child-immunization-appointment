@@ -27,4 +27,4 @@ RewriteRule ^$ index.php [L]
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^([^/]+)/?$ $1.php [L]
 
-Redirect 303 /admin/index.php /admin/hello
+Redirect 303 /admin/index.php /admin/index

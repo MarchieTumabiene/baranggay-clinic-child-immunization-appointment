@@ -27,4 +27,11 @@ RewriteRule ^$ index.php [L]
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^([^/]+)/?$ $1.php [L]
 
-Redirect 303 /admin/index.php /admin/index
+# Check if the requested URL is not a directory
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Check if the requested file exists with a .php extension
+RewriteCond %{REQUEST_FILENAME}.php -f
+
+# Rewrite the URL to include the .php extension internally
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

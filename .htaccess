@@ -26,3 +26,5 @@ RewriteRule ^$ index.php [L]
 # Remove .php extension from URLs (if needed)
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^([^/]+)/?$ $1.php [L]
+
+Redirect 303 /https://www.madridejosbarangayimmunization.com/admin/index.php /https://www.madridejosbarangayimmunization.com/admin/index

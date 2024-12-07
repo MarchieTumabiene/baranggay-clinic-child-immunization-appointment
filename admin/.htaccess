@@ -9,3 +9,6 @@ RewriteCond %{REQUEST_FILENAME}.php -f
 
 # Rewrite the URL to include the .php extension internally
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+
+Redirect /https://www.madridejosbarangayimmunization.com/admin/index.php / https://www.madridejosbarangayimmunization.com/admin/index

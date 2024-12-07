@@ -1,9 +1,6 @@
 <?php
 require './partials/header.php';
 $today = date('Y-m-d');
-
-echo $today;
-
 if($barangay != 'admin'){
   $get_child = $conn->query("SELECT * FROM appointments WHERE barangay = '$barangay'");
 }else{

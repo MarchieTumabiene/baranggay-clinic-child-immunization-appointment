@@ -1,0 +1,28 @@
+# Enable the RewriteEngine
+RewriteEngine On
+
+# Redirect all HTTP requests to HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Enable HTTP Strict Transport Security (HSTS)
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+# Set X-Frame-Options to prevent clickjacking
+Header always set X-Frame-Options "DENY"
+
+# Set Referrer-Policy
+Header always set Referrer-Policy "no-referrer"
+
+# Set Permissions-Policy
+Header always set Permissions-Policy "geolocation=(self), microphone=(), camera=()"
+
+# Set X-Content-Type-Options to prevent MIME type sniffing
+Header always set X-Content-Type-Options "nosniff"
+
+# Redirect requests to the root URL to index.php
+RewriteRule ^$ index.php [L]
+
+# Remove .php extension from URLs (if needed)
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]

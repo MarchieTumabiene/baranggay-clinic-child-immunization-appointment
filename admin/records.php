@@ -1,6 +1,6 @@
 <?php
 require '../partials/headers.php';
-require './partials/header.php';
+// require './partials/header.php';
 if ($barangay == 'admin') {
     $get_appointments = $conn->query("SELECT 
     a.*, 

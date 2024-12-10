@@ -46,7 +46,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="records.php" class="nav-link d-flex <?= str_contains($url, '/admin/records.php') || str_contains($url ,'/view-record.php') ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/record.png"/></figure> Records</a>
+                    <a href="record.php" class="nav-link d-flex <?= str_contains($url, '/admin/record.php') || str_contains($url ,'/view-record.php') ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/record.png"/></figure> Records</a>
                 </li>
 
                <?php 

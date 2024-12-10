@@ -1,4 +1,5 @@
 <?php 
+    require './partials/headers.php';
     session_start();
 
     if (isset($_SESSION['ADMIN_LOGIN'])) {

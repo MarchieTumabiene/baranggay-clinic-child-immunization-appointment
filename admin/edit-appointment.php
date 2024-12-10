@@ -1,4 +1,5 @@
 <?php
+require '../partials/headers.php';
 require './partials/header.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];

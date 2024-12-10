@@ -1,4 +1,5 @@
 <?php
+require '../partials/headers.php';
 require './partials/header.php';
 $message = null;
 if (isset($_GET['message'])) {

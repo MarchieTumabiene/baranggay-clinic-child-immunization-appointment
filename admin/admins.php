@@ -1,4 +1,5 @@
 <?php
+require '../partials/headers.php';
 require './partials/header.php';
 $get_barangayAdmins = $conn->query("SELECT * FROM admin");
 $barangays = [

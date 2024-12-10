@@ -1,5 +1,5 @@
 <?php
-// require '../partials/headers.php';
+require '../partials/headers.php';
 require './partials/header.php';
 $today = date('Y-m-d');
 if($barangay != 'admin'){

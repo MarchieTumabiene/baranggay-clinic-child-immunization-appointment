@@ -1,4 +1,5 @@
 <?php 
+require '../partials/headers.php';
     require __DIR__ . '../../function/config.php';
     if (isset($_SESSION['ID']) && isset($_SESSION['USERNAME'])) {
         header('location: index.php');

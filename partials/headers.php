@@ -20,6 +20,10 @@ if (!headers_sent()) {
     
     // Permissions Policy - Adjust permissions as needed
     header("Permissions-Policy: geolocation=(), microphone=(), camera=(), autoplay=(self)");
+
+    // XSS Protection Header
+    header('X-XSS-Protection: 1; mode=block');
+
 } else {
     error_log('Headers already sent. Unable to set security headers or cookies.');
 }

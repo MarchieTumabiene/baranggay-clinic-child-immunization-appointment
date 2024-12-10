@@ -20,7 +20,21 @@ if (!headers_sent()) {
     
     // Permissions Policy - Adjust permissions as needed
     header("Permissions-Policy: geolocation=(), microphone=(), camera=(), autoplay=(self)");
+
+    // Set secure and HTTP-only cookies
+    setcookie(
+        "user_preference", // Cookie name
+        json_encode(['theme' => 'dark', 'language' => 'en']), // Cookie value (JSON encoded)
+        [
+            'expires' => time() + (86400 * 30), // Expires in 30 days
+            'path' => '/',                      // Accessible across the entire site
+            'domain' => '',                     // Default domain (current domain)
+            'secure' => isset($_SERVER['HTTPS']), // Set to true if HTTPS is used
+            'httponly' => true,                 // HTTP-only for better security
+            'samesite' => 'Strict'              // Prevent cross-site usage of the cookie
+        ]
+    );
 } else {
-    error_log('Headers already sent. Unable to set security headers.');
+    error_log('Headers already sent. Unable to set security headers or cookies.');
 }
 ?>

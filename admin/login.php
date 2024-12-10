@@ -10,7 +10,7 @@
         require __DIR__ . '/function/login.php';
     }
 
-    // echo password_hash("tarongAdmin@123", PASSWORD_DEFAULT);
+    echo password_hash("tugasAdmin@123", PASSWORD_DEFAULT);
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,10 +1,5 @@
 <?php
 require '../partials/headers.php';
-
-if($_SERVER['REQUEST_URI'] == '/admin/index'){
-  header("location: admin/");
-}
-
 require './partials/header.php';
 $today = date('Y-m-d');
 if($barangay != 'admin'){

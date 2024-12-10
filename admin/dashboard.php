@@ -101,7 +101,7 @@ if ($get_child->num_rows > 0) {
          
                 <?php
                 if($barangay == 'admin'){
-                  $get_barangayAdmins = $conn->query("SELECT * FROM admin");
+                  $get_barangayAdmins = $conn->query("SELECT * FROM admin WHERE type != 'admin'");
 
                   ?>
                    <div class="col-lg-4">

@@ -13,7 +13,7 @@
             $success = "*Account logged in successfully, redirecting in 3 seconds";
             $_SESSION['ID'] = $row['id'];
             $_SESSION['REFERENCE_ID'] = $row['reference_id'];
-            header('refresh:3;url=data-card.php');
+            header('refresh:3;url=dashboard.php');
 
 
         }else{

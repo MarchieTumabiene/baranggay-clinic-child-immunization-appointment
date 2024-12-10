@@ -10,8 +10,3 @@ header('X-Content-Type-Options: nosniff');
 header("Referrer-Policy: no-referrer");
 header("Permissions-Policy: geolocation=(), microphone=(), camera=(), autoplay=(self)"); // Adjust policies as needed
 //exit;
-
-// - start session
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();  // Start the session if it's not already started
-}

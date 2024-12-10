@@ -313,13 +313,13 @@ hellow orl
 			});
 </script>
 <?php endif; ?>
-<script>
+<!-- <script>
 document.addEventListener("DOMContentLoaded", function(){
   const newUrl = '/';
 
 // Change the URL without refreshing the page
 history.pushState(null, '', newUrl);
 })
-</script>
+</script> -->
 <?php
 require './partials/footer.php';

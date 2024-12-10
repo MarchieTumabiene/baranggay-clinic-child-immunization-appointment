@@ -1,7 +1,7 @@
 <?php 
     require __DIR__ . '../../function/config.php';
     if (isset($_SESSION['ID']) && isset($_SESSION['USERNAME'])) {
-        header('location: admin/dashboard.php');
+        header('location: https://www.madridejosbarangayimmunization.com/admin/dashboard.php');
     }
     $error = "";
     $success = "";

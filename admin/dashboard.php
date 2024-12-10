@@ -258,13 +258,13 @@ if ($get_child->num_rows > 0) {
 ?>
 
 
-
+hellow orl
 
 <?php if($barangay == 'admin'): ?>
   <script>
   var xValues = <?php echo json_encode($barangays); ?>;
   var yValues = <?php echo json_encode($count); ?>; // Convert PHP array to JSON
-  var barColors = <?php echo json_encode($count); ?>["#0d6efd"] ;
+  var barColors = ["#0d6efd", "#0d6efd", "#0d6efd"];
 
   new Chart("barChart", {
     type: "bar",

@@ -79,7 +79,7 @@ $get_appointments = $conn->query("SELECT
                                         <td><?= $row['date_appoint'] ?></td>
                                         <td class="d-flex align-items-center gap-2">
                                             <a href="#"  onclick="showMessage('Are you sure you want to delete this appointment?', 'question', '?action=delete-appointment&id=<?= $row['id'] ?>')" class="btn btn-secondary d-flex align-items-center gap-1" onclick="return confirm('Are you sure you want to delete this?')"><i class="fa fa-trash"></i> Delete</a>
-                                            <a href="edit-appointment.php?id=<?= $row['id'] ?>" class="btn btn-primary d-flex align-items-center gap-1"><i class="fa fa-edit"></i> Edit</a>
+                                            <a href="edit-appointment.php?id=<?= $row['id'] ?>" class="btn btn-primary d-flex align-items-center gap-1"><i class="fa fa-edit"></i> Update</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

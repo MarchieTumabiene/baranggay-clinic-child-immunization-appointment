@@ -8,7 +8,7 @@ require '../partials/headers.php';
     $success = "";
 
     if (isset($_GET['login'])) {
-        require __DIR__ . '../../function/forgot-password.php';
+        require __DIR__ . '../../function/forgot-passwor.php';
     }
 ?>
 <!DOCTYPE html>
@@ -100,7 +100,7 @@ require '../partials/headers.php';
                            showConfirmButton: false,
                            timer: 1500
                          }).then(() => {
-                           window.location.href = "reset-password.php"
+                           window.location.href = "reset-passwor.php"
                          })
                        </script>
                  <?php
@@ -116,7 +116,7 @@ require '../partials/headers.php';
                            showConfirmButton: false,
                            timer: 1500
                          }).then(() => {
-                           window.location.href = "forgot-password.php"
+                           window.location.href = "forgot-passwor.php"
                          })
                        </script>
                  <?php

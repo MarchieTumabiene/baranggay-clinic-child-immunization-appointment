@@ -40,7 +40,7 @@
                    <p><input type="checkbox" required name="terms" class="form-check-input me-2">  <a class="text-light" href="https://www.madridejosbarangayimmunization.com/assets/pdf/Terms-And-Conditions.pdf" target="_blank" rel="noopener noreferrer">Terms and Condition</a></p>
                     <button type="submit" class="btn btn-primary w-100 my-3">Login</button>
 
-                    <a href="forgot-password.php">Forgot Password</a>
+                    <a href="forgot-passwor.php">Forgot Password</a>
 
                     <?php if($error !== null): ?>
                         <p class="text-danger mt-2"><?= $error ?></p>

@@ -1,17 +1,70 @@
-<?php 
-    require __DIR__ . '../../function/config.php';
-    if (isset($_SESSION['ID']) && isset($_SESSION['USERNAME'])) {
-        header('location: https://www.madridejosbarangayimmunization.com/admin/dashboard.php');
-    }
-    $error = "";
-    $success = "";
+<?php
+session_start();
 
-    if (isset($_GET['login'])) {
-        require __DIR__ . '/function/login.php';
-    }
+// Set initial session variables if not already set
+if (!isset($_SESSION['attempts'])) {
+    $_SESSION['attempts'] = 0; // Track number of failed login attempts
+    $_SESSION['lockout_time'] = 0; // Track time of lockout
+}
 
-    // echo password_hash("tugasAdmin@123", PASSWORD_DEFAULT);
+$max_attempts = 3; // Maximum login attempts
+$lockout_duration = 3 * 60; // 3 minutes lockout duration in seconds
+
+// Get form data
+$uname = $_POST['uname'];
+$password = $_POST['password'];
+
+// Check if the user is locked out
+if ($_SESSION['attempts'] >= $max_attempts) {
+    $time_left = $_SESSION['lockout_time'] - time();
+
+    if ($time_left > 0) {
+        // User is locked out, show lockout message and do not process login
+        $error = "You have exceeded the maximum attempts. Please try again in " . gmdate("i:s", $time_left);
+    } else {
+        // Lockout time has expired, reset attempts and lockout time
+        $_SESSION['attempts'] = 0;
+        $_SESSION['lockout_time'] = 0;
+    }
+} else {
+    // Check the username and password in the database
+    $stmt = $conn->prepare("SELECT * FROM admin WHERE username = ?");
+    $stmt->bind_param('s', $uname);
+
+    if ($stmt->execute()) {
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_array();
+
+            // Validate password
+            if (password_verify($password, $row['password'])) {
+                // Successful login
+                $_SESSION['ID'] = $row['id'];
+                $_SESSION['USERNAME'] = $row['username'];
+                $_SESSION['BARANGAY'] = $row['barangay'];
+                $_SESSION['LOGO'] = $row['logo'];
+                unset($_SESSION['attempts']); // Reset failed attempts
+                header('refresh:3;url=https://www.madridejosbarangayimmunization.com/admin/dashboard.php');
+                $success = "*Account logged in successfully, redirecting in 3 seconds";
+            } else {
+                // Incorrect password
+                $_SESSION['attempts']++;
+                if ($_SESSION['attempts'] >= $max_attempts) {
+                    // Lockout the user after max attempts
+                    $_SESSION['lockout_time'] = time() + $lockout_duration; // Set lockout time (3 minutes)
+                    $error = "You have exceeded the maximum attempts. Please try again in 3 minutes.";
+                } else {
+                    $error = "*Incorrect username or password. You have " . ($max_attempts - $_SESSION['attempts']) . " attempts left.";
+                }
+            }
+        } else {
+            // Account does not exist
+            $error = "*Account doesn't exist";
+        }
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,14 +77,13 @@
 <body  style="background: url('../assets/img/background.JPG') no-repeat center/cover; ">
     
     <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
-
         <div class="card rounded-0 shadow bg-transparent" style="width: 500px; backdrop-filter: blur(3px);">
             <div class="card-body p-3 text-light">
                 <h3 class="text-center my-4">Barangay Child Immunization Appointment System</h3>
                 <h5 class="mb-3">Login Account</h5>
-                <form action="?login" method="post">
+                <form action="" method="post">
                     <label for="">Username</label>
-                    <input type="text" name="uname" class="form-control my-2" placeholder="Enter Username">
+                    <input type="text" name="uname" class="form-control my-2" placeholder="Enter Username" required>
                     <label for="">Password</label>
                     <div class="position-relative">
                     <input type="password" class="form-control my-2" placeholder="********" name="password" required>
@@ -41,23 +93,21 @@
                     <button type="submit" class="btn btn-primary w-100 my-3">Login</button>
 
                     <a href="admin/forgot-passwor.php">Forgot Password</a>
-                    <div id="error-message" class="text-danger mt-2" style="display:none;">You have exceeded the maximum attempts. Please try again in <span id="lockout-timer">3:00</span>.</div>
 
-                    <?php if($error !== null): ?>
+                    <?php if (isset($error)): ?>
                         <p class="text-danger mt-2"><?= $error ?></p>
                     <?php endif; ?>
-                    <?php if($success !== null): ?>
+
+                    <?php if (isset($success)): ?>
                         <p class="text-success mt-2"><?= $success ?></p>
                     <?php endif; ?>
                 </form>
             </div>
-
             
             <div class="card-footer text-center">
-            <a href="https://www.madridejosbarangayimmunization.com/admin/activate.php" class="mx-auto text-decoration-none">Cancel</a>
+                <a href="https://www.madridejosbarangayimmunization.com/admin/activate.php" class="mx-auto text-decoration-none">Cancel</a>
             </div>
         </div>
-
     </div>
 
     <script>
@@ -68,7 +118,7 @@
                 showPass.classList.replace('fa-eye', 'fa-eye-slash')
                 
                 passwordInp.setAttribute('type', 'text')
-            }else{
+            } else {
                 showPass.classList.replace('fa-eye-slash', 'fa-eye')
                 passwordInp.setAttribute('type', 'password')
             }

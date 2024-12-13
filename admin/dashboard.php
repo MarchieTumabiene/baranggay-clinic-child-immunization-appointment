@@ -128,7 +128,7 @@ if ($get_child->num_rows > 0) {
                     <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
                       <div class="card-body">
                       <h1><?= $get_barangayAdmins->num_rows ?></h1>
-                        <p class="mb-0"><i class="fa fa-user"></i> Total Barangay</p>
+                        <p class="mb-0"><i class="fa fa-user"></i> Total Barangays</p>
                       </div>
                     </div>
 

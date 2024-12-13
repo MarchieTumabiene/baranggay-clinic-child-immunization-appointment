@@ -41,6 +41,7 @@
                     <button type="submit" class="btn btn-primary w-100 my-3">Login</button>
 
                     <a href="admin/forgot-passwor.php">Forgot Password</a>
+                    <div id="error-message" class="text-danger mt-2" style="display:none;">You have exceeded the maximum attempts. Please try again in <span id="lockout-timer">3:00</span>.</div>
 
                     <?php if($error !== null): ?>
                         <p class="text-danger mt-2"><?= $error ?></p>
@@ -73,6 +74,69 @@
             }
         }
     </script>
+<script>
+    // Variables to track login attempts and lockout time
+    let attempts = 0;
+    let lockoutTime = 0;
+
+    const maxAttempts = 3;
+    const lockoutDuration = 3 * 60 * 1000; // 3 minutes in milliseconds
+    const username = "user"; // Replace with actual username for checking
+    const password = "password123"; // Replace with actual password for checking
+
+    // Handle form submission
+    document.getElementById('loginForm').onsubmit = function(e) {
+        e.preventDefault();
+
+        if (lockoutTime > 0) {
+            // User is locked out
+            alert('You are locked out. Please wait for the timer to expire.');
+            return;
+        }
+
+        const enteredUsername = document.getElementById('username').value;
+        const enteredPassword = document.getElementById('password').value;
+
+        // Check if the credentials are correct
+        if (enteredUsername === username && enteredPassword === password) {
+            alert('Login successful!');
+            attempts = 0; // Reset attempts on successful login
+        } else {
+            // Increment attempt counter
+            attempts++;
+
+            if (attempts >= maxAttempts) {
+                // Lockout user if max attempts exceeded
+                lockoutTime = Date.now() + lockoutDuration;
+                document.getElementById('error-message').style.display = "block";
+                startTimer();
+                document.getElementById('login-button').disabled = true; // Disable login button
+            } else {
+                alert(`Incorrect credentials. You have ${maxAttempts - attempts} attempts left.`);
+            }
+        }
+    };
+
+    // Function to start the lockout timer
+    function startTimer() {
+        const lockoutTimerElement = document.getElementById('lockout-timer');
+        
+        const interval = setInterval(function() {
+            const timeLeft = lockoutTime - Date.now();
+
+            if (timeLeft <= 0) {
+                clearInterval(interval);
+                document.getElementById('error-message').style.display = "none";
+                document.getElementById('login-button').disabled = false; // Enable login button after lockout
+                attempts = 0; // Reset attempts after lockout
+            } else {
+                const minutes = Math.floor(timeLeft / 60000);
+                const seconds = Math.floor((timeLeft % 60000) / 1000);
+                lockoutTimerElement.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+            }
+        }, 1000);
+    }
+</script>
 
 </body>
 </html>

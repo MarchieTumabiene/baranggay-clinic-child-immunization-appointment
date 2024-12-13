@@ -143,53 +143,5 @@ require '../partials/headers.php';
            
         }
     ?>
-<script>
-    // Track login attempts in localStorage
-    let failedAttempts = localStorage.getItem('failedAttempts') ? parseInt(localStorage.getItem('failedAttempts')) : 0;
-
-    // Disable form if max attempts exceeded
-    if (failedAttempts >= 3) {
-        document.getElementById('loginBtn').disabled = true;
-        document.getElementById('error-msg').innerText = "Your account is locked after 3 failed attempts. Please try again later.";
-    }
-
-    // Show password functionality
-    document.getElementById('show-pass').addEventListener('click', function() {
-        let passwordField = document.getElementById('password');
-        if (passwordField.type === "password") {
-            passwordField.type = "text";
-        } else {
-            passwordField.type = "password";
-        }
-    });
-
-    // On form submit, handle login attempt
-    document.getElementById('loginForm').onsubmit = function(e) {
-        e.preventDefault(); // Prevent actual form submission
-
-        // Dummy username and password validation (replace with actual backend validation)
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        
-        // Check for correct username/password (replace this with actual backend check)
-        if (username === "admin" && password === "password123") {
-            // Reset failed attempts on successful login
-            localStorage.setItem('failedAttempts', 0);
-            window.location.href = 'dashboard.php'; // Redirect to dashboard or another page
-        } else {
-            // Increment failed attempts
-            failedAttempts++;
-            localStorage.setItem('failedAttempts', failedAttempts);
-
-            document.getElementById('error-msg').innerText = `Invalid credentials. Attempt ${failedAttempts} of 3.`;
-
-            // Lock the form if the number of attempts exceeds the limit
-            if (failedAttempts >= 3) {
-                document.getElementById('loginBtn').disabled = true;
-                document.getElementById('error-msg').innerText = "Your account is locked after 3 failed attempts. Please try again later.";
-            }
-        }
-    };
-</script>
 </body>
 </html>

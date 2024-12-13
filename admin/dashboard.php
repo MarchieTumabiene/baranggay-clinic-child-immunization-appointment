@@ -118,6 +118,25 @@ if ($get_child->num_rows > 0) {
                 }
                 ?>
 
+		                <?php
+                if($barangay == 'admin'){
+                  $get_barangayAdmins = $conn->query("SELECT * FROM admin WHERE barangay != 'admin'");
+
+                  ?>
+                   <div class="col-lg-4">
+
+                    <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
+                      <div class="card-body">
+                      <h1><?= $get_barangayAdmins->num_rows ?></h1>
+                        <p class="mb-0"><i class="fa fa-user"></i> Total Barangay</p>
+                      </div>
+                    </div>
+
+                  </div>
+                  <?php 
+                }
+                ?>
+
                 <?php
                 if($barangay == 'admin'){
                   $get_barangayAdmins = $conn->query("SELECT COUNT(*) AS COUNT, barangay FROM appointments GROUP BY barangay");

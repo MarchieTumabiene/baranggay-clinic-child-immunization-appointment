@@ -9,8 +9,8 @@
 </head>
 <body  style="background: url('../assets/img/background.JPG') no-repeat center/cover; ">
     
-    <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
-       <div class="card">
+    <div class="container d-flex align-items-center justify-content-center p-5" style="min-height: 100vh;">
+       <div class="card" style="width:700px;">
         <div class="card-body">
         <h1>Terms And Conditions</h1>
         <p>By accessing and using this Child Immunization Appointment System (the "System"), you agree to the

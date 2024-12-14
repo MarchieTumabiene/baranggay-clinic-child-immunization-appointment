@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="../assets/fontawesome6/css/all.min.css"/>
 </head>
 <body  style="background: url('../assets/img/background.JPG') no-repeat center/100%; ">
-    <h1 class="mx-auto text-center mt-5">Terms And Conditions</h1>    
+    <h1 class="mx-auto text-center mt-5 fw-bolder">Terms And Conditions</h1>    
 
     <div class="container d-flex align-items-center justify-content-center">
-       <div class="card mb-5 mt-3" style="width:700px;">
+       <div class="card mb-5 mt-3 shadow-lg" style="width:700px;">
         <div class="card-body">
         <p>By accessing and using this Child Immunization Appointment System (the "System"), you agree to the
 following terms and conditions. If you do not agree, please refrain from logging in or using the System.

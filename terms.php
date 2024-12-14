@@ -10,6 +10,8 @@
 <body  style="background: url('../assets/img/background.JPG') no-repeat center/cover; ">
     
     <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+       <div class="card">
+        <div class="card-body">
         <h1>Terms And Conditions</h1>
         <p>By accessing and using this Child Immunization Appointment System (the "System"), you agree to the
 following terms and conditions. If you do not agree, please refrain from logging in or using the System.
@@ -40,6 +42,8 @@ continued use of the System indicates acceptance of the updated terms.</p>
 
 <p>By logging in, you acknowledge that you have read, understood, and agree to abide by these terms and
 conditions</p>
+        </div>
+       </div>
     </div>
 </body>
 </html>

@@ -1,3 +1,17 @@
+<?php 
+    require __DIR__ . '../../function/config.php';
+    if (isset($_SESSION['ID']) && isset($_SESSION['USERNAME'])) {
+        header('location: https://www.madridejosbarangayimmunization.com/admin/dashboard.php');
+    }
+    $error = "";
+    $success = "";
+
+    if (isset($_GET['login'])) {
+        require __DIR__ . '/function/login.php';
+    }
+
+    // echo password_hash("tugasAdmin@123", PASSWORD_DEFAULT);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +37,7 @@
                     <input type="password" class="form-control my-2" placeholder="********" name="password" required>
                     <i class="fa fa-eye position-absolute top-0 end-0 me-2" style="cursor: pointer; margin-top: 12px;" id="show-pass"></i>
                    </div>
-                   <p><input type="checkbox" required name="terms" class="form-check-input me-2">  <a class="text-light" href="terms.php" target="_blank" rel="noopener noreferrer">I agree to the Terms and Condition</a></p>
+                   <p><input type="checkbox" required name="terms" class="form-check-input me-2">  <a class="text-light" href="terms.php" target="_blank" rel="noopener noreferrer">Terms and Condition</a></p>
                     <button type="submit" class="btn btn-primary w-100 my-3">Login</button>
 
                     <a href="admin/forgot-passwor.php">Forgot Password</a>

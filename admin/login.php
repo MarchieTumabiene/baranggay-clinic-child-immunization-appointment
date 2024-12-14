@@ -101,7 +101,7 @@
         </div>
     </div>
 
-    
+    <script src="./assets/js/bootstrap.js"></script>
     <script>
         let showPass = document.getElementById('show-pass');
         showPass.onclick = () => {

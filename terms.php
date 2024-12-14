@@ -9,7 +9,7 @@
 </head>
 <body  style="background: url('../assets/img/background.JPG') no-repeat center/cover; ">
     
-    <div class="container d-flex align-items-center justify-content-center overflow-auto" style="max-height: 100vh;">
+    <div class="container d-flex align-items-center justify-content-center">
        <div class="card my-5" style="width:700px;">
         <div class="card-body">
         <h1>Terms And Conditions</h1>

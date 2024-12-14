@@ -37,7 +37,7 @@
                     <input type="password" class="form-control my-2" placeholder="********" name="password" required>
                     <i class="fa fa-eye position-absolute top-0 end-0 me-2" style="cursor: pointer; margin-top: 12px;" id="show-pass"></i>
                    </div>
-                   <p><input type="checkbox" required name="terms" class="form-check-input me-2">  <a class="text-light" href="terms.php" target="_blank" rel="noopener noreferrer">Terms and Condition</a></p>
+                   <p><input type="checkbox" required name="terms" class="form-check-input me-2">  <a class="text-light" href="#" data-bs-toggle="modal" data-bs-target="#modal" rel="noopener noreferrer">Terms and Condition</a></p>
                     <button type="submit" class="btn btn-primary w-100 my-3">Login</button>
 
                     <a href="admin/forgot-passwor.php">Forgot Password</a>

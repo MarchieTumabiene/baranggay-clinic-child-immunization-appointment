@@ -1,17 +1,3 @@
-<?php 
-    require __DIR__ . '../../function/config.php';
-    if (isset($_SESSION['ID']) && isset($_SESSION['USERNAME'])) {
-        header('location: https://www.madridejosbarangayimmunization.com/admin/dashboard.php');
-    }
-    $error = "";
-    $success = "";
-
-    if (isset($_GET['login'])) {
-        require __DIR__ . '/function/login.php';
-    }
-
-    // echo password_hash("tugasAdmin@123", PASSWORD_DEFAULT);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

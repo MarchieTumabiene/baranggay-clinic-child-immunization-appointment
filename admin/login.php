@@ -60,46 +60,40 @@
 
     </div>
 
-    <div class="modal modal-fade" id="modal">
-        <div class="modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                <p>By accessing and using this Child Immunization Appointment System (the "System"), you agree to the
-        following terms and conditions. If you do not agree, please refrain from logging in or using the System.
-        This System is designed to facilitate the scheduling and management of child immunization appointments.
-        It is intended for use by parents, guardians, and authorized healthcare professionals. Users must provide
-        accurate, current, and complete information during registration and appointment scheduling. Users are
-        responsible for ensuring timely attendance at scheduled appointments. It is the user's responsibility to
-        update any changes to personal or contact information to ensure proper communication. Personal
-        information, including your child’s health and immunization data, will be collected and stored securely in
-        compliance with applicable privacy laws. Information will only be used for managing appointments and
-        related immunization services. Users must keep their login credentials confidential and notify the system
-        administrator immediately of any unauthorized access or suspected security breach. Sharing login
-        credentials with others is prohibited.</p>
+    <div class="modal modal-fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Terms and Conditions</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>By accessing and using this Child Immunization Appointment System (the "System"), you agree to the following terms and conditions. If you do not agree, please refrain from logging in or using the System. This System is designed to facilitate the scheduling and management of child immunization appointments. It is intended for use by parents, guardians, and authorized healthcare professionals. Users must provide accurate, current, and complete information during registration and appointment scheduling.</p>
 
-            <p>Prohibited Activities</p>
-            <p>Users are prohibited from:</p>
+                <p>Users are responsible for ensuring timely attendance at scheduled appointments. It is the user's responsibility to update any changes to personal or contact information to ensure proper communication. Personal information, including your child’s health and immunization data, will be collected and stored securely in compliance with applicable privacy laws. Information will only be used for managing appointments and related immunization services.</p>
 
-            <p>Entering false information or impersonating another individual. Attempting to gain unauthorized access to
-            the System. Disrupting the operation of the System through malicious actions such as hacking or
-            introducing harmful software. The System is provided on an "as-is" basis. While we strive for accuracy,
-            we do not guarantee error-free operation or uninterrupted access. Immunization information provided
-            within the System is not a substitute for professional medical advice. Always consult a healthcare
-            provider for medical concerns. Missed appointments must be rescheduled by the user through the System.
-            Late arrivals may result in appointment cancellation or rescheduling based on availability. We reserve the
-            right to terminate or suspend access to the System without notice if these terms are violated or for security
-            reasons. We may update these terms periodically. Users will be notified of significant changes and
-            continued use of the System indicates acceptance of the updated terms.</p>
+                <p>Users must keep their login credentials confidential and notify the system administrator immediately of any unauthorized access or suspected security breach. Sharing login credentials with others is prohibited.</p>
 
-            <p>By logging in, you acknowledge that you have read, understood, and agree to abide by these terms and
-            conditions</p>
+                <h5>Prohibited Activities</h5>
+                <ul>
+                    <li>Entering false information or impersonating another individual.</li>
+                    <li>Attempting to gain unauthorized access to the System.</li>
+                    <li>Disrupting the operation of the System through malicious actions such as hacking or introducing harmful software.</li>
+                </ul>
 
-            <button class="btn btn-primary mx-auto w-25 my-2" type="button" data-bs-dismiss="modal">I Agree</button>
+                <p>The System is provided on an "as-is" basis. While we strive for accuracy, we do not guarantee error-free operation or uninterrupted access. Immunization information provided within the System is not a substitute for professional medical advice. Always consult a healthcare provider for medical concerns. Missed appointments must be rescheduled by the user through the System. Late arrivals may result in appointment cancellation or rescheduling based on availability.</p>
 
-                </div>
+                <p>We reserve the right to terminate or suspend access to the System without notice if these terms are violated or for security reasons. We may update these terms periodically. Users will be notified of significant changes, and continued use of the System indicates acceptance of the updated terms.</p>
+
+                <p>By logging in, you acknowledge that you have read, understood, and agree to abide by these terms and conditions.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-bs-dismiss="modal">I Agree</button>
             </div>
         </div>
     </div>
+</div>
+
 
     <script src="./assets/js/bootstrap.js"></script>
     <script>

@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/fontawesome6/css/all.min.css"/>
 </head>
-<body  style="background: url('../assets/img/background.JPG') no-repeat center/cover; ">
-    
+<body  style="background: url('../assets/img/background.JPG') no-repeat center/100%; ">
+    <h1>Terms And Conditions</h1>    
+
     <div class="container d-flex align-items-center justify-content-center">
        <div class="card my-5" style="width:700px;">
         <div class="card-body">
-        <h1>Terms And Conditions</h1>
         <p>By accessing and using this Child Immunization Appointment System (the "System"), you agree to the
 following terms and conditions. If you do not agree, please refrain from logging in or using the System.
 This System is designed to facilitate the scheduling and management of child immunization appointments.

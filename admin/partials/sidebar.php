@@ -35,31 +35,31 @@
 
         <ul class="nav flex-column mt-3">
                 <li class="nav-item">
-                    <a href="dashboard.php" class="nav-link d-flex g-2 <?= str_contains($url,'/admin/dashboard.php') ? $active : $inactive ?>"> <figure class="me-1"><img src="../assets/img/home.png"/></figure> Dashboard</a>
+                    <a href="dashboard.php" class="nav-link d-flex g-2 <?= str_contains($url,'/admin/dashboard') ? $active : $inactive ?>"> <figure class="me-1"><img src="../assets/img/home.png"/></figure> Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="appointments.php" class="nav-link d-flex <?= str_contains($url, '/admin/appointments.php') || str_contains($url, '/admin/create.php-appointment') || str_contains($url, '/admin/edit-appointment.php')  ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/appointment.png"/></figure> Appointments</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="immunization.php" class="nav-link d-flex <?= str_contains($url, '/admin/immunization.php') || str_contains($url, '/admin/view-immunization.php') ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/immunization.png"/></figure> Immunization</a>
+                    <a href="appointments.php" class="nav-link d-flex <?= str_contains($url, '/admin/appointments') || str_contains($url, '/admin/create-appointment') || str_contains($url, '/admin/edit-appointment')  ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/appointment.png"/></figure> Appointments</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="record.php" class="nav-link d-flex <?= str_contains($url, '/admin/record.php') || str_contains($url ,'/view-record.php') ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/record.png"/></figure> Records</a>
+                    <a href="immunization.php" class="nav-link d-flex <?= str_contains($url, '/admin/immunization') || str_contains($url, '/admin/view-immunization') ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/immunization.png"/></figure> Immunization</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="record.php" class="nav-link d-flex <?= str_contains($url, '/admin/record') || str_contains($url ,'/view-record') ? $active : $inactive ?>">  <figure class="me-1"><img src="../assets/img/record.png"/></figure> Records</a>
                 </li>
 
                <?php 
                 if($barangay != 'admin'){
                     ?>
                     <li class="nav-item">
-                        <a href="settings.php" class="nav-link <?= str_contains($url, '/admin/settings.php') ? $active : $inactive ?>"> <i class="fa fa-gear"></i> Settings</a>
+                        <a href="settings.php" class="nav-link <?= str_contains($url, '/admin/settings') ? $active : $inactive ?>"> <i class="fa fa-gear"></i> Settings</a>
                     </li>
                     <?php 
                 }else{
                     ?>
                     <li class="nav-item">
-                        <a href="admins.php" class="nav-link <?= str_contains($url, '/admin/admins.php') ? $active : $inactive ?>"> <i class="fa fa-users"></i> Barangay Admins</a>
+                        <a href="admins.php" class="nav-link <?= str_contains($url, '/admin/admins') ? $active : $inactive ?>"> <i class="fa fa-users"></i> Barangay Admins</a>
                     </li>
                     <?php 
                 }

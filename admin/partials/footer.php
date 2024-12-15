@@ -15,7 +15,7 @@
                   showConfirmButton: false,
                   timer: 1500
                 }).then(() => {
-                  window.location.href = "login.php"
+                  window.location.href = "https://www.madridejosbarangayimmunization.com/"
                 })
               </script>
         <?php

@@ -68,7 +68,7 @@
             // Check if the reCAPTCHA is empty (not solved)
             if (recaptchaResponse.length == 0) {
                 // If not solved, add red border to the reCAPTCHA element
-                recaptchaElement.style.border = '2px solid red';
+                // recaptchaElement.style.border = '2px solid red';
                 alert("Please complete the reCAPTCHA verification.");
                 return false; // Prevent form submission
             } else {

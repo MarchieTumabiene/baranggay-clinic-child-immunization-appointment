@@ -44,7 +44,7 @@
                     <a class="text-light" href="terms.php" target="_blank" rel="noopener noreferrer">Terms and Condition</a></p>
 
                     <!-- reCAPTCHA widget -->
-                    <div class="g-recaptcha" data-sitekey="6Ld3DZwqAAAAAAPOpn9OCe13Bzh9SmyvUYBpYRT9"></div>
+                    <div class="g-recaptcha" data-sitekey="6LfSEJwqAAAAAFN415xljK0VEjgqvSWZOTAcnI6p"></div>
 
                     <button type="submit" class="btn btn-primary w-100 my-3">Login</button>
 

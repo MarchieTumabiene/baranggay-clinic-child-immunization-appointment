@@ -7,5 +7,6 @@ RewriteEngine On
 
 # Ensure .php extension is removed from URLs
 # Redirect .php URLs to clean URLs
+RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteCond %{THE_REQUEST} \s/([^\s]+)\.php [NC]
 RewriteRule ^ %1 [R=301,L]

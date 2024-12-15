@@ -44,7 +44,7 @@
                     <a class="text-light" href="terms.php" target="_blank" rel="noopener noreferrer">Terms and Condition</a></p>
 
                     <!-- reCAPTCHA widget -->
-                    <div class="g-recaptcha" data-sitekey="6Ld3DZwqAAAAAAPOpn9OCe13Bzh9SmyvUYBpYRT9"></div>
+                    <div class="g-recaptcha" id="recaptcha" data-sitekey="6Ld3DZwqAAAAAAPOpn9OCe13Bzh9SmyvUYBpYRT9"></div>
 
                     <button type="submit" class="btn btn-primary w-100 my-3">Login</button>
 
@@ -83,9 +83,17 @@
         // Function to validate reCAPTCHA before submitting the form
         function validateCaptcha() {
             const recaptchaResponse = grecaptcha.getResponse();
+            const recaptchaElement = document.getElementById('recaptcha');
+
+            // Check if the reCAPTCHA is empty (not solved)
             if (recaptchaResponse.length == 0) {
+                // If not solved, add red border to the reCAPTCHA element
+                recaptchaElement.style.border = '2px solid red';
                 alert("Please complete the reCAPTCHA verification.");
-                return false;
+                return false; // Prevent form submission
+            } else {
+                // If solved, remove the red border
+                recaptchaElement.style.border = '';
             }
             return true; // Allow form submission if reCAPTCHA is valid
         }

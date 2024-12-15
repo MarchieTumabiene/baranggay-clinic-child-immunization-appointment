@@ -1,7 +1,0 @@
-# Enable the rewrite engine
-RewriteEngine On
-allow from all
-
-# Remove .php extension from URLs (if needed)
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^([^/]+)/?$ $1.php [L]

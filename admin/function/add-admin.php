@@ -46,7 +46,7 @@ if ($_GET['action'] == 'add-admin') {
 
         $mail->addAddress($email);
         $mail->Subject = "Account In Use";
-        $mail->Body = "Your account is currently used to ". $username . "\n .Discard this message if it is you. \n Thank you.";
+        $mail->Body = "Your account is currently used to: ". $username . "\nDiscard this message if it is you.\nThank you.";
 
         $mail->send();
 

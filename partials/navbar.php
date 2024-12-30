@@ -9,7 +9,7 @@
 
         <button type="button" class="navbar-toggler " data-bs-toggle="collapse" data-bs-target="#sidebar"><i class="fa fa-bars"></i></button>
 
-        <ul class="navbar-collapse collapse ms-auto navbar-nav gap-lg-3" id="sidebar">
+        <ul class="navbar-collapse collapse ms-lg-auto navbar-nav gap-lg-3" id="sidebar">
 
         
         <li class="nav-item">

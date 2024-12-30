@@ -2,7 +2,6 @@
   require __DIR__ . '../../../function/config.php';
 
   use PHPMailer\PHPMailer\PHPMailer;
-  use PHPMailer\PHPMailer\Exception;
   use PHPMailer\PHPMailer\SMTP;
           
   require __DIR__ . "../../../phpmailer/src/Exception.php";

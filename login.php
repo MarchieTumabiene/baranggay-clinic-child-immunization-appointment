@@ -53,7 +53,7 @@
             </div>
 
             <div class="card-footer text-center">
-                <a href="activate.php" class="mx-auto text-decoration-none">Other</a>
+                <a href="activate.php" class="mx-auto text-decoration-none text-light">Other</a>
             </div>
 
         </div>

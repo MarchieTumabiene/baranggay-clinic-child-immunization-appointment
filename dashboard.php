@@ -27,7 +27,7 @@ require './partials/headers.php';
     ?>
     <?php require './partials/navbar.php' ?>
 
-    <div class="container-fluid">
+    <div class="container-lg container-fluid">
         <?php 
             if (isset($_GET['view'])) {
                 $view = $_GET['view'];

@@ -7,9 +7,9 @@
 
         <h1 class="navbar-brand" >Barangay Immunization</h1>
 
-        <button type="button" class="navbar-toggler " data-bs-toggle="collapse" data-bs-target="#sidebar"><i class="fa fa-bars"></i></button>
+        <button type="button" class="navbar-toggler " data-bs-toggle="collapse" data-bs-target="sidebar"><i class="fa fa-bars"></i></button>
 
-        <ul class="navbar-collapse collapse ms-lg-auto ms-auto navbar-nav gap-lg-3" id="sidebar">
+        <ul class="ms-auto navbar-nav gap-lg-3">
 
         
         <li class="nav-item">

@@ -20,22 +20,22 @@ if ($_GET['action'] == 'update-admin') {
     if ($_FILES['logo']['error'] > 0) {
        
         if (empty($password)) {
-            $stmt = $conn->prepare("INSERT INTO admin(username,email,barangay) VALUES(?,?,?)");
+            $stmt = $conn->prepare("UPDATE admin SET username=?,email=?,barangay =? WHERE id = ?");
             $stmt->bind_param("sss", $username, $email, $barangay);
         }else{
-            $stmt = $conn->prepare("INSERT INTO admin(username,email,password,barangay) VALUES(?,?,?,?)");
-            $stmt->bind_param("ssss", $username, $email, $password, $barangay);
+            $stmt = $conn->prepare("UPDATE admin SET username=?,email=?,password=?,barangay=? WHERE id = ?");
+            $stmt->bind_param("ssssi", $username, $email, $password, $barangay,$id);
         }
     
     }else{
       
         
         if (empty($password)) {
-            $stmt = $conn->prepare("INSERT INTO admin(username,email,barangay,logo) VALUES(?,?,?,?)");
-            $stmt->bind_param("ssss", $username, $email, $barangay, $filename);
+            $stmt = $conn->prepare("UPDATE admin SET username =?,email=?,barangay=?,logo=? WHERE id = ?");
+            $stmt->bind_param("ssssi", $username, $email, $barangay, $filename,$id);
         }else{
-            $stmt = $conn->prepare("INSERT INTO admin(username,email,password,barangay,logo) VALUES(?,?,?,?,?)");
-            $stmt->bind_param("sssss", $username, $email, $password, $barangay, $filename);
+            $stmt = $conn->prepare("UPDATE admin SET username=?,email=?,password=?,barangay=?,logo=? WHERE id = ?");
+            $stmt->bind_param("sssssi", $username, $email, $password, $barangay, $filename,$id);
         }
     
     }

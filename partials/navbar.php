@@ -2,12 +2,12 @@
     
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top dont-print" style="background: #fff;z-index: 1;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top dont-print" style="background: #fff;z-index: 1;" id="sidebar-toggler">
     <div class="container">
 
         <h1 class="navbar-brand" >Barangay Immunization</h1>
 
-        <!-- <button type="button" class="navbar-toggler " id="sidebar-toggler"><i class="fa fa-bars"></i></button> -->
+        <button type="button" class="navbar-toggler " id="sidebar-toggler"><i class="fa fa-bars"></i></button>
 
         <ul class="ms-auto navbar-nav gap-lg-3">
 

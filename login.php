@@ -11,7 +11,7 @@
     $error = "";
     $success = "";
 
-    echo password_hash("admin@123", PASSWORD_DEFAULT);
+    // echo password_hash("admin@123", PASSWORD_DEFAULT);
 
     if (isset($_GET['login'])) {
         require './function/login.php';

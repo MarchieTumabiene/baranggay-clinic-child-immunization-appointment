@@ -22,7 +22,7 @@ if ($_GET['action'] == 'add-admin') {
 
     $check = $conn->prepare("SELECT * FROM admin WHERE username = ?");
     $check->bind_param("s", $username);
-    
+     
     if($check->execute()){
         $result = $check->get_result();
 

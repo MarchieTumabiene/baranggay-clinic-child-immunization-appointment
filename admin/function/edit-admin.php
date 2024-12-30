@@ -49,7 +49,7 @@ if ($_GET['action'] == 'update-admin') {
         $mail = new PHPMailer(true);
         $mail->SMTPDebug = 0;
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = 'smtp.gmail.com'; 
         $mail->SMTPAuth = true;
         $mail->Username = 'tumabienemarchie034@gmail.com';
         $mail->Password = 'mknsrhxregcdrqhj';

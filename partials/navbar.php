@@ -33,17 +33,17 @@
 </nav>
 
 <script>
-     let toggle = document.getElementById('sidebar-toggler')
-    let sidebar = document.getElementById('menu')
-    let close = document.getElementById('close-sidebar')
+    //  let toggle = document.getElementById('sidebar-toggler')
+    // let sidebar = document.getElementById('menu')
+    // let close = document.getElementById('close-sidebar')
 
-    toggle.onclick = () => {
-        sidebar.classList.remove('d-none', 'd-lg-block')
-        sidebar.classList.add('position-fixed', 'start-0', 'top-0')
-    }
+    // toggle.onclick = () => {
+    //     sidebar.classList.remove('d-none', 'd-lg-block')
+    //     sidebar.classList.add('position-fixed', 'start-0', 'top-0')
+    // }
 
-    close.onclick = () => {
-        sidebar.classList.add('d-none', 'd-lg-block')
-        sidebar.classList.remove('position-fixed', 'start-0', 'top-0')
-    }
+    // close.onclick = () => {
+    //     sidebar.classList.add('d-none', 'd-lg-block')
+    //     sidebar.classList.remove('position-fixed', 'start-0', 'top-0')
+    // }
 </script>

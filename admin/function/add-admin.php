@@ -31,7 +31,7 @@ if ($_GET['action'] == 'add-admin') {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = $email;
+        $mail->Username = 'tumabienemarchie034@gmail.com';
         $mail->Password = 'mknsrhxregcdrqhj';
         $mail->Port = 587;
 

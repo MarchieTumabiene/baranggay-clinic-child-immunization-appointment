@@ -188,7 +188,7 @@ $all_notifications = array_sum($notifications);
        <button type="button" class="navbar-toggler " id="sidebar-toggler"><i class="fa fa-bars"></i></button>
        </div>
 
-        <ul class="ms-auto navbar-nav gap-3">
+        <ul class="ms-auto navbar-nav gap-3 d-flex">
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-bell"></i> <?= $all_notifications ?></a>
                 <ul class="dropdown-menu dropdown-menu-end">

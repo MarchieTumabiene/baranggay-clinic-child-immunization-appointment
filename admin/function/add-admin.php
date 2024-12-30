@@ -1,5 +1,12 @@
 <?php 
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+        
+require_once __DIR__ . "../../../phpmailer/src/PHPMailer.php";
+require_once __DIR__ . "../../../phpmailer/src/Exception.php";
+require_once __DIR__ . "../../../phpmailer/src/SMTP.php";
+
 if ($_GET['action'] == 'add-admin') {
     $username = $_POST['uname'];
     $email = $_POST['email'];

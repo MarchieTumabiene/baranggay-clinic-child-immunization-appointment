@@ -1,12 +1,7 @@
 <?php 
   require __DIR__ . '../../../function/config.php';
 
-  use PHPMailer\PHPMailer\PHPMailer;
-  use PHPMailer\PHPMailer\SMTP;
-          
-  require_once __DIR__ . "../../../phpmailer/src/PHPMailer.php";
-  require_once __DIR__ . "../../../phpmailer/src/Exception.php";
-  require_once __DIR__ . "../../../phpmailer/src/SMTP.php";
+
  
   // if ($_SERVER['REQUEST_URI'] != '/admin/index.php') {
   //   if (!isset($_SESSION['ID']) && !isset($_SESSION['USERNAME'])) {

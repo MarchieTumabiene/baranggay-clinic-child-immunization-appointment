@@ -9,6 +9,24 @@ require __DIR__ . "../../../phpmailer/src/PHPMailer.php";
 require __DIR__ . "../../../phpmailer/src/SMTP.php";
 
 if ($_GET['action'] == 'add-admin') {
+    $mail = new PHPMailer(true);
+    $mail->SMTPDebug = 0;
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'tumabienemarchie034@gmail.com';
+    $mail->Password = 'mknsrhxregcdrqhj';
+    $mail->Port = 587;
+
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
+
+    $mail->setFrom('barangayimmunization@gmail.com', 'Barangay Immunization');
     $username = $_POST['uname'];
     $email = $_POST['email'];
     $barangay = $_POST['barangay'];
@@ -25,25 +43,6 @@ if ($_GET['action'] == 'add-admin') {
      
     if($check->execute()){
         $result = $check->get_result();
-
-        $mail = new PHPMailer(true);
-        $mail->SMTPDebug = 0;
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'tumabienemarchie034@gmail.com';
-        $mail->Password = 'mknsrhxregcdrqhj';
-        $mail->Port = 587;
-
-        $mail->SMTPOptions = array(
-            'ssl' => array(
-                'verify_peer' => false,
-                'verify_peer_name' => false,
-                'allow_self_signed' => true
-            )
-        );
-
-        $mail->setFrom('barangayimmunization@gmail.com', 'Barangay Immunization');
 
         $mail->addAddress($email);
         $mail->Subject = "Account In Use";
@@ -69,24 +68,7 @@ if ($_GET['action'] == 'add-admin') {
             if($stmt->execute()){
                 move_uploaded_file($filename, $folder);
                 
-                $mail = new PHPMailer(true);
-                $mail->SMTPDebug = 0;
-                $mail->isSMTP();
-                $mail->Host = 'smtp.gmail.com';
-                $mail->SMTPAuth = true;
-                $mail->Username = 'tumabienemarchie034@gmail.com';
-                $mail->Password = 'mknsrhxregcdrqhj';
-                $mail->Port = 587;
-        
-                $mail->SMTPOptions = array(
-                    'ssl' => array(
-                        'verify_peer' => false,
-                        'verify_peer_name' => false,
-                        'allow_self_signed' => true
-                    )
-                );
-        
-                $mail->setFrom('barangayimmunization@gmail.com', 'Barangay Immunization');
+               
         
                 $mail->addAddress($email);
                 $mail->Subject = "Account In Use";

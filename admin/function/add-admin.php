@@ -4,9 +4,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
          
-require "../phpmailer/src/Exception.php";
-require "../phpmailer/src/PHPMailer.php";
-require "../phpmailer/src/SMTP.php";
+require "../../phpmailer/src/Exception.php";
+require "../../phpmailer/src/PHPMailer.php";
+require "../../phpmailer/src/SMTP.php";
 
 if ($_GET['action'] == 'add-admin') {
     $username = $_POST['uname'];

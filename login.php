@@ -52,7 +52,7 @@
                 </form>
             </div>
 
-            <div class="card-footer text-center">
+            <div class="card-footer text-center text-light">
                 <a href="activate.php" class="mx-auto text-decoration-none text-light">Other</a>
             </div>
 

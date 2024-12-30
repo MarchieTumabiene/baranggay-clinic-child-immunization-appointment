@@ -62,7 +62,7 @@
             </div>
 
             <div class="card-footer text-center">
-                <a href="https://www.madridejosbarangayimmunization.com/admin/activate.php" class="mx-auto text-decoration-none text-light">Cancel</a>
+                <a href="https://www.madridejosbarangayimmunization.com/admin/activate.php" class="mx-auto text-decoration-none text-dark bg-warning p-1 px-3">Cancel</a>
             </div>
         </div>
     </div>

@@ -3,13 +3,13 @@
 
 
 if ($_GET['action'] == 'add-admin') {
-    use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
+    // use PHPMailer\PHPMailer\PHPMailer;
+    // use PHPMailer\PHPMailer\Exception;
+    // use PHPMailer\PHPMailer\SMTP;
          
-require __DIR__ . "../../../phpmailer/src/Exception.php";
-require __DIR__ . "../../../phpmailer/src/PHPMailer.php";
-require __DIR__ . "../../../phpmailer/src/SMTP.php";
+    require __DIR__ . "../../../phpmailer/src/Exception.php";
+    require __DIR__ . "../../../phpmailer/src/PHPMailer.php";
+    require __DIR__ . "../../../phpmailer/src/SMTP.php";
     $username = $_POST['uname'];
     $email = $_POST['email'];
     $barangay = $_POST['barangay'];

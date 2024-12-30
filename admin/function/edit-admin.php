@@ -1,5 +1,13 @@
 <?php 
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+         
+require "../phpmailer/src/Exception.php";
+require "../phpmailer/src/PHPMailer.php";
+require "../phpmailer/src/SMTP.php";
+
 if ($_GET['action'] == 'update-admin') {
     $id = $_POST['id'];
     $username = $_POST['uname'];
@@ -37,6 +45,31 @@ if ($_GET['action'] == 'update-admin') {
 
     if($stmt->execute()){
         move_uploaded_file($filename, $folder);
+
+        $mail = new PHPMailer(true);
+        $mail->SMTPDebug = 0;
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = $email;
+        $mail->Password = 'mknsrhxregcdrqhj';
+        $mail->Port = 587;
+
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
+
+        $mail->setFrom('barangayimmunization@gmail.com', 'Barangay Immunization');
+
+        $mail->addAddress($email);
+        $mail->Subject = "Account In Use";
+        $mail->Body = "Your account is currently used to ". $username . "\n .Discard this message if it is you. \n Thank you.";
+
+        $mail->send();
 
         ?>
         <script>

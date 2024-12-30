@@ -183,7 +183,7 @@ $all_notifications = array_sum($notifications);
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light sticky-top dont-print shadow-sm" style="background: #fff;z-index: 1;">
-    <div class="container-fluid">
+    <div class="container-lg container-fluid">
         <button type="button" class="navbar-toggler " id="sidebar-toggler"><i class="fa fa-bars"></i></button>
 
         <ul class="ms-auto navbar-nav gap-3">

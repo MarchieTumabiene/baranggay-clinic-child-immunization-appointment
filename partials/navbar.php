@@ -2,7 +2,7 @@
     
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top dont-print" style="background: #fff;z-index: 1;" id="sidebar-toggler">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top dont-print" style="background: #fff;z-index: 1;">
     <div class="container">
 
         <h1 class="navbar-brand" >Barangay Immunization</h1>

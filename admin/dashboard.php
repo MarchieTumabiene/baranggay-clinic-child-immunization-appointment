@@ -314,27 +314,38 @@ if ($get_child->num_rows > 0) {
 
         <script>
         var xValues = <?php echo json_encode($barangays); ?>;
-        var yValues = <?php echo json_encode($count); ?>;
+           var yValues = <?php echo json_encode($count); ?>;
+            var barColors = [
+              "#b91d47",
+              "#00aba9",
+              "#2b5797",
+              "#e8c3b9",
+              "#1e7145",
+              "#b91d47",
+             "#e8c3b9",
+              "#2b5797",
+              "#e8c3b9",
+              "#1e7145",
+              "#b91d47",
+              "#00aba9",
+            ];
 
-        new Chart("lineChart", {
-          type: "line",
-          data: {
-            labels: xValues,
-            datasets: [{
-              fill: false,
-              lineTension: 0,
-              backgroundColor: "rgba(0,0,255,1.0)",
-              borderColor: "rgba(0,0,255,0.1)",
-              data: yValues
-            }]
-          },
-          options: {
-            legend: {display: false},
-            scales: {
-              yAxes: [{ticks: {min: 6, max:16}}],
-            }
-          }
-        });
+            new Chart("pieChart1", {
+              type: "doughnut",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  backgroundColor: barColors,
+                  data: yValues
+                }]
+              },
+              options: {
+                title: {
+                  display: true,
+                  text: "Immunization Records by Barangay"
+                }
+              }
+            });
         </script>
 
         </div>

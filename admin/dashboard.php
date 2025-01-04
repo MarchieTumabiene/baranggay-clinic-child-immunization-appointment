@@ -247,7 +247,7 @@ if ($get_child->num_rows > 0) {
             </div>
           </div>
 
-          <div class="col-12">
+          <div class="col-6">
             <div class="card">
               <div class="card-body">
               <canvas id="pieChart1" height="100px"></canvas>
@@ -256,7 +256,7 @@ if ($get_child->num_rows > 0) {
           </div>
 
           <script>
-            var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+            var xValues = [<?php echo json_encode($count); ?>];
             var yValues = [55, 49, 44, 24, 15];
             var barColors = [
               "#b91d47",

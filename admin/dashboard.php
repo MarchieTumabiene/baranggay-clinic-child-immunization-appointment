@@ -117,7 +117,7 @@ if ($get_child->num_rows > 0) {
                   $get_barangayAdmins = $conn->query("SELECT * FROM admin WHERE barangay != 'admin'");
 
                   ?>
-                   <div class="col-lg-3 col-md-6">
+                   <div class="col-lg-6 col-md-12">
 
                     <div class="card shadow-sm rounded-0 p-1 h-100 bg-primary text-light">
                       <div class="card-body">

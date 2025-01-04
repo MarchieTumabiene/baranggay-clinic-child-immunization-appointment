@@ -298,7 +298,7 @@ if ($get_child->num_rows > 0) {
               options: {
                 title: {
                   display: true,
-                  text: "World Wide Wine Production 2018"
+                  text: "Immunization Records by Barangay"
                 }
               }
             });

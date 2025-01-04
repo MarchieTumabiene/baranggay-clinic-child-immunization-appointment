@@ -256,7 +256,7 @@ if ($get_child->num_rows > 0) {
           </div>
 
           <script>
-            var xValues = ['Japan'];
+            var xValues = [<?php echo json_encode($count); ?>];
             var yValues = [<?php echo json_encode($count); ?>];
             var barColors = [
               "#b91d47",

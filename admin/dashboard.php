@@ -106,7 +106,7 @@ if ($get_child->num_rows > 0) {
                   ?>
                    <div class="col-lg-3">
 
-                    <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
+                    <div class="card shadow-sm rounded-0 p-1 h-100 bg-primary text-light">
                       <div class="card-body">
                       <h3><?= $get_barangayAdmins->num_rows ?></h3>
                         <p class="mb-0"><i class="fa fa-user"></i> Barangay Admins</p>
@@ -125,7 +125,7 @@ if ($get_child->num_rows > 0) {
                   ?>
                    <div class="col-lg-3">
 
-                    <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
+                    <div class="card shadow-sm rounded-0 p-1 h-100 bg-primary text-light">
                       <div class="card-body">
                       <h3><?= $get_barangayAdmins->num_rows ?></h3>
                         <p class="mb-0"><i class="fa fa-user"></i> Total Barangays</p>
@@ -145,7 +145,7 @@ if ($get_child->num_rows > 0) {
                     ?>
                      <div class="col-lg-3">
 
-                      <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
+                      <div class="card shadow-sm rounded-0 p-1 h-100 bg-primary text-light">
                         <div class="card-body">
                         <h3><?= $value['COUNT'] ?></h3>
                           <p class="mb-0"><i class="fa fa-user"></i> <?= strtoupper($value['barangay']) ?></p>
@@ -165,7 +165,7 @@ if ($get_child->num_rows > 0) {
           
           <div class="col-lg-3">
 
-            <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
+            <div class="card shadow-sm rounded-0 p-1 h-100 bg-primary text-light">
               <div class="card-body">
 
                 <?php
@@ -184,7 +184,7 @@ if ($get_child->num_rows > 0) {
 
           <div class="col-lg-3">
 
-            <div class="card shadow-sm rounded-0 p-3 h-100  bg-primary text-light">
+            <div class="card shadow-sm rounded-0 p-1 h-100  bg-primary text-light">
               <div class="card-body">
                 <?php
                
@@ -203,7 +203,7 @@ if ($get_child->num_rows > 0) {
 
           <div class="col-lg-3">
 
-            <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
+            <div class="card shadow-sm rounded-0 p-1 h-100 bg-primary text-light">
               <div class="card-body">
                 <?php
                 $get_appoint_records = $conn->query("SELECT * FROM appointments WHERE status = 2 AND barangay = '$barangay'");

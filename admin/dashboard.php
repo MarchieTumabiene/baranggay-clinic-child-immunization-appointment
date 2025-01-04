@@ -269,8 +269,8 @@ if ($get_child->num_rows > 0) {
           </div>
 
           <script>
-            var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-            var yValues = [55, 49, 44, 24, 15];
+           var xValues = <?php echo json_encode($barangays); ?>;
+           var yValues = <?php echo json_encode($count); ?>;
             var barColors = [
               "#b91d47",
               "#00aba9",

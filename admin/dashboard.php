@@ -147,7 +147,7 @@ if ($get_child->num_rows > 0) {
 
                       <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
                         <div class="card-body">
-                        <h3><?= $value['COUNT'] ?><3h1>
+                        <h3><?= $value['COUNT'] ?></h3>
                           <p class="mb-0"><i class="fa fa-user"></i> <?= strtoupper($value['barangay']) ?></p>
                         </div>
                       </div>
@@ -223,7 +223,7 @@ if ($get_child->num_rows > 0) {
           <div class="col-lg-3">
              <div class="card h-100 bg-primary text-light">
               <div class="card-body">
-                <h3><?= array_sum($count_show) ?><3h1>
+                <h3><?= array_sum($count_show) ?></h3>
                 <p class="mb-0"><i class="fa fa-user-check"></i> Immunized</p>
               </div>
              </div>
@@ -232,7 +232,7 @@ if ($get_child->num_rows > 0) {
           <div class="col-lg-3">
              <div class="card h-100 bg-primary text-light">
               <div class="card-body">
-                <h3><?= array_sum($count_dont_show) ?><3h1>
+                <h3><?= array_sum($count_dont_show) ?></h3>
                 <p class="mb-0"><i class="fa fa-user-xmark"></i> Not Immunized</p>
               </div>
              </div>

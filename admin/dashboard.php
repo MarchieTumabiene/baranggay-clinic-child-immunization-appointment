@@ -108,7 +108,7 @@ if ($get_child->num_rows > 0) {
 
                     <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
                       <div class="card-body">
-                      <h1><?= $get_barangayAdmins->num_rows ?></h1>
+                      <h3><?= $get_barangayAdmins->num_rows ?></h3>
                         <p class="mb-0"><i class="fa fa-user"></i> Barangay Admins</p>
                       </div>
                     </div>
@@ -127,7 +127,7 @@ if ($get_child->num_rows > 0) {
 
                     <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
                       <div class="card-body">
-                      <h1><?= $get_barangayAdmins->num_rows ?></h1>
+                      <h3><?= $get_barangayAdmins->num_rows ?></h3>
                         <p class="mb-0"><i class="fa fa-user"></i> Total Barangays</p>
                       </div>
                     </div>
@@ -147,7 +147,7 @@ if ($get_child->num_rows > 0) {
 
                       <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
                         <div class="card-body">
-                        <h1><?= $value['COUNT'] ?></h1>
+                        <h3><?= $value['COUNT'] ?><3h1>
                           <p class="mb-0"><i class="fa fa-user"></i> <?= strtoupper($value['barangay']) ?></p>
                         </div>
                       </div>
@@ -175,7 +175,7 @@ if ($get_child->num_rows > 0) {
                   $get_appointments = $conn->query("SELECT * FROM appointments WHERE status = 1 AND barangay = '$barangay'");
                 }
                 ?>
-                <h1><?= $get_appointments->num_rows ?></h1>
+                <h3><?= $get_appointments->num_rows ?></h3>
                 <p class="mb-0"><i class="fa fa-calendar-check"></i> Appointments</p>
               </div>
             </div>
@@ -194,7 +194,7 @@ if ($get_child->num_rows > 0) {
                   $get_records = $conn->query("SELECT * FROM appointments WHERE status = 1 AND barangay = '$barangay'");
                 }
                 ?>
-                <h1><?= $get_records->num_rows ?></h1>
+                <h3><?= $get_records->num_rows ?></h3>
                 <p class="mb-0"><i class="fa fa-check-circle"></i> Immunization Records</p>
               </div>
             </div>
@@ -211,7 +211,7 @@ if ($get_child->num_rows > 0) {
                   $get_records = $conn->query("SELECT * FROM appointments WHERE status = 2");
                 }
                 ?>
-                <h1><?= $get_appoint_records->num_rows ?></h1>
+                <h3><?= $get_appoint_records->num_rows ?></h3>
                 <p class="mb-0"><i class="fa fa-folder-open"></i> Appointment Records</p>
               </div>
             </div>
@@ -223,7 +223,7 @@ if ($get_child->num_rows > 0) {
           <div class="col-lg-3">
              <div class="card h-100 bg-primary text-light">
               <div class="card-body">
-                <h1><?= array_sum($count_show) ?></h1>
+                <h3><?= array_sum($count_show) ?><3h1>
                 <p class="mb-0"><i class="fa fa-user-check"></i> Immunized</p>
               </div>
              </div>
@@ -232,7 +232,7 @@ if ($get_child->num_rows > 0) {
           <div class="col-lg-3">
              <div class="card h-100 bg-primary text-light">
               <div class="card-body">
-                <h1><?= array_sum($count_dont_show) ?></h1>
+                <h3><?= array_sum($count_dont_show) ?><3h1>
                 <p class="mb-0"><i class="fa fa-user-xmark"></i> Not Immunized</p>
               </div>
              </div>

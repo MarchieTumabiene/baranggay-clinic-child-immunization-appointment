@@ -307,45 +307,34 @@ if ($get_child->num_rows > 0) {
           <div class="col-12">
             <div class="card">
               <div class="card-body">
-              <canvas id="doughnut" height="100px"></canvas>
+              <canvas id="lineChart" height="100px"></canvas>
               </div>
             </div>
           </div>
 
         <script>
         var xValues = <?php echo json_encode($barangays); ?>;
-           var yValues = <?php echo json_encode($count); ?>;
-            var barColors = [
-              "#b91d47",
-              "#00aba9",
-              "#2b5797",
-              "#e8c3b9",
-              "#1e7145",
-              "#b91d47",
-             "#e8c3b9",
-              "#2b5797",
-              "#e8c3b9",
-              "#1e7145",
-              "#b91d47",
-              "#00aba9",
-            ];
+        var yValues = <?php echo json_encode($count); ?>;
 
-            new Chart("doughnut", {
-              type: "doughnut",
-              data: {
-                labels: xValues,
-                datasets: [{
-                  backgroundColor: barColors,
-                  data: yValues
-                }]
-              },
-              options: {
-                title: {
-                  display: true,
-                  text: "Immunization Records by Barangay"
-                }
-              }
-            });
+        new Chart("lineChart", {
+          type: "line",
+          data: {
+            labels: xValues,
+            datasets: [{
+              fill: false,
+              lineTension: 0,
+              backgroundColor: "rgba(0,0,255,1.0)",
+              borderColor: "rgba(0,0,255,0.1)",
+              data: yValues
+            }]
+          },
+          options: {
+            legend: {display: false},
+            scales: {
+              yAxes: [{ticks: {min: 6, max:16}}],
+            }
+          }
+        });
         </script>
 
         </div>

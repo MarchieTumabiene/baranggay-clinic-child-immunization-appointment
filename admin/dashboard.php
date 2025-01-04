@@ -104,7 +104,7 @@ if ($get_child->num_rows > 0) {
                   $get_barangayAdmins = $conn->query("SELECT * FROM admin WHERE barangay != 'admin'");
 
                   ?>
-                   <div class="col-lg-4">
+                   <div class="col-lg-3">
 
                     <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
                       <div class="card-body">
@@ -123,7 +123,7 @@ if ($get_child->num_rows > 0) {
                   $get_barangayAdmins = $conn->query("SELECT * FROM admin WHERE barangay != 'admin'");
 
                   ?>
-                   <div class="col-lg-4">
+                   <div class="col-lg-3">
 
                     <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
                       <div class="card-body">
@@ -143,7 +143,7 @@ if ($get_child->num_rows > 0) {
                   $adminsCount = 0;
                   foreach ($get_barangayAdmins as $key => $value) {
                     ?>
-                     <div class="col-lg-4">
+                     <div class="col-lg-3">
 
                       <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
                         <div class="card-body">
@@ -163,7 +163,7 @@ if ($get_child->num_rows > 0) {
           
         <?php if($barangay != 'admin'): ?>
           
-          <div class="col-lg-4">
+          <div class="col-lg-3">
 
             <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
               <div class="card-body">
@@ -182,7 +182,7 @@ if ($get_child->num_rows > 0) {
 
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-3">
 
             <div class="card shadow-sm rounded-0 p-3 h-100  bg-primary text-light">
               <div class="card-body">
@@ -201,7 +201,7 @@ if ($get_child->num_rows > 0) {
 
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-3">
 
             <div class="card shadow-sm rounded-0 p-3 h-100 bg-primary text-light">
               <div class="card-body">
@@ -220,7 +220,7 @@ if ($get_child->num_rows > 0) {
 
 
 
-          <div class="col-lg-4">
+          <div class="col-lg-3">
              <div class="card h-100 bg-primary text-light">
               <div class="card-body">
                 <h1><?= array_sum($count_show) ?></h1>
@@ -229,7 +229,7 @@ if ($get_child->num_rows > 0) {
              </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-3">
              <div class="card h-100 bg-primary text-light">
               <div class="card-body">
                 <h1><?= array_sum($count_dont_show) ?></h1>

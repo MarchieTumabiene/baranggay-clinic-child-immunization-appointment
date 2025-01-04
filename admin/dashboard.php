@@ -313,7 +313,7 @@ if ($get_child->num_rows > 0) {
 </script>
 
 <script>
-            var xValues1 = ["japan"];
+            // var xValues1 = ["japan"];
             var yValues1 = [<?php echo json_encode($count); ?>];
             var barColors1 = [
               "#b91d47",
@@ -333,7 +333,7 @@ if ($get_child->num_rows > 0) {
             new Chart("pieChart1", {
               type: "pie",
               data: {
-                labels: xValues1,
+                // labels: xValues1,
                 datasets: [{
                   backgroundColor: barColors1,
                   data: yValues1

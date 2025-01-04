@@ -307,7 +307,7 @@ if ($get_child->num_rows > 0) {
           <div class="col-12">
             <div class="card">
               <div class="card-body">
-              <canvas id="lineChart" height="100px"></canvas>
+              <canvas id="doughnut" height="100px"></canvas>
               </div>
             </div>
           </div>
@@ -330,7 +330,7 @@ if ($get_child->num_rows > 0) {
               "#00aba9",
             ];
 
-            new Chart("pieChart1", {
+            new Chart("doughnut", {
               type: "doughnut",
               data: {
                 labels: xValues,

@@ -283,6 +283,43 @@ if ($get_child->num_rows > 0) {
 ?>
 
 
+<script>
+            var xValues1 = ["japan"];
+            var yValues1 = [<?php echo json_encode($count); ?>];
+            var barColors1 = [
+              "#b91d47",
+              "#00aba9",
+              "#2b5797",
+              "#e8c3b9",
+              "#1e7145",
+              "#b91d47",
+              "#00aba9",
+              "#2b5797",
+              "#e8c3b9",
+              "#1e7145",
+              "#b91d47",
+              "#2b5797",
+            ];
+
+            new Chart("pieChart1", {
+              type: "pie",
+              data: {
+                labels: xValues1,
+                datasets: [{
+                  backgroundColor: barColors1,
+                  data: yValues1
+                }]
+              },
+              options: {
+                title: {
+                  display: true,
+                  text: "World Wide Wine Production 2018"
+                }
+              }
+            });
+          </script>
+
+
 
 
 <?php if($barangay == 'admin'): ?>
@@ -312,41 +349,7 @@ if ($get_child->num_rows > 0) {
   });
 </script>
 
-<script>
-            // var xValues1 = ["japan"];
-            var yValues1 = [<?php echo json_encode($count); ?>];
-            var barColors1 = [
-              "#b91d47",
-              "#00aba9",
-              "#2b5797",
-              "#e8c3b9",
-              "#1e7145",
-              "#b91d47",
-              "#00aba9",
-              "#2b5797",
-              "#e8c3b9",
-              "#1e7145",
-              "#b91d47",
-              "#2b5797",
-            ];
 
-            new Chart("pieChart1", {
-              type: "pie",
-              data: {
-                // labels: xValues1,
-                datasets: [{
-                  backgroundColor: barColors1,
-                  data: yValues1
-                }]
-              },
-              options: {
-                title: {
-                  display: true,
-                  text: "World Wide Wine Production 2018"
-                }
-              }
-            });
-          </script>
 
 <?php else: ?>
   <script>

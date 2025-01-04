@@ -85,6 +85,19 @@ if ($get_child->num_rows > 0) {
   }
 }
 ?>
+
+<?php 
+  // Assuming $conn is your database connection
+  $appoint_by_barangay = $conn->query("SELECT COUNT(*) AS RECORD, barangay FROM appointments GROUP BY barangay");
+  
+
+  $count = [];
+  $barangays = [];
+  foreach ($appoint_by_barangay as $value) {
+    $count[] = $value['RECORD'];
+    $barangays[] = $value['barangay'];
+  }
+?>
 <div class="container-fluid">
 
   <div class="row">
@@ -297,18 +310,7 @@ if ($get_child->num_rows > 0) {
 
 </div>
 
-<?php 
-  // Assuming $conn is your database connection
-  $appoint_by_barangay = $conn->query("SELECT COUNT(*) AS RECORD, barangay FROM appointments GROUP BY barangay");
-  
 
-  $count = [];
-  $barangays = [];
-  foreach ($appoint_by_barangay as $value) {
-    $count[] = $value['RECORD'];
-    $barangays[] = $value['barangay'];
-  }
-?>
 
 
 

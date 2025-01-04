@@ -247,7 +247,7 @@ if ($get_child->num_rows > 0) {
             </div>
           </div>
 
-          <div class="col-6">
+          <div class="col-12">
             <div class="card">
               <div class="card-body">
               <canvas id="pieChart1" height="100px"></canvas>

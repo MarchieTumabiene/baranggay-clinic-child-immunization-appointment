@@ -268,10 +268,28 @@ if ($get_child->num_rows > 0) {
             </div>
           </div>
 
-         <?php if($barangay == 'admin'): ?>
+
+          <?php 
+            $byBarangayRecord = [
+              'Appointments',
+              'Immunization Records',
+              'Appointment Records',
+              'Immunized',
+              'Not Immunized'
+            ];
+
+            $byBarangayCount = [
+              $get_appointments->num_rows,
+              $get_records->num_rows,
+              $get_appoint_records->num_rows,
+              array_sum($count_show),
+              array_sum($count_dont_show)
+            ];
+          ?>
+
           <script>
-           var xValues = <?php echo json_encode($barangays); ?>;
-           var yValues = <?php echo json_encode($count); ?>;
+           var xValues = <?php echo $barangay == 'admin' ? json_encode($barangays) : json_encode($byBarangayRecord) ; ?>;
+           var yValues = <?php echo $barangay == 'admin' ? json_encode($count) : json_encode($byBarangayCount) ; ?>;
             var barColors = [
               "#b91d47",
               "#00aba9",
@@ -304,7 +322,6 @@ if ($get_child->num_rows > 0) {
               }
             });
           </script>
-          <?php endif; ?>
 
           <div class="col-12">
             <div class="card">
@@ -314,7 +331,6 @@ if ($get_child->num_rows > 0) {
             </div>
           </div>
 
-        <?php if($barangay == 'admin'): ?>
         <script>
         var xValues = <?php echo json_encode($barangays); ?>;
         var yValues = <?php echo json_encode($count); ?>;
@@ -339,7 +355,6 @@ if ($get_child->num_rows > 0) {
           }
         });
         </script>
-        <?php endif; ?>
 
         </div>
       </div>

@@ -332,8 +332,8 @@ if ($get_child->num_rows > 0) {
           </div>
 
         <script>
-        var xValues = <?php echo json_encode($barangays); ?>;
-        var yValues = <?php echo json_encode($count); ?>;
+        var xValues = <?php echo $barangay == 'admin' ? json_encode($barangays) : json_encode($byBarangayRecord) ; ?>;
+        var yValues = <?php echo $barangay == 'admin' ? json_encode($count) : json_encode($byBarangayCount) ; ?>;
 
         new Chart("lineChart", {
           type: "line",

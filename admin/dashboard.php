@@ -268,6 +268,7 @@ if ($get_child->num_rows > 0) {
             </div>
           </div>
 
+         <?php if($barangay == 'admin'): ?>
           <script>
            var xValues = <?php echo json_encode($barangays); ?>;
            var yValues = <?php echo json_encode($count); ?>;
@@ -303,6 +304,7 @@ if ($get_child->num_rows > 0) {
               }
             });
           </script>
+          <?php endif; ?>
 
           <div class="col-12">
             <div class="card">
@@ -312,6 +314,7 @@ if ($get_child->num_rows > 0) {
             </div>
           </div>
 
+        <?php if($barangay == 'admin'): ?>
         <script>
         var xValues = <?php echo json_encode($barangays); ?>;
         var yValues = <?php echo json_encode($count); ?>;
@@ -336,6 +339,7 @@ if ($get_child->num_rows > 0) {
           }
         });
         </script>
+        <?php endif; ?>
 
         </div>
       </div>

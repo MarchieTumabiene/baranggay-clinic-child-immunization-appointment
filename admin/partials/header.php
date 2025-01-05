@@ -3,11 +3,11 @@
 
 
  
-  // if ($_SERVER['REQUEST_URI'] != '/admin/index.php') {
-  //   if (!isset($_SESSION['ID']) && !isset($_SESSION['USERNAME'])) {
-  //     header('location: login.php');
-  //   }  
-  // }
+  if ($_SERVER['REQUEST_URI'] != '/admin/index.php') {
+    if (!isset($_SESSION['ID']) && !isset($_SESSION['USERNAME'])) {
+      header('location: https://www.madridejosbarangayimmunization.com/');
+    }  
+  }
   
 $barangay = $_SESSION['BARANGAY'];
 $logo = $_SESSION['LOGO'];

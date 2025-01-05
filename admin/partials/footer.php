@@ -6,19 +6,25 @@
   <?php 
       if (isset($_GET['logout'])) {
         session_destroy();
-        ?>
-        <script>
-                Swal.fire({
-                  position: 'top-end',
-                  icon: 'success',
-                  title: "Logged out succesfully",
-                  showConfirmButton: false,
-                  timer: 1500
-                }).then(() => {
-                  window.location.href = "https://www.madridejosbarangayimmunization.com/"
-                })
-              </script>
-        <?php
+
+        $status = 1;
+        $updateStatus = $conn->prepare("UPDATE admin SET status = ? WHERE id = ?");
+        $updateStatus->bind_param("ii", $status, $_SESSION['ID']);
+        if($updateStatus->execute()){
+          ?>
+          <script>
+                  Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: "Logged out succesfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                  }).then(() => {
+                    window.location.href = "https://www.madridejosbarangayimmunization.com/"
+                  })
+                </script>
+          <?php
+        }
       }
   ?>
   <script>

@@ -46,10 +46,10 @@
                     <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
 
                     <?php if($error !== null): ?>
-                        <p class="text-danger mt-2"><?= $error ?></p>
+                        <p class="text-danger mt-2 bg-light px-2"><?= $error ?></p>
                     <?php endif; ?>
                     <?php if($success !== null): ?>
-                        <p class="text-success mt-2"><?= $success ?></p>
+                        <p class="text-success mt-2 bg-light px-2"><?= $success ?></p>
                     <?php endif; ?>
                 </form>
             </div>

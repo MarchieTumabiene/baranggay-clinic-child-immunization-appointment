@@ -53,10 +53,10 @@
                     <div id="error-message" class="text-danger mt-2" style="display:none;">You have exceeded the maximum attempts. Please try again in <span id="lockout-timer">3:00</span>.</div>
 
                     <?php if($error !== null): ?>
-                        <p class="text-danger mt-2 bg-light px-2"><?= $error ?></p>
+                        <p class="text-danger mt-2 bg-light px-2 text-center"><?= $error ?></p>
                     <?php endif; ?>
                     <?php if($success !== null): ?>
-                        <p class="text-success mt-2 bg-light px-2"><?= $success ?></p>
+                        <p class="text-success mt-2 bg-light px-2 text-center"><?= $success ?></p>
                     <?php endif; ?>
                 </form>
             </div>

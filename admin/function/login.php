@@ -40,7 +40,36 @@ if ($_SESSION['attempts'] >= $max_attempts) {
             // if($row['status'] == 2){
             //     $error = "Account logged in to other device.";
             // }else{
-                $error = $row['status'];
+                if($row['status'] == 1){
+                    if (password_verify($password, $row['password'])) {
+                        $status = 2;
+        
+                        // Successful login
+                        $_SESSION['ID'] = $row['id'];
+                        $_SESSION['USERNAME'] = $row['username'];
+                        $_SESSION['BARANGAY'] = $row['barangay'];
+                        $_SESSION['LOGO'] = $row['logo'];
+                        $updateStatus = $conn->prepare("UPDATE admin SET status = ? WHERE id = ?");
+                        $updateStatus->bind_param("ii", $status, $row['id']);
+                        if($updateStatus->execute()){
+                            unset($_SESSION['attempts']); // Reset failed attempts
+                            header('refresh:3;url=https://www.madridejosbarangayimmunization.com/admin/dashboard.php');
+                            $success = "*Account logged in successfully, redirecting in 3 seconds";
+                        }
+                    } else {
+                        // Incorrect password
+                        $_SESSION['attempts']++;
+                        if ($_SESSION['attempts'] >= $max_attempts) {
+                            // Lockout the user after max attempts
+                            $_SESSION['lockout_time'] = time() + $lockout_duration; // Set lockout time (3 minutes)
+                            $error = "You have exceeded the maximum attempts. Please try again in 3 minutes.";
+                        } else {
+                            $error = "*Incorrect username or password. You have " . ($max_attempts - $_SESSION['attempts']) . " attempts left.";
+                        }
+                    }
+                }else{
+                    $error = "Account logged in to other device.";
+                }
             // }
         } else {
             // Account does not exist

@@ -39,7 +39,7 @@ if ($_SESSION['attempts'] >= $max_attempts) {
             // Validate password
             if($row['status'] == 2){
                 $error = "Account logged in to other device.";
-            }else{
+            } else if($row['status'] == 1){
                 if (password_verify($password, $row['password'])) {
                     $status = 2;
     

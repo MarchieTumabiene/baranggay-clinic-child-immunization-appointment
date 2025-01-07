@@ -37,9 +37,9 @@ if ($_SESSION['attempts'] >= $max_attempts) {
             $row = $result->fetch_array();
             echo $row['status'];
             // Validate password
-            if($row['status'] == 2){
-                $error = "Account logged in to other device.";
-            } else if($row['status'] == 1){
+            // if($row['status'] == 2){
+            //     $error = "Account logged in to other device.";
+            // }else{
                 if (password_verify($password, $row['password'])) {
                     $status = 2;
     
@@ -66,7 +66,7 @@ if ($_SESSION['attempts'] >= $max_attempts) {
                         $error = "*Incorrect username or password. You have " . ($max_attempts - $_SESSION['attempts']) . " attempts left.";
                     }
                 }
-            }
+            // }
         } else {
             // Account does not exist
             $error = "*Account doesn't exist";

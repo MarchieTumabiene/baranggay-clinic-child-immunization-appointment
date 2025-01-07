@@ -35,7 +35,7 @@ if ($_SESSION['attempts'] >= $max_attempts) {
         $result = $stmt->get_result();
         if ($result->num_rows > 0) {
             $row = $result->fetch_array();
-
+            echo $row['status'];
             // Validate password
             if($row['status'] == 2){
                 $error = "Account logged in to other device.";
